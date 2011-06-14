@@ -4,13 +4,56 @@
 </head>
 <body>
 <script language="javascript">
+
+// Console is a builtin object.
+
 var test = function () {
-  console.log("Hello !!");
-}
+  console.log("Named anonymous function executed!");
+};
+
+function myFunc(iFunc) {
+  iFunc();
+};
+
+
+
+
+myFunc(test);
+
+
+// Self executing anonymous functions
+(function(){
+    console.log("Self executing anonymous functions");
+})();
+
+
+// Overriding
 test.toString = function() {
- return "Sundar";
+ return "SundarReplacedToStringofObject";
 }
-console.log(test);
+console.log(test); // Using toString
+
+var arr = ["Hello", "ArrayExample"]
+arr.push("Appended");
+console.log(arr);
+
+// My custom object
+var myObj = {
+  sayHello : function () {
+    console.log("myObj hello!! " + this.myName);
+  },
+  myName : "Sundar",
+  "hell" : "hell"
+};
+
+var secondObj = function() {
+  myName : "Raami"
+};
+
+myObj.sayHello.call(secondObj);
+
+myObj.sayHello();
+console.log(myObj.hell);
 </script>
 
 Hello world!!
