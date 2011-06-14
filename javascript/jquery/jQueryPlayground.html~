@@ -8,10 +8,11 @@
 Steps in Jquery:
 
 1. Selection using CSS selector.
-2. Traverising
+2. Traverising ($().parent(), next) OR $.each() function.
 3. Manupulate Element/DOM
 
 */
+
 // Setters return JQuery object and allow you to continue call chain.
 // Getters return a string object hence you cannot continue call chain.
 
