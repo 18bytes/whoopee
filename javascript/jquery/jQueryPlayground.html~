@@ -1,6 +1,40 @@
 <html>
 <head>
 <title> Jquery playground! </title>
+<script src="jquery-1.6.1.js" > </script>
 </head>
+<script>
+/**
+Steps in Jquery:
 
+1. Selection using CSS selector.
+2. Traverising
+3. Manupulate Element/DOM
+
+*/
+// Setters return JQuery object and allow you to continue call chain.
+// Getters return a string object hence you cannot continue call chain.
+
+$(document).ready(function() {
+  console.log("Hello World!!");
+});
+
+$(function() {
+  console.log("Jquery Ready shorthand!"); // Lesson: Selection does not change when DOM    changes.
+  console.log($('h1').length.toString() );
+  $('h1').has('p').html("Ram & Viji");
+  
+  console.log($('h1').html());
+  console.log($('h1').css("font-Size"));
+  // Set CSS
+  // $('h1').css("font-Size": "55pX")
+  $('h1').css({"font-Size": "55pX", 'color': 'red'})
+  
+
+});
+
+</script>
+<h1> <p>Sun1 </p></h1>
+<h1> Sun2 </h1>
+<div> "sundar" </div>
 <html>
