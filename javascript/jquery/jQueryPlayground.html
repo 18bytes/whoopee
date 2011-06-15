@@ -32,7 +32,13 @@ $(function() {
   // $('h1').css("font-Size": "55pX")
   $('h1').css({"font-Size": "55pX", 'color': 'red'})
   
-
+  // Creating new element!!!!
+  var $newElem = $("<b>Hello New elem</b>");
+  $newElem.insertAfter("h1");
+  $('h1').click(function () {
+    console.log("H1 Clicked!!");
+    $('h1').fadeOut('slow');
+  });
 });
 
 </script>
