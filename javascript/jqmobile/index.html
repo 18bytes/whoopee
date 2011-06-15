@@ -7,14 +7,34 @@
 <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js" > </script>
 </head>
 
+<!--   Body     -->
+
 <body>
+
+<!-- Main page -->
+
 <div data-role="page" id="home" >
 <div data-role="header" data-nobackbtn="true" data-position="fixed" >
 <H1>HOME</H1>
 </div>
 
   <div data-role="content">
-   Hello jqMobile!!
+    <div id="listing">
+      <ul id="mylist" data-role="listview" data-filter="true" data-split-theme="c"  >
+      <li data-role="list-divider"> My list- This must not be filtered 
+      </li>
+      <li>one </li>
+      <li>two </li>
+      <li> three </li>
+        
+      </ul>
+    </div>
+<br>
+Lots of text <br>
+Multiline <br>
+Even further <br>
+More, and more <br>
+ 
    <a href="#about" data-transition="slideup" data-role="button" >About</a>
   </div>
 
@@ -22,6 +42,8 @@
     Footer23 
   </div>
  </div>
+
+ <!-- New Page -->
 
  <div data-role="page" id="about" data-fullscreen="true" >
   <div data-role="header" data-nobackbtn="true" data-position="fixed" >
@@ -33,7 +55,7 @@
    </div>
 
   <div data-role="footer" data-position="fixed">
-   About Footer!
+   <input type="text" /><a href="#" data-role="button">Send</a>
   </div>
  </div>
 
