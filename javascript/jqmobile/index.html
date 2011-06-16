@@ -11,24 +11,32 @@
 
 
 <script>
+  var datastatus;
   function search() {
     $.ajax({
       async: true,
       type: "GET",
       url: "test.json",
-      dataType: "xml",
-      success: function() {
-        $('#results').html("Hello");
+      dataType: 'json',
+      success: function(json) {
+        alert('SUN' + json.names[0]);
+      },
+    error : function(xhr, status) {
+      datastatus = xhr;
+      alert('error ' + xhr + status);
+    },
+      complete: function(xx) {
+      alert('Completed!' + xx);
       }
       
         });
   };
   function simpleGET() {
-    $.get('test.json', function(r){alert(r);});
+    $.get('test.json', function(r){$('#results').html("Hello!!!!!!");});
   }
 
   $(document).ready(function () {
-    $('#searchbar').keypress(simpleGET);
+    $('#searchbar').keypress(search);
   });
 
 
