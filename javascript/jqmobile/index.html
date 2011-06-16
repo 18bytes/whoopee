@@ -3,6 +3,24 @@
 
 <head>
    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+
+
+<script src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
+<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js" > </script>
+
+
+
+<script>
+  $(document).ready(function() {
+    $("#searchBar").keypress(searchfill());
+  });
+  
+  function searchfill() {
+    console.log("Searchfill");
+  }
+
+</script>
+
 </head>
 
 <!--   Body     -->
@@ -12,10 +30,10 @@
 <!-- Main page -->
 
 <div data-role="page" id="home" >
-<div data-role="header" data-nobackbtn="true" data-position="fixed" >
+<div data-role="header" data-nobackbtn="true"  >
   <div data-role="navbar">
     <ul>
-      <li><a href="#about">Wall</a> </li>
+      <li><a href="#about">Wal</a> </li>
       <li><a href="#about">History</a></li>
       <li><a href="#about">My Bets </a></li>
       <li><a href="#about">Ranking</a></li>
@@ -26,7 +44,7 @@
 
   <div data-role="content">
     <div id="listing">
-      <ul id="mylist" data-role="listview" data-filter="true" data-split-theme="c"  >
+      <ul id="searchbar" data-role="listview" data-filter="true" data-split-theme="c"  >
       <li data-role="list-divider"> My list- This must not be filtered 
       </li>
       <li>one </li>
@@ -44,15 +62,15 @@ More, and more <br>
    <a href="#about" data-transition="slideup" data-role="button" >About</a>
   </div>
 
-  <div data-role="footer" data-position="fixed" >
+  <div data-role="footer"  >
     Footer23 
   </div>
  </div>
 
  <!-- New Page -->
 
- <div data-role="page" id="about" data-fullscreen="true" >
-  <div data-role="header" data-nobackbtn="true" data-position="fixed" >
+ <div data-role="page" id="about"  >
+  <div data-role="header" data-nobackbtn="true"  >
   <h1>About this App</h1>
   </div>
 
@@ -60,14 +78,11 @@ More, and more <br>
     Hello world this is a test jqMobile web application!!
    </div>
 
-  <div data-role="footer" data-position="fixed">
+  <div data-role="footer" >
    <input type="text" /><a href="#" data-role="button">Send</a>
   </div>
  </div>
 
-
-<script src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
-<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js" > </script>
 
 
 </body>
