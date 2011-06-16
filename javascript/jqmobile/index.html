@@ -2,9 +2,7 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
-<script src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
-<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js" > </script>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
 </head>
 
 <!--   Body     -->
@@ -15,7 +13,15 @@
 
 <div data-role="page" id="home" >
 <div data-role="header" data-nobackbtn="true" data-position="fixed" >
-<H1>HOME</H1>
+  <div data-role="navbar">
+    <ul>
+      <li><a href="#about">Wall</a> </li>
+      <li><a href="#about">History</a></li>
+      <li><a href="#about">My Bets </a></li>
+      <li><a href="#about">Ranking</a></li>
+    </ul>
+    25$
+  </div> 
 </div>
 
   <div data-role="content">
@@ -58,6 +64,11 @@ More, and more <br>
    <input type="text" /><a href="#" data-role="button">Send</a>
   </div>
  </div>
+
+
+<script src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
+<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js" > </script>
+
 
 </body>
 </html>
