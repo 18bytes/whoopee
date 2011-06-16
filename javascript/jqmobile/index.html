@@ -11,19 +11,24 @@
 
 
 <script>
-  var iFunct = function() {
-  alert("TEST");
-};
-  function initJquery() {
-   alert("this is it");
+  function search() {
+    $.ajax({
+      async: true,
+      type: "GET",
+      url: "test.json",
+      dataType: "xml",
+      success: function() {
+        $('#results').html("Hello");
+      }
+      
+        });
   };
-
+  function simpleGET() {
+    $.get('test.json', function(r){alert(r);});
+  }
 
   $(document).ready(function () {
-  $('#itext').keypress(
-  initJquery 
-
-  );
+    $('#searchbar').keypress(simpleGET);
   });
 
 
@@ -51,7 +56,8 @@
 </div>
 
   <div data-role="content">
-    <input type="text" id="itext" />
+    <input type="text" id="searchbar" />
+    <div id="results"> </div>
     <!--
     <div id="listing">
       <ul id="searchbar" data-role="listview" data-filter="true" data-split-theme="c"  >
