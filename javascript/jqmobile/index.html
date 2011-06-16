@@ -2,23 +2,24 @@
 <html>
 
 <head>
-   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+   <link rel="stylesheet" href="jquery.mobile-1.0a1.min.css" />
 
 
-<script src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
-<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js" > </script>
+<script src="jquery-1.4.3.min.js" ></script>
+<script src="jquery.mobile-1.0a1.min.js" > </script>
 
 
 
 <script>
-  $(document).ready(function() {
-    $("#searchBar").keypress(searchfill());
-  });
-  
-  function searchfill() {
-    console.log("Searchfill");
-  }
+  function alertMe(vars) {
+    alert("alert ME" + vars);
+  };
 
+  $(document).ready(function() {
+   alertMe();
+  }
+  );
+  alertMe("Sundar");
 </script>
 
 </head>
