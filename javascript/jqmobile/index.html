@@ -11,15 +11,22 @@
 
 
 <script>
-  function alertMe(vars) {
-    alert("alert ME" + vars);
+  var iFunct = function() {
+  alert("TEST");
+};
+  function initJquery() {
+   alert("this is it");
   };
 
-  $(document).ready(function() {
-   alertMe();
-  }
+
+  $(document).ready(function () {
+  $('#itext').keypress(
+  initJquery 
+
   );
-  alertMe("Sundar");
+  });
+
+
 </script>
 
 </head>
@@ -44,6 +51,8 @@
 </div>
 
   <div data-role="content">
+    <input type="text" id="itext" />
+    <!--
     <div id="listing">
       <ul id="searchbar" data-role="listview" data-filter="true" data-split-theme="c"  >
       <li data-role="list-divider"> My list- This must not be filtered 
@@ -54,6 +63,7 @@
         
       </ul>
     </div>
+  -->
 <br>
 Lots of text <br>
 Multiline <br>
