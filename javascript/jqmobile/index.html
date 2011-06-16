@@ -4,6 +4,9 @@
 <head>
    <link rel="stylesheet" href="jquery.mobile-1.0a1.min.css" />
 
+<style type="text/css" >
+ .ibuttons  {width: 75px;}
+</style>
 
 <script src="jquery-1.4.3.min.js" ></script>
 <script src="jquery.mobile-1.0a1.min.js" > </script>
@@ -52,14 +55,15 @@
 
 <div data-role="page" id="home" >
 <div data-role="header" data-nobackbtn="true"  >
-  <div data-role="navbar">
+  
+<div data-role="navbar">
     <ul>
-      <li><a href="#about">Wal</a> </li>
-      <li><a href="#about">History</a></li>
-      <li><a href="#about">My Bets </a></li>
-      <li><a href="#about">Ranking</a></li>
+      <li><a href="#wall"   >Wall</a> </li>
+      <li><a href="#about"  >History</a></li>
+      <li><a href="#about"   >My Bets </a></li>
+      <li><a href="#about"  >Ranking</a></li>
+      <li>25$</li>
     </ul>
-    25$
   </div> 
 </div>
 
@@ -108,7 +112,19 @@ More, and more <br>
   </div>
  </div>
 
+  <div data-role="page" id="wall">
+    <div data-role="navbar">
+    <ul>
+      <li><a href="#wall"   >Wall</a> </li>
+      <li><a href="#about"  >History</a></li>
+      <li><a href="#about"   >My Bets </a></li>
+      <li><a href="#about"  >Ranking</a></li>
+      <li>25$</li>
+    </ul>
+  </div> 
 
+    
+  </div>
 
 </body>
 </html>
