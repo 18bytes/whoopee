@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+
+
+<script src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
+<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js" > </script>
+
+
+
+<script>
+  function searchfill() {
+    console.log("Searchfill" + "test");
+  };
+
+  $(document).ready(function() {
+    console.log("document is ready!");
+   }
+  );
+  
+  seachfill();
+</script>
+
+</head>
+
+<!--   Body     -->
+
+<body>
+
+<!-- Main page -->
+
+<div data-role="page" id="home" >
+<div data-role="header" data-nobackbtn="true"  >
+  <div data-role="navbar">
+    <ul>
+      <li><a href="#about">Wal</a> </li>
+      <li><a href="#about">History</a></li>
+      <li><a href="#about">My Bets </a></li>
+      <li><a href="#about">Ranking</a></li>
+    </ul>
+    25$
+  </div> 
+</div>
+
+  <div data-role="content">
+    <div id="listing">
+      <ul id="searchbar" data-role="listview" data-filter="true" data-split-theme="c"  >
+      <li data-role="list-divider"> My list- This must not be filtered 
+      </li>
+      <li>one </li>
+      <li>two </li>
+      <li> three one </li>
+        
+      </ul>
+    </div>
+<br>
+Lots of text <br>
+Multiline <br>
+Even further <br>
+More, and more <br>
+ 
+   <a href="#about" data-transition="slideup" data-role="button" >About</a>
+  </div>
+
+  <div data-role="footer"  >
+    Footer23 
+  </div>
+ </div>
+
+ <!-- New Page -->
+
+ <div data-role="page" id="about"  >
+  <div data-role="header" data-nobackbtn="true"  >
+  <h1>About this App</h1>
+  </div>
+
+   <div data-role="content">
+    Hello world this is a test jqMobile web application!!
+   </div>
+
+  <div data-role="footer" >
+   <input type="text" /><a href="#" data-role="button">Send</a>
+  </div>
+ </div>
+
+
+
+</body>
+</html>
