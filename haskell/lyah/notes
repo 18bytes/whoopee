@@ -1,0 +1,6 @@
+* Haskell is declarative language. Unlike imperative language you just tell what it is and not what to do.
+* There are no states and function has no side effects.
+* In haskel, we can think programs as series of transformations on data.
+* Haskell is statically typed.
+
+
