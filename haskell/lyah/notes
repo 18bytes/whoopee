@@ -16,7 +16,18 @@ Chapter 2: Starting out
                                   else x * 2
 * When a function does not take any parameters we say it is a definition (or a name). We cannot change the name.
   For e.g. funcDef = "Hello, Haskell"
+  In interpreter use let statement for function definition.
 * Lists are homogenous in Haskell.
+* In GHCI we need to prefix with "let" to assign a name to the function, however this is not required in the haskell script.
+* "null" is a function which checks for empty lists.
+* You can specify a list range using [1..20], this will create a list of 20 items. Also ['a'..'z']
+
+[TODO]
+* List comprehension
+* Tupels
+
+Chapter 3: Types and TypeClasses
+================================
 
 
 
