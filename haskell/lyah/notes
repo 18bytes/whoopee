@@ -1,6 +1,23 @@
+Chapter 1: Introduction
+========================
 * Haskell is declarative language. Unlike imperative language you just tell what it is and not what to do.
 * There are no states and function has no side effects.
 * In haskel, we can think programs as series of transformations on data.
 * Haskell is statically typed.
+
+
+Chapter 2: Starting out
+========================
+* Two types of functions are available. They are infix function and prefix function.
+* Function application - Calling a function with parameters. Spaces are used for function application, and not brackets.
+* IF statement is an expression and it MUST always contain ELSE statement. Because else is mandatory the IF statement will always return a value.
+  For e.g. doubleSmallNumber x = if x > 100
+                                  then x 
+                                  else x * 2
+* When a function does not take any parameters we say it is a definition (or a name). We cannot change the name.
+  For e.g. funcDef = "Hello, Haskell"
+* Lists are homogenous in Haskell.
+
+
 
 
