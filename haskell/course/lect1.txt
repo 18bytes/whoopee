@@ -1,0 +1,52 @@
+Imperative languages
+ - You tell HOW to solve a problem
+ - For controlling performance
+ - Has side effects, and it may be undesired.
+ - Sequence of steps to execute
+Declarative lanugages
+ - Lisp, OCAML, Haskel
+ - Prototyping
+ - You only describe the problem, and we do not tell how to solve the problem.
+
+Haskell:
+- Does not require () paranthesis, and it is optional.
+- No loops, if you want to repeat some stuff then use recursion.
+- Polymorphic type system.
+  length :: [a] -> Int    This is called as parametric polymorphism.
+- There are no side effects. Evaluation of the same arguments yield in same result. This is called referential transperancy.
+- Automatic memory management (If state is not stored then do we need garbage collector?)
+- Higher order functions. Its like any other objects, and functions can be passed around as input or result.
+- Lazy evaluation.Does as little work as possible, evaluates functions only when they are needed. This is not avaialble in all functional languages.
+  Advantages:
+  - Programs are shorter and clearer.
+  - Less bugs during programming.
+ 
+
+ Finding the list length in haskell:
+ - If the list L is empty, then length(L) = 0
+ - If the list L is not empty, and if XS is the list L without its first element then length(L) = 1 + length(XS)
+  Example:
+  "X:XS" means the list which results from the list XS by inserting the element X in front
+  12:[70] = [12,70]
+  15:(70:[])
+  
+  length :: [Int] -> Int
+  length [] = 0
+  length (x:xs) = 1 + length(xs)
+
+
+  Contents:
+  1. Practical (Intro to Haskell)
+  2. Semantics of Functional langauges (Using Haskell)
+  3. Lambda calculus
+  4. Type checking
+
+
+  Declarations:
+  - Type (Declare argument types)
+  e.g. square :: Int -> Int
+  - Function
+
+  Comments:
+  Single line --
+  Multiline  {-  -}
