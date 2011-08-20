@@ -1,0 +1,3 @@
+* Destructive updates like x = x + 2 are not allowed, but why myList = myList : 1 allowed?
+
+* In ghci, i was able to assign value of a twice, why? 
