@@ -1,0 +1,184 @@
+!SESSION 2011-09-21 19:46:42.928 -----------------------------------------------
+eclipse.buildId=M20100211-1343
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 19:48:23.048
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:23.048
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.048
+!MESSAGE Software being installed: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.048
+!MESSAGE Missing requirement: Scala Plugin 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.core 2.0.0.beta10-2_09-201109130916-d64e014) requires 'bundle org.eclipse.ui.browser 3.3.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:23.048
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.048
+!MESSAGE From: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.048
+!MESSAGE To: org.scala-ide.sdt.core [2.0.0.beta10-2_09-201109130916-d64e014]
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 19:48:23.048
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:23.048
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.048
+!MESSAGE Software being installed: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.048
+!MESSAGE Missing requirement: Scala Plugin 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.core 2.0.0.beta10-2_09-201109130916-d64e014) requires 'bundle org.eclipse.ui.browser 3.3.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:23.048
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.049
+!MESSAGE From: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.049
+!MESSAGE To: org.scala-ide.sdt.core [2.0.0.beta10-2_09-201109130916-d64e014]
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 19:48:23.057
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:23.057
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.057
+!MESSAGE Software being installed: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.057
+!MESSAGE Missing requirement: Scala Plugin 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.core 2.0.0.beta10-2_09-201109130916-d64e014) requires 'bundle org.eclipse.ui.browser 3.3.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:23.057
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.057
+!MESSAGE From: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.057
+!MESSAGE To: org.scala-ide.sdt.core [2.0.0.beta10-2_09-201109130916-d64e014]
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 19:48:23.087
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:23.087
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.087
+!MESSAGE Software being installed: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.087
+!MESSAGE Missing requirement: Scala Plugin 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.core 2.0.0.beta10-2_09-201109130916-d64e014) requires 'bundle org.eclipse.ui.browser 3.3.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:23.087
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.087
+!MESSAGE From: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:23.087
+!MESSAGE To: org.scala-ide.sdt.core [2.0.0.beta10-2_09-201109130916-d64e014]
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 19:48:45.081
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:45.081
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:45.081
+!MESSAGE Software being installed: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:45.081
+!MESSAGE Missing requirement: Scala Plugin 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.core 2.0.0.beta10-2_09-201109130916-d64e014) requires 'bundle org.eclipse.ui.browser 3.3.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:45.081
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:45.081
+!MESSAGE From: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:45.081
+!MESSAGE To: org.scala-ide.sdt.core [2.0.0.beta10-2_09-201109130916-d64e014]
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 19:48:45.083
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:45.083
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:45.083
+!MESSAGE Software being installed: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:45.083
+!MESSAGE Missing requirement: Scala Plugin 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.core 2.0.0.beta10-2_09-201109130916-d64e014) requires 'bundle org.eclipse.ui.browser 3.3.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-21 19:48:45.083
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:45.083
+!MESSAGE From: Scala IDE for Eclipse 2.0.0.beta10-2_09-201109130916-d64e014 (org.scala-ide.sdt.feature.feature.group 2.0.0.beta10-2_09-201109130916-d64e014)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-21 19:48:45.083
+!MESSAGE To: org.scala-ide.sdt.core [2.0.0.beta10-2_09-201109130916-d64e014]
+!SESSION 2011-09-21 19:54:05.247 -----------------------------------------------
+eclipse.buildId=M20100211-1343
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 20:09:29.050
+!MESSAGE Unable to load the repository http://download.scala-ide.org/update-1.0.0-milestones-2.8.1.fina
+!STACK 1
+org.eclipse.equinox.internal.provisional.p2.core.ProvisionException: No repository found at http://download.scala-ide.org/update-1.0.0-milestones-2.8.1.fina.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:380)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:641)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:88)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProvisioningUtil.loadMetadataRepository(ProvisioningUtil.java:88)
+	at org.eclipse.equinox.internal.provisional.p2.ui.QueryableMetadataRepositoryManager.doLoadRepository(QueryableMetadataRepositoryManager.java:55)
+	at org.eclipse.equinox.internal.provisional.p2.ui.QueryableRepositoryManager.loadRepository(QueryableRepositoryManager.java:195)
+	at org.eclipse.equinox.internal.provisional.p2.ui.QueryableRepositoryManager.loadAll(QueryableRepositoryManager.java:108)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.run(PreloadingRepositoryHandler.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2011-09-21 20:09:29.051
+!MESSAGE No repository found at http://download.scala-ide.org/update-1.0.0-milestones-2.8.1.fina.
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 20:09:53.066
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10050 2011-09-21 20:09:53.066
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.066
+!MESSAGE "Eclipse Weaving Service Feature" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.066
+!MESSAGE "JDT Weaving for Scala" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.066
+!MESSAGE "Scala IDE for Eclipse" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.066
+!MESSAGE "Dummy SDT feature for upgrade" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 20:09:53.067
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10050 2011-09-21 20:09:53.067
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.067
+!MESSAGE "Eclipse Weaving Service Feature" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.067
+!MESSAGE "JDT Weaving for Scala" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.067
+!MESSAGE "Scala IDE for Eclipse" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.067
+!MESSAGE "Dummy SDT feature for upgrade" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 20:09:53.081
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10050 2011-09-21 20:09:53.081
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.081
+!MESSAGE "Eclipse Weaving Service Feature" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.081
+!MESSAGE "JDT Weaving for Scala" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.081
+!MESSAGE "Scala IDE for Eclipse" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.081
+!MESSAGE "Dummy SDT feature for upgrade" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 20:09:53.105
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10050 2011-09-21 20:09:53.105
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.105
+!MESSAGE "Eclipse Weaving Service Feature" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.105
+!MESSAGE "JDT Weaving for Scala" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.105
+!MESSAGE "Scala IDE for Eclipse" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:09:53.105
+!MESSAGE "Dummy SDT feature for upgrade" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-21 20:10:15.066
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10050 2011-09-21 20:10:15.066
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:10:15.066
+!MESSAGE "Eclipse Weaving Service Feature" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:10:15.066
+!MESSAGE "JDT Weaving for Scala" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:10:15.066
+!MESSAGE "Scala IDE for Eclipse" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10005 2011-09-21 20:10:15.066
+!MESSAGE "Dummy SDT feature for upgrade" will be ignored because it is already installed.

@@ -1,3 +1,13 @@
 * Destructive updates like x = x + 2 are not allowed, but why myList = myList : 1 allowed?
 
-* In ghci, i was able to assign value of a twice, why? 
+* In ghci, i was able to assign value of a twice using "let", why? 
+
+* Function application takes highest precedence. 
+
+* Tuples can be pairs, tribples, quadruples etc. And it is a heterogenous. Lists are HOMOGENEOUS.
+
+* Tuple can only have a fixed number of element, whereas list need not. Both can be empty.
+
+* : is a "cons" operator, process of adding an element is called consing. "constructing"
+
+

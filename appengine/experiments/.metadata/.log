@@ -1,0 +1,129 @@
+!SESSION 2011-09-09 22:28:58.815 -----------------------------------------------
+eclipse.buildId=M20100211-1343
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:33:48.712
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:33:48.712
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.712
+!MESSAGE Software being installed: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.712
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710) requires 'org.eclipse.equinox.p2.operations 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:33:48.712
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.712
+!MESSAGE From: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.712
+!MESSAGE To: com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:33:48.713
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:33:48.713
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.713
+!MESSAGE Software being installed: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.713
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710) requires 'org.eclipse.equinox.p2.operations 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:33:48.713
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.713
+!MESSAGE From: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.713
+!MESSAGE To: com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:33:48.716
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:33:48.716
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.716
+!MESSAGE Software being installed: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.716
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710) requires 'org.eclipse.equinox.p2.operations 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:33:48.716
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.716
+!MESSAGE From: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.716
+!MESSAGE To: com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:33:48.758
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:33:48.758
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.758
+!MESSAGE Software being installed: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.758
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710) requires 'org.eclipse.equinox.p2.operations 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:33:48.758
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.758
+!MESSAGE From: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:33:48.758
+!MESSAGE To: com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:34:32.623
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:34:32.623
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:34:32.623
+!MESSAGE Software being installed: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:34:32.623
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710) requires 'org.eclipse.equinox.p2.operations 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:34:32.623
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:34:32.623
+!MESSAGE From: Google Web Toolkit SDK 2.4.0 2.4.0.r36v201108301710 (com.google.gwt.eclipse.sdkbundle.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:34:32.623
+!MESSAGE To: com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:35:19.593
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:35:19.593
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:19.593
+!MESSAGE Software being installed: Google App Engine Tools for Android 2.4.0.r36v201108301710 (com.google.gdt.eclipse.mobile.android.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:19.593
+!MESSAGE Missing requirement: Android Cloud Tooling 2.4.0.r36v201108301710 (com.google.gdt.eclipse.mobile.android 2.4.0.r36v201108301710) requires 'bundle com.android.ide.eclipse.adt 12.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:35:19.593
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:19.593
+!MESSAGE From: Google App Engine Tools for Android 2.4.0.r36v201108301710 (com.google.gdt.eclipse.mobile.android.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:19.593
+!MESSAGE To: com.google.gdt.eclipse.mobile.android [2.4.0.r36v201108301710]
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:35:19.596
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:35:19.596
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:19.597
+!MESSAGE Software being installed: Google App Engine Tools for Android 2.4.0.r36v201108301710 (com.google.gdt.eclipse.mobile.android.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:19.597
+!MESSAGE Missing requirement: Android Cloud Tooling 2.4.0.r36v201108301710 (com.google.gdt.eclipse.mobile.android 2.4.0.r36v201108301710) requires 'bundle com.android.ide.eclipse.adt 12.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:35:19.597
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:19.597
+!MESSAGE From: Google App Engine Tools for Android 2.4.0.r36v201108301710 (com.google.gdt.eclipse.mobile.android.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:19.597
+!MESSAGE To: com.google.gdt.eclipse.mobile.android [2.4.0.r36v201108301710]
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:35:29.132
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:35:29.132
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:29.132
+!MESSAGE Software being installed: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:29.132
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710) requires 'org.eclipse.equinox.p2.operations 0.0.0' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2011-09-09 22:35:29.135
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2011-09-09 22:35:29.135
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:29.136
+!MESSAGE Software being installed: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2011-09-09 22:35:29.136
+!MESSAGE Missing requirement: Google Plugin for Eclipse 3.6 2.4.0.r36v201108301710 (com.google.gdt.eclipse.suite.e36.feature.feature.group 2.4.0.r36v201108301710) requires 'org.eclipse.equinox.p2.operations 0.0.0' but it could not be found
