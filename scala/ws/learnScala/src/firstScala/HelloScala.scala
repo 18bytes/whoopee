@@ -1,0 +1,5 @@
+package firstScala
+
+class HelloScala {
+
+}

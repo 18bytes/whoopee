@@ -3,15 +3,15 @@
 	<section name="org.eclipse.equinox.internal.provisional.p2.ui.dialogs.InstallWizard.WizardSettings">
 		<item value="733" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="640" key="DIALOG_HEIGHT"/>
 		<item value="143" key="DIALOG_X_ORIGIN"/>
+		<item value="640" key="DIALOG_HEIGHT"/>
 		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.equinox.internal.provisional.p2.ui.dialogs.InstallWizard.SelectableIUsPage">
 		<item value="800" key="ListSashWeight"/>
 		<item value="280" key="NameColumnWidth"/>
-		<item value="200" key="DetailsSashWeight"/>
 		<item value="369" key="IDColumnWidth"/>
+		<item value="200" key="DetailsSashWeight"/>
 		<item value="70" key="VersionColumnWidth"/>
 	</section>
 	<section name="AvailableIUsPage">
