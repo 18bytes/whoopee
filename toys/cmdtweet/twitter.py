@@ -1,13 +1,17 @@
+#!/usr/bin/python
 # Documentation: https://dev.twitter.com/docs/api/1/post/statuses/update
 # App creation: https://dev.twitter.com/apps
 import tweepy
 import sys
 import ConfigParser
 import string
+import os
 
 # Configuration is from the twitter.ini file to avoid commiting auth tokens
+iniPath = os.path.dirname(sys.argv[0]) + '/twitter.ini'
+print iniPath
 config = ConfigParser.ConfigParser()
-config.read('twitter.ini')
+config.read(iniPath)
 
 
 CONSUMER_KEY = config.get('auth', 'consumer.key') 
@@ -28,7 +32,11 @@ def tweet(status):
 
 if len(sys.argv) > 1:
   params = sys.argv
-  result = tweet(string.join(params[1:], " "))  
-  print result
+  status = string.join(params[1:], " ")
+  result = tweet(status)  
+  if result is None:
+    print "Error: Unable to update the twitter status."
+  else:
+    print "Status updated successfully: " + status
 else:
   print "Invalid number of parameters!"
