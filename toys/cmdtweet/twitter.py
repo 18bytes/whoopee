@@ -3,7 +3,9 @@
 import tweepy
 import sys
 import ConfigParser
+import string
 
+# Configuration is from the twitter.ini file to avoid commiting auth tokens
 config = ConfigParser.ConfigParser()
 config.read('twitter.ini')
 
@@ -24,8 +26,9 @@ def tweet(status):
   result = api.update_status(status)
   return result
 
-if len(sys.argv) == 2:
-  result = tweet(sys.argv[1])  
+if len(sys.argv) > 1:
+  params = sys.argv
+  result = tweet(string.join(params[1:], " "))  
   print result
 else:
   print "Invalid number of parameters!"
