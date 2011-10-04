@@ -1,4 +1,5 @@
 # Documentation: https://dev.twitter.com/docs/api/1/post/statuses/update
+# App creation: https://dev.twitter.com/apps
 import tweepy
 import sys
 
