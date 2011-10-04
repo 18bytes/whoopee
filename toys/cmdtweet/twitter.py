@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # Documentation: https://dev.twitter.com/docs/api/1/post/statuses/update
 # App creation: https://dev.twitter.com/apps
+# Reference: http://stackoverflow.com/questions/4473320/twitter-api-simple-status-update-python
 import tweepy
 import sys
 import ConfigParser
