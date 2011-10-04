@@ -1,11 +1,12 @@
 # Documentation: https://dev.twitter.com/docs/api/1/post/statuses/update
 import tweepy
+import sys
 
-CONSUMER_KEY = '[TODO: Your consumer key]'
-CONSUMER_SECRET = '[TODO: Your consumer secret]'
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
 
-ACCESS_TOKEN_KEY = '[TODO: Your access token]'
-ACCESS_TOKEN_SECRET = 'TODO: Your token secret'
+ACCESS_TOKEN_KEY = ''
+ACCESS_TOKEN_SECRET = ''
 
 def tweet(status):
   ''' Update the status message in twitter '''
@@ -16,6 +17,9 @@ def tweet(status):
   api = tweepy.API(auth)
   result = api.update_status(status)
   return result
-tweet("Hello Twitter from python script!")
-print "Hello tweet"
 
+if len(sys.argv) == 2:
+  result = tweet(sys.argv[1])  
+  print result
+else:
+  print "Invalid number of parameters!"
