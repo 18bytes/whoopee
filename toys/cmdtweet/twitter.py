@@ -2,12 +2,17 @@
 # App creation: https://dev.twitter.com/apps
 import tweepy
 import sys
+import ConfigParser
 
-CONSUMER_KEY = ''
-CONSUMER_SECRET = ''
+config = ConfigParser.ConfigParser()
+config.read('twitter.ini')
 
-ACCESS_TOKEN_KEY = ''
-ACCESS_TOKEN_SECRET = ''
+
+CONSUMER_KEY = config.get('auth', 'consumer.key') 
+CONSUMER_SECRET = config.get('auth', 'consumer.secret')
+
+ACCESS_TOKEN_KEY = config.get('auth','access.token')
+ACCESS_TOKEN_SECRET = config.get('auth', 'access.secret')
 
 def tweet(status):
   ''' Update the status message in twitter '''
