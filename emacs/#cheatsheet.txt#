@@ -1,0 +1,8 @@
+emacs -nw         ---> Open emacs in commandline mode.
+F10   		  ---> To use menu.
+
+C-x C-c 	  ---> Quit Emacs.
+C-x k		  ---> Kill named buffer.
+C-x s		  ---> Save the file.
+
+()
