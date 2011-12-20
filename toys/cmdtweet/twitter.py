@@ -10,7 +10,6 @@ import os
 
 # Configuration is from the twitter.ini file to avoid commiting auth tokens
 iniPath = os.path.dirname(sys.argv[0]) + '/twitter.ini'
-print iniPath
 config = ConfigParser.ConfigParser()
 config.read(iniPath)
 
