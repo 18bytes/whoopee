@@ -17,10 +17,10 @@ gd_client.source = 'iuploader'
 gd_client.ProgrammaticLogin()
 
 # base path
-base = '~/Pictures'
+base = '/home/meenu/Pictures/sundar22in/photos'
 
 # Directories names to upload.
-dirs = ['testalbum']
+#dirs = ['testalbum']
 
 
 # Print the current albums  
@@ -80,6 +80,10 @@ def uploadPhotos(album, path):
 
 def run():
   print "------>>>"
+  tempList = os.listdir(base)
+  print tempList
+  dirs = [d for d in os.listdir(base) if os.path.isdir(base + '/' + d)]
+  print "Direcotries ", dirs
   for dir in dirs:
     album = createAlbum(dir)
     if album != None:
