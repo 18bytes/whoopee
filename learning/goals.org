@@ -33,3 +33,9 @@
 C-c C-t       Toggle
 M-Shift-RET   Add new TODO item
 Shift+Tab     Fold/Unfold
+
+
+* Backlog
+** TODO Hadoop
+** TODO Database fundamentals
+** TODO RabbitMQ
