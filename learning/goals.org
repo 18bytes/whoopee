@@ -1,13 +1,8 @@
 * Languages
-  CLOCK: [2011-12-20 Tue 01:03]--[2011-12-20 Tue 01:03] =>  0:00
 ** TODO Eloquent Javascript
 ** TODO Crockford Javascript lessons
 ** TODO Euler first 25 problems
-   CLOCK: [2011-12-20 Tue 01:03]--[2011-12-20 Tue 01:03] =>  0:00
-   
-   CLOCK: [2011-12-20 Tue 01:03]--[2011-12-20 Tue 01:03] =>  0:00
-   CLOCK: [2011-12-20 Tue 01:00]--[2011-12-20 Tue 01:03] =>  0:03
-   CLOCK: [2011-12-20 Tue 00:59]--[2011-12-20 Tue 01:00] =>  0:01
+
 ** TODO Learn python the hardway [52 Chapters] 
    
 * General
@@ -19,12 +14,13 @@
 **** TODO 11 to 15
 **** TODO 16 to 20
 **** TODO 21 to 25
+
 * Books
 ** TODO Structure and interpretation of programming
 ** TODO The Last lecture   
 * Lectures
 ** TODO Structure and interpretation of programming
-   CLOCK: [2011-12-20 Tue 01:01]--[2011-12-20 Tue 01:01] =>  0:00
+
 
 
 * Tools
