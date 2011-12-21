@@ -4,17 +4,21 @@ import gdata.geo
 import os
 
 
+# FIXME: Preprocess and find out what to upload. Update a summary in summary.log
+# FIXME: Recursive directories
+
+
 # FIXME: Duplicate entries
 # FIXME: Import from other albums, FlickR, Facebook
 
 # TODO: Configure tempuser and temppass environment variable before running.
 
 # Initialize google photo service.
-gd_client = gdata.photos.service.PhotosService()
-gd_client.email = os.environ['tempuser']
-gd_client.password = os.environ['temppass']
-gd_client.source = 'iuploader'
-gd_client.ProgrammaticLogin()
+gdc = gdata.photos.service.PhotosService()
+gdc.email = os.environ['tempuser']
+gdc.password = os.environ['temppass']
+gdc.source = 'iuploader'
+gdc.ProgrammaticLogin()
 
 # base path
 base = '/home/meenu/Pictures/sundar22in/photos'
@@ -24,7 +28,7 @@ base = '/home/meenu/Pictures/sundar22in/photos'
 
 
 # Print the current albums  
-albums = gd_client.GetUserFeed()
+albums = gdc.GetUserFeed()
 for album in albums.entry:
   print 'title: %s, number of photos: %s, id: %s' % (album.title.text, album.numphotos.text, album.gphoto_id.text)
 
@@ -92,8 +96,10 @@ def run():
     
   print "<<<------"
 
-gdc = gd_client
+
+
+
 run()
 
-#createAlbum('Duplicate Test', gd_client)
+#createAlbum('Duplicate Test', gdc)
 
