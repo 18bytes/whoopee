@@ -4,12 +4,12 @@ import gdata.geo
 import os
 
 
-# FIXME: Preprocess and find out what to upload. Update a summary in summary.log
-# FIXME: Recursive directories
+# TODO: Preprocess and find out what to upload. Update a summary in summary.log
+# TODO: Recursive directories
+# TODO: Must be able to interrupt
 
-
-# FIXME: Duplicate entries
-# FIXME: Import from other albums, FlickR, Facebook
+# TODO: Duplicate entries
+# TODO: Import from other albums, FlickR, Facebook
 
 # TODO: Configure tempuser and temppass environment variable before running.
 
@@ -37,16 +37,9 @@ for album in albums.entry:
 """
 def createAlbum(name):
   result = None
-  isDuplicate = False
-  albums = gdc.GetUserFeed()
 
-  # check for any duplicate
-  for album in albums.entry:
-    isDuplicate = (album.title.text == name)
-    if isDuplicate == True:
-      break
   # create album
-  if isDuplicate == False:
+  if isDuplicateAlbum(name) == False:
     result = gdc.InsertAlbum(title=name, summary='auto')
     print "Created album successfully: ", name
   else:
@@ -54,14 +47,24 @@ def createAlbum(name):
     print "Album already present:", name
   return result 
 
+def isDuplicateAlbum(newName):
+  isDuplicate = False
+  albums = gdc.GetUserFeed()
+
+  # check for any duplicate
+  for album in albums.entry:
+    isDuplicate = (album.title.text == newName)
+    if isDuplicate == True:
+      break
+  print isDuplicate
+  return isDuplicate
+  
+
 def uploadPhotos(album, path):
+  existingPhotos = []
   # get all photo name from album and store it in a map/list
   # If already present then dont upload, else upload
-  existingPhotos = []
-  album_url = '/data/feed/api/user/%s/albumid/%s' % (os.environ['tempuser'], album.gphoto_id.text)
-  photos = gdc.GetFeed(album_url + '?kind=photo')
-  for photo in photos.entry:
-    existingPhotos.append(photo.title.text)
+  existingPhotos = getExistingPhotos(album.gphoto_id.text)
   
   pics = os.listdir(path)
 
@@ -80,7 +83,17 @@ def uploadPhotos(album, path):
       except: 
         print "Could not upload:", pic
 
-  print "TODO: upload photo"
+
+"""
+Method gets the available photo names for the given albumid
+"""
+def getExistingPhotos(albumid):
+  existingPhotos = []
+  album_url = '/data/feed/api/user/%s/albumid/%s' % (os.environ['tempuser'], albumid)
+  photos = gdc.GetFeed(album_url + '?kind=photo')
+  for photo in photos.entry:
+    existingPhotos.append(photo.title.text)
+  return existingPhotos
 
 def run():
   print "------>>>"
