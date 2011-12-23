@@ -21,11 +21,15 @@ import settings.*
 
 
 def run():
-  print "------>>>"
-  tempList = os.listdir(base)
-  gdc = initGooglePhotoService()
-  photoman = new PhotoMan(gdc)
+  print "==========================================="
+  
+  # Precondition check.
+  if (base == None):
+    print "Hey, I cannot run if you don't set the base directory in settings.py. \nGo and set it first before running me!!"
 
+  tempList = os.listdir(base)
+
+  photoman = new PhotoMan()
   dirs = [d for d in os.listdir(base) if os.path.isdir(base + '/' + d)]
 
   for dir in dirs:
@@ -33,23 +37,12 @@ def run():
     if album != None:
       path = base + '/' + dir
       photoman.uploadPhotos(album, path)
+  print "==========================================="
 
-  print "<<<------"
 
-"""
-  Method to intialize Google Photo service.
-"""
-def initGooglePhotoService():
-  gdc = gdata.photos.service.PhotosService()
-  gdc.email = os.environ['tempuser']
-  gdc.password = os.environ['temppass']
-  gdc.source = 'iuploader'
-  gdc.ProgrammaticLogin()
-  return gdc
 
 
 if __name__ == "__main__":
-  run()
+  run() # Let photo man be run.
 
-#createAlbum('Duplicate Test', gdc)
 

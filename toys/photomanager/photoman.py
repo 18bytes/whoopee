@@ -2,9 +2,20 @@
 
 class PhotoMan:
 
-    def __init__(self, gdc):
-        self.gdc = gdc
+    def __init__(self):
+        self.gdc = self.initGooglePhotoService()
         
+
+   """
+    Method to intialize Google Photo service.
+   """
+   def initGooglePhotoService():
+       gdc = gdata.photos.service.PhotosService()
+       gdc.email = os.environ['tempuser']
+       gdc.password = os.environ['temppass']
+       gdc.source = 'iuploader'
+       gdc.ProgrammaticLogin()
+       return gdc
 
 
     #  -------------------------------------------------------------------------
