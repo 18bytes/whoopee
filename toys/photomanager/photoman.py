@@ -5,18 +5,24 @@ import gdata.photos.service
 import gdata.media
 import gdata.geo
 import os
+import urllib
 
 import settings.*
 
-
-# TODO: Preprocess and find out what to upload. Update a summary in summary.log
+## Priority Zero items
 # TODO: Recursive directories
 # TODO: Must be able to interrupt
-
+# TODO: Import from other albums = Facebook, Google+, Flickr
+# TODO: Meta data in each album
 # TODO: Duplicate entries
-# TODO: Import from other albums, FlickR, Facebook
-
 # TODO: Configure tempuser and temppass environment variable before running.
+
+## Nice to have
+# TODO: Preprocess and find out what to upload. Update a summary in summary.log
+# TODO: Once uploaded successfully, create a compressed archive and store it in another location/upload to webservice (Yahoo mail as attachment where unlimited storage?)
+
+
+
 
 
 
@@ -73,12 +79,12 @@ class PhotoMan:
                 filename = path + '/' + pic
                 try:
                     photo = self.gdc.InsertPhotoSimple(album_url, pic , '', filename, content_type='image/jpeg')
-            if photo == None:
-                errFiles.append(pic)
-            else:
-                successFiles.append(pic)
-except:
-    errFiles.append(pic)
+                    if photo == None:
+                        errFiles.append(pic)
+                    else:
+                        successFiles.append(pic)
+                except:
+                    errFiles.append(pic)
 
       # Print the summary
       self.printUploadSumnmary(album.gphoto_id.text, pics, successFiles, errFiles, duplicateFiles)
@@ -120,6 +126,12 @@ except:
       return existingPhotos
 
 
+    def downloadPhoto(url, albumName):
+        if (url == None or albumName == None): return None
+        photoName = url[url.rindex('/')+1:] 
+        url = url.replace(photoName, "d/" + photoName)
+        urllib.retrieve(url, work + '/' + albumName + '/' + photoName)
+        
 
 
 
