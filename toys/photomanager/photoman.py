@@ -1,3 +1,26 @@
+# Long live google (and its photo service.)
+# I am photoman, My god is Sundar (The creator) and my purpose of existence is to help him maintain his digital photos.
+
+import gdata.photos.service
+import gdata.media
+import gdata.geo
+import os
+
+import settings.*
+
+
+# TODO: Preprocess and find out what to upload. Update a summary in summary.log
+# TODO: Recursive directories
+# TODO: Must be able to interrupt
+
+# TODO: Duplicate entries
+# TODO: Import from other albums, FlickR, Facebook
+
+# TODO: Configure tempuser and temppass environment variable before running.
+
+
+
+
 # TODO License
 
 class PhotoMan:
@@ -13,7 +36,7 @@ class PhotoMan:
        gdc = gdata.photos.service.PhotosService()
        gdc.email = os.environ['tempuser']
        gdc.password = os.environ['temppass']
-       gdc.source = 'iuploader'
+       gdc.source = 'photoman'
        gdc.ProgrammaticLogin()
        return gdc
 
@@ -106,10 +129,14 @@ class PhotoMan:
     """
     def createAlbum(self, name):
       result = None
+
+      # Precondition check.
+      if name == None: return None
+
       check = isDuplicateAlbum(name)
-      # create album
+    
       if check[1] == False:
-        result = self.gdc.InsertAlbum(title=name, summary='auto')
+        result = self.gdc.InsertAlbum(title=name, summary='auto')    # create album
         print "Created album successfully: ", name
       else:
         result = check[0] # FIXME: Get the existing album reference
@@ -128,4 +155,33 @@ class PhotoMan:
             break
       return (album, isDuplicate)
 
+
+
+
+
+
+def run():
+  print "==========================================="
+  
+  # Precondition check.
+  if (base == None):
+    print "Hey, I cannot run if you don't set the base directory in settings.py. \nGo and set it first before running me!!"
+
+  tempList = os.listdir(base)
+
+  photoman = new PhotoMan()
+  dirs = [d for d in os.listdir(base) if os.path.isdir(base + '/' + d)]
+
+  for dir in dirs:
+    album = photoman.createAlbum(dir)
+    if album != None:
+      path = base + '/' + dir
+      photoman.uploadPhotos(album, path)
+  print "==========================================="
+
+
+
+
+if __name__ == "__main__":
+  run() # Let photo man be run.
 
