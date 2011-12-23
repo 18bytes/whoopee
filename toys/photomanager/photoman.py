@@ -44,8 +44,9 @@ class PhotoMan:
               errFiles.append(pic)
 
       # Print the summary
+      self.printUploadSumnmary(album.gphoto_id.text, pics, successFiles, errFiles, duplicateFiles)
 
-    def printUploadSummary(albumid, allPhotos, successPhotos ,errPhotos, duplicatePhotos):
+    def printUploadSummary(self, albumid, allPhotos, successPhotos , errPhotos, duplicatePhotos):
       total = len(allphotos)
       errors = len(errPhotos)
       duplicates = len(duplicatePhotos)
@@ -54,6 +55,8 @@ class PhotoMan:
       print "Photo album: " + albumid
       if errors == 0 and duplicates == 0 and total == success:
           print "Hooray, I have uploaded all %r photos for you!! " % (total)
+      else if error > 0 and duplicates == 0:
+          print "I uploaded %r photos out of %r. But %r files are not uploaded. Probably they are not images, please check them." % (success, total, )
       print "Total photos: " + total
       print "Error while uploading: " + errors
       print "Duplicate Entries: " + duplicates
