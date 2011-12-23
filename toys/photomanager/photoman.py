@@ -63,19 +63,22 @@ class PhotoMan:
       
       # Try to upload each file.
       for pic in pics:
-        # FIXME Add recurisve directory support, subdirectories can have duplicate names.
-        if pic in existingPhotos:
-          duplicateFiles.append(pic)
+        if os.path.isdir(pic) == True:
+            self.uploadPhotos(self, album, pic)
         else:
-          filename = path + '/' + pic
-          try:
-            photo = self.gdc.InsertPhotoSimple(album_url, pic , '', filename, content_type='image/jpeg')
-            if photo == None:
-              errFiles.append(pic)
+            # FIXME Add recurisve directory support, subdirectories can have duplicate names.
+            if pic in existingPhotos:
+                duplicateFiles.append(pic)
             else:
-              successFiles.append(pic)
-          except:
-              errFiles.append(pic)
+                filename = path + '/' + pic
+                try:
+                    photo = self.gdc.InsertPhotoSimple(album_url, pic , '', filename, content_type='image/jpeg')
+            if photo == None:
+                errFiles.append(pic)
+            else:
+                successFiles.append(pic)
+except:
+    errFiles.append(pic)
 
       # Print the summary
       self.printUploadSumnmary(album.gphoto_id.text, pics, successFiles, errFiles, duplicateFiles)
