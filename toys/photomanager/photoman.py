@@ -64,7 +64,7 @@ class PhotoMan:
       # Try to upload each file.
       for pic in pics:
         if os.path.isdir(pic) == True:
-            self.uploadPhotos(self, album, pic)
+            self.uploadPhotos(self, album, base + '/' + pic)
         else:
             # FIXME Add recurisve directory support, subdirectories can have duplicate names.
             if pic in existingPhotos:
