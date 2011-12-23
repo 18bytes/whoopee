@@ -55,11 +55,16 @@ class PhotoMan:
       print "Photo album: " + albumid
       if errors == 0 and duplicates == 0 and total == success:
           print "Hooray, I have uploaded all %r photos for you!! " % (total)
-      else if error > 0 and duplicates == 0:
-          print "I uploaded %r photos out of %r. But %r files are not uploaded. Probably they are not images, please check them." % (success, total, )
-      print "Total photos: " + total
-      print "Error while uploading: " + errors
-      print "Duplicate Entries: " + duplicates
+      else if errors > 0 and duplicates == 0:
+          print ":( Unfortunately I could not upload %r photos out of %r. Files failed are:" % (errors, total)
+          print errPhotos
+      else if errors == 0 and duplicates > 0 and success == 0:
+          print "Well, I have already uploaded this album and there is nothing new in it. So remove it, your album is in safe hands!."
+      else if errors == 0 and duplicates > 0 and success > 0:
+          print "I have uploaded %r photos, and ignored %r photos which are already there." % (success, duplicates)
+
+      if total != (errors + duplicates + success):
+          print "Hey, something fishy here. I did not upload all photos available in the Album."
       print "------------------------------"
 
         
@@ -88,13 +93,13 @@ class PhotoMan:
     """
     def createAlbum(self, name):
       result = None
-
+      check = isDuplicateAlbum(name)
       # create album
-      if isDuplicateAlbum(name) == False:
+      if check[1] == False:
         result = self.gdc.InsertAlbum(title=name, summary='auto')
         print "Created album successfully: ", name
       else:
-        result = album # FIXME: Get the existing album reference
+        result = check[0] # FIXME: Get the existing album reference
         print "Album already present:", name
       return result
 
@@ -106,7 +111,8 @@ class PhotoMan:
       for album in albums.entry:
         isDuplicate = (album.title.text == newName)
         if isDuplicate == True:
-          break
-      return isDuplicate
+            album = None
+            break
+      return (album, isDuplicate)
 
 
