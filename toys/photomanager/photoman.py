@@ -15,7 +15,7 @@ class PhotoMan:
       existingPhotos = []
       errFiles = [] # Files which were not uploaded.
       successFiles = [] # Files which were successfully uploaded.
-      duplicateFiles = []
+      duplicateFiles = [] # Files already in the server.
 
       # Precondition check
       if (self.gdc == None): return
@@ -45,6 +45,8 @@ class PhotoMan:
 
       # Print the summary
       self.printUploadSumnmary(album.gphoto_id.text, pics, successFiles, errFiles, duplicateFiles)
+
+
 
     def printUploadSummary(self, albumid, allPhotos, successPhotos , errPhotos, duplicatePhotos):
       total = len(allphotos)

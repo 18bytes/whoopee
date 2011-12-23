@@ -4,6 +4,9 @@ import gdata.geo
 import os
 
 import photoman.PhotoMan
+import settings.*
+
+# Long live google (and its photo service.)
 
 # TODO: Preprocess and find out what to upload. Update a summary in summary.log
 # TODO: Recursive directories
@@ -14,10 +17,6 @@ import photoman.PhotoMan
 
 # TODO: Configure tempuser and temppass environment variable before running.
 
-
-
-# base path
-base = '/home/meenu/Pictures/sundar22in/photos'
 
 
 
