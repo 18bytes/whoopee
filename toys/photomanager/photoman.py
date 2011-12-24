@@ -83,22 +83,25 @@ class PhotoMan:
               errFiles.append(pic)
             else:
               successFiles.append(pic)
+          except KeyboardInterrupt:
+            print "Okay, I stop uploading since you cancelled."
+            sys.exit()
           except:
             print "Unable to upload."
             errFiles.append(pic)
             
             # Print the summary
-    self.printUploadSummary(album.gphoto_id.text, pics, successFiles, errFiles, duplicateFiles)
+    self.printUploadSummary(album.title.text, pics, successFiles, errFiles, duplicateFiles)
 
 
 
-  def printUploadSummary(self, albumid, allPhotos, successPhotos , errPhotos, duplicatePhotos):
+  def printUploadSummary(self, albumname, allPhotos, successPhotos , errPhotos, duplicatePhotos):
     total = len(allPhotos)
     errors = len(errPhotos)
     duplicates = len(duplicatePhotos)
     success = len(successPhotos)
     print "------------------------------"
-    print "Photo album: " + albumid
+    print "Photo album: " + albumname
     if errors == 0 and duplicates == 0 and total == success:
       print "Hooray, I have uploaded all %r photos for you!! " % (total)
     elif errors > 0 and duplicates == 0:
@@ -157,7 +160,7 @@ class PhotoMan:
     check = self.isDuplicateAlbum(name)
     
     if check[1] == False:
-      result = self.gdc.InsertAlbum(title=name, summary='auto')    # create album
+      result = self.gdc.InsertAlbum(title=name, summary='auto', access='private')    # create album
       print "Created album successfully: ", name
     else:
       result = check[0] # FIXME: Get the existing album reference
