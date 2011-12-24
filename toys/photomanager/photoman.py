@@ -82,15 +82,16 @@ class PhotoMan:
             else:
               successFiles.append(pic)
           except:
+            print "Unable to upload."
             errFiles.append(pic)
             
             # Print the summary
-    self.printUploadSumnmary(album.gphoto_id.text, pics, successFiles, errFiles, duplicateFiles)
+    self.printUploadSummary(album.gphoto_id.text, pics, successFiles, errFiles, duplicateFiles)
 
 
 
   def printUploadSummary(self, albumid, allPhotos, successPhotos , errPhotos, duplicatePhotos):
-    total = len(allphotos)
+    total = len(allPhotos)
     errors = len(errPhotos)
     duplicates = len(duplicatePhotos)
     success = len(successPhotos)
@@ -121,7 +122,7 @@ class PhotoMan:
     photos = self.gdc.GetFeed(album_url + '?kind=photo')
     for photo in photos.entry:
       existingPhotos.append(photo.title.text)
-      return existingPhotos
+    return existingPhotos
 
     
   def downloadPhoto(self, url, albumName):
@@ -164,7 +165,6 @@ class PhotoMan:
     for album in albums.entry:
       isDuplicate = (album.title.text == newName)
       if isDuplicate == True:
-        album = None
         break
     return (album, isDuplicate)
 
