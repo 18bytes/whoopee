@@ -210,9 +210,12 @@ def run(args):
         photoman.uploadPhotos(album, path)
   elif action == "import":
     pass
+  else:
+    print "[Usage] Allowed actions are: upload, import, prugeall"
+    print "upload     Uploads the photos to the album. Creates new album if not existing."
+    print "import     imports the album from another service to Google+. photoman looks for import.cfg"
+    print "purgeall   DELETES ALL ALBUMS. Use with CAUTION!!"
   print "==========================================="
-    
-
 
 
 if __name__ == "__main__":
