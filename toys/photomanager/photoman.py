@@ -1,11 +1,12 @@
 # Long live google (and its photo service.)
-# I am photoman, My god is Sundar (The creator) and my purpose of existence is to help him maintain his digital photos.
+# I am photoman, my purpose of existence is to help him maintain digital photos.
 
 import gdata.photos.service
 import gdata.media
 import gdata.geo
 import os
 import urllib
+import sys
 
 import settings
 
@@ -59,6 +60,7 @@ class PhotoMan:
     if (self.gdc == None): return
     if album == None or path == None: return
 
+    album_url = '/data/feed/api/user/%s/albumid/%s' % (os.environ['tempuser'], album.gphoto_id.text)
     # get all photo name from album and store it in a map/list
     # If already present then dont upload, else upload
     existingPhotos = self.getExistingPhotos(album.gphoto_id.text)
@@ -130,6 +132,12 @@ class PhotoMan:
     photoName = url[url.rindex('/')+1:] 
     url = url.replace(photoName, "d/" + photoName)
     urllib.retrieve(url, work + '/' + albumName + '/' + photoName)
+
+  # -------------------------------------------------------------------------
+  # Import helper methods
+  # -------------------------------------------------------------------------
+  
+
         
 
 
@@ -179,9 +187,9 @@ class PhotoMan:
       print "Okay, I do not delete it!"
 
 
-def run():
+def run(args):
   print "==========================================="
-  
+  action = args[1] if len(args) == 2 else None
   # Precondition check.
   if (settings.base == None):
     print "Hey, I cannot run if you don't set the base directory in settings.py. \nGo and set it first before running me!!"
@@ -189,21 +197,24 @@ def run():
   tempList = os.listdir(settings.base)
 
   photoman = PhotoMan()
-  # photoman.deleteAllAlbums()
-  
-  dirs = [d for d in os.listdir(settings.base) if os.path.isdir(settings.base + '/' + d)]
-  
-  for dir in dirs:
-    album = photoman.createAlbum(dir)
-    if album != None:
-      path = settings.base + '/' + dir
-      photoman.uploadPhotos(album, path)
-  
-  print "==========================================="
 
+  if action == "purgeall":
+    photoman.deleteAllAlbums()
+  elif action == "upload":
+    dirs = [d for d in os.listdir(settings.base) if os.path.isdir(settings.base + '/' + d)]
+  
+    for dir in dirs:
+      album = photoman.createAlbum(dir)
+      if album != None:
+        path = settings.base + '/' + dir
+        photoman.uploadPhotos(album, path)
+  elif action == "import":
+    pass
+  print "==========================================="
+    
 
 
 
 if __name__ == "__main__":
-  run() # Let photo man be run.
+  run(sys.argv) # Let photo man be run.
 
