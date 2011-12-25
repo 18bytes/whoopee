@@ -1,0 +1,5 @@
+Contest URL:
+http://strangelyconsistent.org/blog/the-2011-perl-6-coding-contest
+
+Context last date: 29-Jan-12
+

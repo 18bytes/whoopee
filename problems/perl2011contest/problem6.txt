@@ -1,0 +1,55 @@
+== Enumerating trees
+
+We're used to thinking about rooted trees in computer science, but now
+for a while we'll be talking about *un*rooted trees.
+
+An unrooted tree is simply a graph with N nodes and N-1 edges,
+without cycles. Each node is reachable from any other node through
+exactly one simple path.
+
+Here's an example tree with three nodes.
+
+    1--2--3         a tree with a line shape
+
+In order to talk about different trees, we employ a traversal representation
+that looks like this:
+
+    1-2-3-2         traversal representation
+
+This can be thought of as the sequence of nodes encountered when tracing
+around the tree (say) clockwise. In the above case, we start at node
+1, continue to node 2, turn at node 3, find node 2 again, and then
+we're back at node 1 (which we don't include at the end).
+
+The traversal representation is simply a way to identify each graph by its
+structure.
+
+For simplicity's sake, let the traversal representation be "canonical", in the
+sense that it always introduces previously unseen nodes with the numbers
+1..*, in order. This reflects the fact that we're really dealing with
+unlabeled trees, and don't consider nodes to be distinct.
+
+Note that starting from a different node, or mirroring the tree in the
+plane that embeds it, may yield a different canonical traversal
+representation. (So it's not quite canonical.) You're free to pick any
+one of these if there are several.
+
+There's only one tree each with 1, 2, or 3 nodes. 4 is the first
+interesting case, and has two unique trees
+
+    1--2--3--4      another line        1-2-3-4-3-2
+    
+    1--2--3
+       |            a T-shape           1-2-3-2-4-2
+       4
+
+Similarly, there are three unique trees with 5 nodes.
+
+Write a program that accepts a positive integer N on the command line,
+and outputs all unique unrooted unlabeled trees with N nodes, using
+canonical traversal representation.
+
+For example, for N = 4, the program should output the above two trees:
+
+    1-2-3-4-3-2
+    1-2-3-2-4-2

@@ -1,0 +1,22 @@
+== Addition chains
+
+For a positive integer N, an addition chain for N is a sequence
+starting with 1, each subsequent element being the sum of two
+earlier elements (possibly the sum of the same element twice),
+        and ending with N.
+
+        For example for N = 9, this is a possible addition chain:
+
+            (1, 2, 4, 5, 8, 9)
+
+  because 2 = 1 + 1, 4 = 2 + 2, 5 = 1 + 4, etc.
+
+  But a minimal solution would be:
+
+      (1, 2, 3, 6, 9)
+
+  Write a program that reads numbers N from standard input, one per line,
+  and outputs a minimal addition chain like the one above.
+
+  Sometimes there will be several possible solutions of minimal length.
+  That's fine; just pick one of them.

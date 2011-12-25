@@ -1,0 +1,20 @@
+== Expressing integers using four nines
+
+What non-negative integers can you write as expressions containing exactly
+four occurrences the number 9, and any of the binary operators *, /, %, +,
+     -, prefix negations, and any number of matching pairs of parentheses you
+     care to use?
+
+     The program should accept an upper limit N as a command-line argument.
+     It should then print all integers 0..N in increasing order, along with
+     an expression with four nines, if any such was found.
+
+     More precisely, let's say your program didn't find a four-nines expression
+     for the number 18. Then it should simply print
+
+         18
+
+         on that particular line. If it *did* find a number, it should include the
+         expression it found, like this:
+
+             18 = 9 + 9 * (9 / 9)

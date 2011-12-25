@@ -1,0 +1,19 @@
+== Sum of cubes
+
+Some natural numbers can be as the sum of two positive cubes of natural
+numbers. For example, 1729 is 12 cubed plus 1 cubed. Some natural numbers
+can even be expressed as more than one such sum. For example, 1729 can
+also be expressed as 10 cubed plus 9 cubed.
+
+Just for clarity's sake, the sum with the two terms reversed is the
+same sum, not a new one. Thus, 91 is 3 cubed plus 4 cubed, but
+finding "4 cubed plus 3 cubed" does not count as a distinct sum.
+
+Write a program that accepts an integer N on the command line, and
+prints out the first N of these numbers in increasing order. For each
+number found, print it out, as well as the sums of cubes that yield that
+number.
+
+For example:
+
+    1729 = 12 ** 3 + 1 ** 3 = 10 ** 3 + 9 ** 3
