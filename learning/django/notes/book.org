@@ -1,7 +1,12 @@
 ** Commands
-**** "django-admin.py startproject projectname" to start the project.
-**** "python manage.py runserver 8080" to run the project on port 8080.
+* "django-admin.py startproject projectname" to start the project.
+* "python manage.py runserver 8080" to run the project on port 8080.
+
+** Notes
+* django views are stored in views.py by convetion. Each view is a method which takes request as the parameter and returns HttpResponse object.
+* URLconf is like a table of contents for application. Maps URL to VIEWS.
+* To see the python path "print sys.path"
 
 ** Appengine-Django REST
-**** http://code.google.com/p/appengine-rest-server/
-**** http://code.google.com/p/django-rest-interface/
+* http://code.google.com/p/appengine-rest-server/
+* http://code.google.com/p/django-rest-interface/

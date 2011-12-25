@@ -185,7 +185,7 @@ class PhotoMan:
     if confirm == "YES":
       for album in albums.entry:
         self.gdc.Delete(album)
-        print album.title.text + "detelted!!"
+        print album.title.text , "deleted!!"
     else:
       print "Okay, I do not delete it!"
 

@@ -1,4 +1,6 @@
 toys/cmdtweet/twitter.ini
 *~
 #*#
+#*.py#
 *.pyc
+.#*.py
