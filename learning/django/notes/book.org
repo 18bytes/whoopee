@@ -1,0 +1,7 @@
+** Commands
+**** "django-admin.py startproject projectname" to start the project.
+**** "python manage.py runserver 8080" to run the project on port 8080.
+
+** Appengine-Django REST
+**** http://code.google.com/p/appengine-rest-server/
+**** http://code.google.com/p/django-rest-interface/
