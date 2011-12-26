@@ -7,6 +7,19 @@
 * URLconf is like a table of contents for application. Maps URL to VIEWS.
 * To see the python path "print sys.path"
 
+Template system:
+* Django template system can be used outside views, as a template system anywere.
+* Django template system requires 3 steps to use
+  1. Create a Template object with the required template string. It can come from a str variable or a HTML file.
+  2. Create a Context object with name and value pairs.
+  3. Use the context and render the template. That's it!
+* Dictionaries, list and custom objects can be passed to the template system. It can access using '.' operator. Dot lookups can be multilevel.
+* Metho calls cannot have any arguments in template.
+* If funcitonName.alters_data is True then the method will not be executed by template system.
+* If method/field not found while rendering, tempalte system uses empty string. Failing silently.
+* You can add/remove to a context object in dictionary syntax after its created.
+
+
 ** Appengine-Django REST
 * http://code.google.com/p/appengine-rest-server/
 * http://code.google.com/p/django-rest-interface/
