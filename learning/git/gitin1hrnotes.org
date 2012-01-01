@@ -1,0 +1,42 @@
+* Config git using "git config"
+* "git config --global color.ui true" for displaying colors in console output.
+* "git clone" will pull down a copy of entire repository and not just latest checkout.
+* git works offline, you dont need network connection
+* "git init" will create a new git repo
+* "Untracked files" git does not know about it, use "git add ." to add all
+* "git commit" - To local repository
+* "git status" 
+* "git show" will show last commit
+* "git log" shows all files
+* Untracked -> (git add) -> 
+* "git commit -a" adds all untracked files for commit
+* "git commit filename" will commit only the file
+* git add for staging the commit, you can select files individually.
+* "git commit" opens editor if 
+* "git reset HEAD filename" to unstage the file
+* "git diff" will show the local changes and last commit
+* "git add -p" stage the patches and choose to stage only parts of the modification.
+* "git diff --staged" will show difference between staged files and current working directory
+* "git log --stat"
+* "git branch" list all branches
+* "git branch name" creates a branch
+* "git checkout name" to switch to a branch, all new commits will go in to this branch.
+* "git checkout -b name" will create and switch to the branch
+* "git log --graph --all"
+* "git merge name" will merge the branch with the current branch
+* "git branch --merged" will show the list of branches merged
+* "git branch -d name" will delete the branch
+* "git branch name commitid" will create a branch from this commit.
+* "git remote add origin [url]" - Add a new remote repo, name it as origin and its url
+* "git push origin master" - Push master branch to the origin server
+* "origin" is the name used for default remote git repo
+* "git remote -v" will list all the remote servers used
+* "git fetch origin" - Gets new changes (to origin/master branch), but working directory is not updated.
+* "git log origin/master --not master" shows only the new changes
+* "git push orignin master" is explicit
+* "git pull" will fetch and merge automagically
+* When merge conflicts happen, resolve and add files to manually merge.
+* "git blame filename" will show who changed what, and when
+* "git blame -C filename" will tell who orignally modified the line
+* "git bisect start" "git bisect bad" "git bisect good SHA" this updates the working directory. "git bisect reset" will go back to original state.
+* "git svn checkout" 
