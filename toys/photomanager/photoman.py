@@ -7,7 +7,7 @@ import gdata.geo
 import os
 import urllib
 import sys
-
+import traceback
 import settings
 
 
@@ -88,6 +88,7 @@ class PhotoMan:
             sys.exit()
           except:
             print "Unable to upload."
+            traceback.print_exc(file=sys.stdout)
             errFiles.append(pic)
             
             # Print the summary

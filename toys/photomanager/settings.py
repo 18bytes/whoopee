@@ -1,5 +1,5 @@
 # configuration settings in this file.
 
 # base path
-base = '/home/meenu/Pictures/sundar22in/photos'
+base = '/mnt/meenu/personal/pics'
 work = '[WORKING DIRECTORY, INTENTIONALLY WRONG]'
