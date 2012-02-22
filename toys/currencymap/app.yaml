@@ -6,6 +6,8 @@ threadsafe: true
 
 handlers:
   - url: /*
-    script: cmap.app
-
+    script: currencymap.app
+libraries:  
+- name: jinja2
+  version: latest
 
