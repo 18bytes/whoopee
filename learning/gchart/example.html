@@ -1,0 +1,30 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"> </script>
+  <script type="text/javascript"> 
+    google.load('visualization', '1', {'packages':['geochart']});
+    google.setOnLoadCallback(drawCurrencyMap);
+    
+    function drawCurrencyMap() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Country');
+      data.addColumn('number', 'Rate(INR)');
+      data.addRows([
+        ['Germany', 65],
+        ['United States', 49],
+        ['Switzerland', 54],
+        ['China', 7],
+        ['Russia', 1.6]
+      ]);
+
+      var options = {};
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+  </script> 
+</head>
+<body>
+<div id="chart_div" style="width=100%; height=100% "> <div>
+
+</body>
+</html>
