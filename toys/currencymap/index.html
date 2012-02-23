@@ -4,31 +4,36 @@
   <script type="text/javascript"> 
     google.load('visualization', '1', {'packages':['geochart']});
     google.setOnLoadCallback(drawCurrencyMap);
-    
+
+
     function drawCurrencyMap() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Country');
       data.addColumn('number', 'Rate(INR)');
       data.addRows([
 
-    {% for country in countries.iterkeys() %}
-      {% if rates[countries[country]] %}
-        ['{{country}}', {{rates[countries[country]]}}],
-      {% endif %}
-    {% endfor %}
+      {% for country in countries.iterkeys() %}
+        {% if rates[countries[country]] %}
+          ['{{country}}', {{rates[countries[country]]}}],
+        {% endif %}
+      {% endfor %}
 
-    
       ]);
 
-      var options = {};
+      var options = {
+            colorAxis: {colors: ['grey', '#00CC99', 'blue', 'yellow', 'green', 'red']}
+      };
       var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     };
+
+
   </script> 
+
 </head>
 <body>
 
-<div id="chart_div" style="width=100%; height=100% "> <div>
+<div id="chart_div"> <div>
 
 </body>
 </html>

@@ -11,7 +11,8 @@ class MainPage(webapp2.RequestHandler):
       resp = urlfetch.fetch(url)
       data = json.loads(resp.content)
       base = self.request.get("base")
-      base = "INR"
+      if base == '':
+        base = "USD"
       factor =  1 / (data['rates'][base])
       for code in data['rates']:
         data['rates'][code] = 1 / (data['rates'][code] * factor)
