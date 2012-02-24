@@ -1,0 +1,13 @@
+
+Must have:
+* TODO Find base country using IP address (X-AppEngine-Country ==> Works only on server)
+* TODO Jquery auto complete dialog with flag for base country.
+* TODO Add a slider for timeline. User can see the data from 1991 to 2012. Thanks to money.js data.
+* TODO Tooltip with proper data.
+
+Ideas:
+* TODO Play animation for timeine?
+* TODO GDP data from world bank?
+* TODO Top 10 and bottom 10 table
+* TODO Population data?
+
