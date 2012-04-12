@@ -1,6 +1,7 @@
 import utils
 # TODO Use same input and compare executaion time
 
+@utils.measure_time
 def bubble_sort(input):
   swapped = True
 
@@ -20,13 +21,12 @@ def bubble_sort(input):
   return input
 
 
-
 if __name__ == '__main__':
-  data = utils.get_random_number_list(5000)
+  data = utils.get_random_number_list(500)
   print "--------------------------"
   print "input:"
   print data
   print "--------------------------"
   print "Sorted result:"
-  print bubble_sort(data)
+  bubble_sort(data)
   print "--------------------------"
