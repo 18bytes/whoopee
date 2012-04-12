@@ -1,4 +1,4 @@
-import random_list_generator
+import utils
 # TODO Use same input and compare executaion time
 
 def bubble_sort(input):
@@ -22,7 +22,7 @@ def bubble_sort(input):
 
 
 if __name__ == '__main__':
-  data = random_list_generator.get_random_number_list(5000)
+  data = utils.get_random_number_list(5000)
   print "--------------------------"
   print "input:"
   print data
