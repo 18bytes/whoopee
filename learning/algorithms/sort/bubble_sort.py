@@ -22,11 +22,4 @@ def bubble_sort(input):
 
 
 if __name__ == '__main__':
-  data = utils.get_random_number_list(500)
-  print "--------------------------"
-  print "input:"
-  print data
-  print "--------------------------"
-  print "Sorted result:"
-  bubble_sort(data)
-  print "--------------------------"
+  utils.sort(bubble_sort)

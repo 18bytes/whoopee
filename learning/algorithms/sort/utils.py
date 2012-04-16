@@ -1,6 +1,17 @@
 import random
 import time
 
+def sort(fn):
+  data = get_random_number_list(500)
+  print "--------------------------"
+  print "input:"
+  print data
+  print "--------------------------"
+  print "Sorted result:"
+  fn(data)
+  print data
+  print "--------------------------"
+
 def get_random_number_list(size):
   result = []
   for i in range(0, size):
