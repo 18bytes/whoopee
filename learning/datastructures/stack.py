@@ -17,6 +17,7 @@ class Stack:
         if size == 0:
             raise Exception("Stackunderflow error!!")
         result = self.data[size-1]
+        return result
 
     def pop(self):
         size   = len(self.data)
@@ -31,11 +32,15 @@ class Stack:
         return (len(self.data) == 0)
 
 if __name__ == "__main__":
-    stack = Stack(22)
+    stack = Stack(20)
     stack.push(22)
     stack.push(33)
-    stack.push(33)
-    print stack.get_data()
+    stack.push(44)
+
+
     print stack.pop()
+    print stack.pop()
+    print stack.pop()
+    print stack.get_data()
     print stack.get_data()
     print "Hello"
