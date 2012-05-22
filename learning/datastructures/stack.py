@@ -12,11 +12,15 @@ class Stack:
             raise Exception("Stackoverflow error!!")
         self.data.append(val)
     
-    def pop(self):
+    def peek(self):
         size = len(self.data)
         if size == 0:
             raise Exception("Stackunderflow error!!")
         result = self.data[size-1]
+
+    def pop(self):
+        size   = len(self.data)
+        result = self.peek()
         del(self.data[size-1])
         return result
 
