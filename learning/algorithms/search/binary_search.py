@@ -8,7 +8,7 @@ def binary_search(arr, search_for, left, right):
     return binary_search(arr, search_for, left, mid -1)
   elif arr[mid] < search_for:
     return binary_search(arr, search_for, mid + 1, right)
-  else: 
+  else:
     return mid
 
 
