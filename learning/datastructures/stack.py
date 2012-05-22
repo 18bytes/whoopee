@@ -27,6 +27,9 @@ class Stack:
     def get_data(self):
         return self.data
 
+    def is_empty(self):
+        return (len(self.data) == 0)
+
 if __name__ == "__main__":
     stack = Stack(22)
     stack.push(22)
