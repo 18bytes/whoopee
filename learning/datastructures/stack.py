@@ -1,5 +1,6 @@
 """
   A simple stack implementation in Python.
+  FILO
 """
 class Stack:
     def __init__(self, mx_size):

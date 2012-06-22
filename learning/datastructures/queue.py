@@ -1,5 +1,6 @@
 """
 A simple Queue implementation in Python.
+FIFO
 """
 class Queue:
     def __init__(self):
