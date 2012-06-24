@@ -1,0 +1,8 @@
+* Sorting
+* Searching
+
+
+Links:
+http://stackoverflow.com/questions/445425/what-algorithms-should-every-developer-know
+http://hbfs.wordpress.com/2008/12/23/the-10-classes-of-algorithms-every-programmer-must-know-about/
+http://news.ycombinator.com/item?id=1489166
