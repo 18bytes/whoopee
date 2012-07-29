@@ -1,0 +1,4382 @@
+Updates - Adding ruby koans
+
+# --------------
+# Please enter the commit message for your changes. Everything below
+# this paragraph is ignored, and an empty message aborts the commit.
+# Just close the window to accept your message.
+diff --git a/learning/java/datastructures.mm b/learning/java/datastructures.mm
+new file mode 100644
+index 0000000..9be43aa
+--- /dev/null
++++ b/learning/java/datastructures.mm
+@@ -0,0 +1,36 @@
++<map version="0.9.0">
++<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
++<node CREATED="1340863769174" ID="ID_183460282" MODIFIED="1340863769174" TEXT="New Mindmap">
++<node CREATED="1340863783947" HGAP="243" ID="ID_1066074913" MODIFIED="1340864020904" POSITION="right" TEXT="java.util" VSHIFT="-41">
++<node CREATED="1340863846739" ID="ID_1380116214" MODIFIED="1340863851221" TEXT="Collection">
++<node CREATED="1340863857764" ID="ID_528201573" MODIFIED="1340863859763" TEXT="List">
++<node CREATED="1340863869585" ID="ID_1186258126" MODIFIED="1340863873099" TEXT="ArrayList"/>
++<node CREATED="1340863874692" ID="ID_1733453523" MODIFIED="1340863876612" TEXT="Vector">
++<node CREATED="1340864101748" ID="ID_425006496" MODIFIED="1340864103716" TEXT="Stack"/>
++</node>
++<node CREATED="1340863994794" ID="ID_377181876" MODIFIED="1340863997683" TEXT="LinkedList"/>
++<node CREATED="1340864178298" ID="ID_1916419840" MODIFIED="1340864180016" TEXT="CopyOnWriteArrayList"/>
++</node>
++<node CREATED="1340863863464" HGAP="68" ID="ID_924125840" MODIFIED="1340864354571" TEXT="Set" VSHIFT="103">
++<node CREATED="1340864231658" ID="ID_1032464293" MODIFIED="1340864664502" TEXT="SortedSet"/>
++<node CREATED="1340864251537" HGAP="22" ID="ID_1428324954" MODIFIED="1340864352744" TEXT="HashSet" VSHIFT="2">
++<node CREATED="1340864297042" ID="ID_850526058" MODIFIED="1340864300946" TEXT="LinkedHashSet"/>
++</node>
++<node CREATED="1340864257736" ID="ID_389834336" MODIFIED="1340864260610" TEXT="TreeSet"/>
++</node>
++</node>
++<node CREATED="1340863854469" HGAP="111" ID="ID_1148056432" MODIFIED="1340864608675" TEXT="Map" VSHIFT="122">
++<node CREATED="1340864392487" ID="ID_793915181" MODIFIED="1340864395688" TEXT="HashMap">
++<node CREATED="1340864524848" ID="ID_220107571" MODIFIED="1340864528783" TEXT="LinkedHashmap"/>
++</node>
++<node CREATED="1340864396875" ID="ID_1416744234" MODIFIED="1340864401669" TEXT="Hashtable"/>
++<node CREATED="1340864412538" ID="ID_398655183" MODIFIED="1340864418035" TEXT="IdentityHashMap"/>
++<node CREATED="1340864424156" ID="ID_1390259418" MODIFIED="1340864427389" TEXT="TreeHashMap"/>
++<node CREATED="1340864429341" HGAP="23" ID="ID_370658317" MODIFIED="1340864442318" TEXT="WeakHashmap" VSHIFT="12"/>
++<node CREATED="1340864479624" ID="ID_1539077559" MODIFIED="1340864481951" TEXT="SortedMap"/>
++</node>
++</node>
++<node CREATED="1340863799313" HGAP="196" ID="ID_294990457" MODIFIED="1340864032101" POSITION="right" TEXT="Google Guava" VSHIFT="168"/>
++<node CREATED="1340863808324" HGAP="-227" ID="ID_1166090763" MODIFIED="1340863816803" POSITION="right" TEXT="Apache Commons" VSHIFT="23"/>
++</node>
++</map>
+diff --git a/learning/ruby/koans/.path_progress b/learning/ruby/koans/.path_progress
+new file mode 100644
+index 0000000..c101f20
+--- /dev/null
++++ b/learning/ruby/koans/.path_progress
+@@ -0,0 +1 @@
++0,0,0,1
+\ No newline at end of file
+diff --git a/learning/ruby/koans/GREED_RULES.txt b/learning/ruby/koans/GREED_RULES.txt
+new file mode 100644
+index 0000000..58b5a9c
+--- /dev/null
++++ b/learning/ruby/koans/GREED_RULES.txt
+@@ -0,0 +1,66 @@
++= Playing Greed
++
++Greed is a dice game played among 2 or more players, using 5
++six-sided dice.
++
++== Playing Greed
++
++Each player takes a turn consisting of one or more rolls of the dice.
++On the first roll of the game, a player rolls all five dice which are
++scored according to the following:
++
++  Three 1's => 1000 points
++  Three 6's =>  600 points
++  Three 5's =>  500 points
++  Three 4's =>  400 points
++  Three 3's =>  300 points
++  Three 2's =>  200 points
++  One   1   =>  100 points
++  One   5   =>   50 points
++
++A single die can only be counted once in each roll.  For example,
++a "5" can only count as part of a triplet (contributing to the 500
++points) or as a single 50 points, but not both in the same roll.
++
++Example Scoring
++
++   Throw       Score
++   ---------   ------------------
++   5 1 3 4 1   50 + 2 * 100 = 250
++   1 1 1 3 1   1000 + 100 = 1100
++   2 4 4 5 4   400 + 50 = 450
++
++The dice not contributing to the score are called the non-scoring
++dice.  "3" and "4" are non-scoring dice in the first example.  "3" is
++a non-scoring die in the second, and "2" is a non-score die in the
++final example.
++
++After a player rolls and the score is calculated, the scoring dice are
++removed and the player has the option of rolling again using only the
++non-scoring dice. If all of the thrown dice are scoring, then the
++player may roll all 5 dice in the next roll.
++
++The player may continue to roll as long as each roll scores points. If
++a roll has zero points, then the player loses not only their turn, but
++also accumulated score for that turn. If a player decides to stop
++rolling before rolling a zero-point roll, then the accumulated points
++for the turn is added to his total score.
++
++== Getting "In The Game"
++
++Before a player is allowed to accumulate points, they must get at
++least 300 points in a single turn. Once they have achieved 300 points
++in a single turn, the points earned in that turn and each following
++turn will be counted toward their total score.
++
++== End Game
++
++Once a player reaches 3000 (or more) points, the game enters the final
++round where each of the other players gets one more turn. The winner
++is the player with the highest score after the final round.
++
++== References
++
++Greed is described on Wikipedia at
++http://en.wikipedia.org/wiki/Greed_(dice_game), however the rules are
++a bit different from the rules given here.
+diff --git a/learning/ruby/koans/README.rdoc b/learning/ruby/koans/README.rdoc
+new file mode 100644
+index 0000000..f8208bc
+--- /dev/null
++++ b/learning/ruby/koans/README.rdoc
+@@ -0,0 +1,157 @@
++= EdgeCase Ruby Koans
++
++The Ruby Koans walk you along the path to enlightenment in order to learn Ruby.
++The goal is to learn the Ruby language, syntax, structure, and some common
++functions and libraries. We also teach you culture. Testing is not just something we
++pay lip service to, but something we live.  It is essential in your quest to learn
++and do great things in the language.
++
++== The Structure
++
++The koans are broken out into areas by file, hashes are covered in about_hashes.rb,
++modules are introduced in about_modules.rb, etc.  They are presented in order in the
++path_to_enlightenment.rb file.
++
++Each koan builds up your knowledge of Ruby and builds upon itself.  It will stop at
++the first place you need to correct.
++
++Some koans simply need to have the correct answer substituted for an incorrect one.
++Some, however, require you to supply your own answer.  If you see the method +__+ (a
++double underscore) listed, it is a hint to you to supply your own code in order to
++make it work correctly.
++
++== Installing Ruby
++
++If you do not have Ruby setup, please visit http://ruby-lang.org/en/downloads/ for
++operating specific instructions.  In order to run this you need ruby and rake
++installed. To check the installations simply type:
++
++*nix platforms from any terminal window:
++
++   [~] $ ruby --version
++   [~] $ rake --version
++
++Windows from the command prompt (cmd.exe)
++
++   c:\ruby --version
++   c:\rake --version
++
++If you don't have rake installed, just run `gem install rake`
++
++Any response for Ruby with a version number greater than 1.8 is fine (should be
++around 1.8.6 or more). Any version of rake will do.
++
++== Generating the Koans
++
++A fresh checkout will not include the koans, you will need to generate
++them.
++
++    [ruby_koans] $ rake gen                       # generates the koans directory
++
++If you need to regenerate the koans, thus wiping your current `koans`,
++
++    [ruby_koans] $ rake regen                     # regenerates the koans directory, wiping the original
++
++== The Path To Enlightenment
++
++You can run the tests through rake or by calling the file itself (rake is the
++recommended way to run them as we might build more functionality into this task).
++
++*nix platforms, from the koans directory
++
++    [ruby_koans] $ rake                           # runs the default target :walk_the_path
++    [ruby_koans] $ ruby path_to_enlightenment.rb  # simply call the file directly
++
++Windows is the same thing
++
++    c:\ruby_koans\rake                             # runs the default target :walk_the_path
++    c:\ruby_koans\ruby path_to_enlightenment.rb    # simply call the file directly
++
++=== Red, Green, Refactor
++
++In test-driven development the mantra has always been, red, green, refactor.  Write a
++failing test and run it (red), make the test pass (green), then refactor it (that is
++look at the code and see if you can make it any better.  In this case you will need
++to run the koan and see it fail (red), make the test pass (green), then take a
++moment and reflect upon the test to see what it is teaching you and improve the
++code to better communicate its intent (refactor).
++
++The very first time you run it you will see the following output:
++
++    [ ruby_koans ] $ rake
++    (in /Users/person/dev/ruby_koans)
++    cd koans
++
++    Thinking AboutAsserts
++      test_assert_truth has damaged your karma.
++
++    You have not yet reached enlightenment ...
++    <false> is not true.
++
++    Please meditate on the following code:
++    ./about_asserts.rb:10:in `test_assert_truth'
++    path_to_enlightenment.rb:27
++
++    mountains are merely mountains
++
++You have come to your first stage. If you notice it is telling you where to look for
++the first solution:
++
++    Please meditate on the following code:
++    ./about_asserts.rb:10:in `test_assert_truth'
++    path_to_enlightenment.rb:27
++
++We then open up the about_asserts.rb file and look at the first test:
++
++    # We shall contemplate truth by testing reality, via asserts.
++    def test_assert_truth
++      assert false                # This should be true
++    end
++
++We then change the +false+ to +true+ and run the test again.  After you are
++done, think about what you are learning.  In this case, ignore everything except
++the method name (+test_assert_truth+) and the parts inside the method (everything
++before the +end+).
++
++In this case the goal is for you to see that if you pass a value to the +assert+
++method, it will either ensure it is +true+ and continue on, or fail if in fact
++the statement is +false+.
++
++== Inspiration
++
++A special thanks to Mike Clark and Ara Howard for inspiring this
++project.  Mike Clark wrote an excellent blog post about learning Ruby
++through unit testing. This sparked an idea that has taken a bit to
++solidify, that of bringing new rubyists into the community through
++testing. Ara Howard then gave us the idea for the Koans in his ruby
++quiz entry on Meta Koans (a must for any rubyist wanting to improve
++their skills).  Also, "The Little Lisper" taught us all the value of
++the short questions/simple answers style of learning.
++
++Mike Clark's post ::  http://www.clarkware.com/cgi/blosxom/2005/03/18
++Meta Koans        ::  http://rubyquiz.com/quiz67.html
++The Little Lisper ::  http://www.amazon.com/Little-LISPer-Third-Daniel-Friedman/dp/0023397632
++
++== Other Resources
++
++The Ruby Language               ::  http://ruby-lang.org
++Try Ruby in your browser        ::  http://tryruby.org
++
++Dave Thomas' introduction to Ruby Programming Ruby (the Pick Axe) ::  http://pragprog.com/titles/ruby/programming-ruby
++
++Brian Marick's fantastic guide for beginners Everyday Scripting with Ruby    ::  http://pragprog.com/titles/bmsft/everyday-scripting-with-ruby
++
++= Other stuff
++
++Author         :: Jim Weirich <jim@weirichhouse.org>
++Author         :: Joe O'Brien <joe@edgecase.com>
++Issue Tracker  :: http://www.pivotaltracker.com/projects/48111
++Requires       :: Ruby 1.8.x or later and Rake (any recent version)
++
++= License
++
++http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png
++
++RubyKoans is released under a Creative Commons,
++Attribution-NonCommercial-ShareAlike, Version 3.0
++(http://creativecommons.org/licenses/by-nc-sa/3.0/) License.
+diff --git a/learning/ruby/koans/Rakefile b/learning/ruby/koans/Rakefile
+new file mode 100644
+index 0000000..1a2c7f2
+--- /dev/null
++++ b/learning/ruby/koans/Rakefile
+@@ -0,0 +1,12 @@
++#!/usr/bin/env ruby
++# -*- ruby -*-
++
++require 'rake/clean'
++require 'rake/testtask'
++
++task :default => :test
++
++task :test do
++  ruby 'path_to_enlightenment.rb'
++end
++
+diff --git a/learning/ruby/koans/about_array_assignment.rb b/learning/ruby/koans/about_array_assignment.rb
+new file mode 100644
+index 0000000..21a64bb
+--- /dev/null
++++ b/learning/ruby/koans/about_array_assignment.rb
+@@ -0,0 +1,51 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutArrayAssignment < EdgeCase::Koan
++  def test_non_parallel_assignment
++    names = ["John", "Smith"]
++    assert_equal __, names
++  end
++
++  def test_parallel_assignments
++    first_name, last_name = ["John", "Smith"]
++    assert_equal __, first_name
++    assert_equal __, last_name
++  end
++
++  def test_parallel_assignments_with_extra_values
++    first_name, last_name = ["John", "Smith", "III"]
++    assert_equal __, first_name
++    assert_equal __, last_name
++  end
++
++  def test_parallel_assignments_with_splat_operator
++    first_name, *last_name = ["John", "Smith", "III"]
++    assert_equal __, first_name
++    assert_equal __, last_name
++  end
++
++  def test_parallel_assignments_with_too_few_variables
++    first_name, last_name = ["Cher"]
++    assert_equal __, first_name
++    assert_equal __, last_name
++  end
++
++  def test_parallel_assignments_with_subarrays
++    first_name, last_name = [["Willie", "Rae"], "Johnson"]
++    assert_equal __, first_name
++    assert_equal __, last_name
++  end
++
++  def test_parallel_assignment_with_one_variable
++    first_name, = ["John", "Smith"]
++    assert_equal __, first_name
++  end
++
++  def test_swapping_with_parallel_assignment
++    first_name = "Roy"
++    last_name = "Rob"
++    first_name, last_name = last_name, first_name
++    assert_equal __, first_name
++    assert_equal __, last_name
++  end
++end
+diff --git a/learning/ruby/koans/about_arrays.rb b/learning/ruby/koans/about_arrays.rb
+new file mode 100644
+index 0000000..9f27b5a
+--- /dev/null
++++ b/learning/ruby/koans/about_arrays.rb
+@@ -0,0 +1,84 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutArrays < EdgeCase::Koan
++  def test_creating_arrays
++    empty_array = Array.new
++    assert_equal __, empty_array.class
++    assert_equal __, empty_array.size
++  end
++
++  def test_array_literals
++    array = Array.new
++    assert_equal [], array
++
++    array[0] = 1
++    assert_equal [1], array
++
++    array[1] = 2
++    assert_equal [1, __], array
++
++    array << 333
++    assert_equal __, array
++  end
++
++  def test_accessing_array_elements
++    array = [:peanut, :butter, :and, :jelly]
++
++    assert_equal __, array[0]
++    assert_equal __, array.first
++    assert_equal __, array[3]
++    assert_equal __, array.last
++    assert_equal __, array[-1]
++    assert_equal __, array[-3]
++  end
++
++  def test_slicing_arrays
++    array = [:peanut, :butter, :and, :jelly]
++
++    assert_equal __, array[0,1]
++    assert_equal __, array[0,2]
++    assert_equal __, array[2,2]
++    assert_equal __, array[2,20]
++    assert_equal __, array[4,0]
++    assert_equal __, array[4,100]
++    assert_equal __, array[5,0]
++  end
++
++  def test_arrays_and_ranges
++    assert_equal __, (1..5).class
++    assert_not_equal [1,2,3,4,5], (1..5)
++    assert_equal __, (1..5).to_a
++    assert_equal __, (1...5).to_a
++  end
++
++  def test_slicing_with_ranges
++    array = [:peanut, :butter, :and, :jelly]
++
++    assert_equal __, array[0..2]
++    assert_equal __, array[0...2]
++    assert_equal __, array[2..-1]
++  end
++
++  def test_pushing_and_popping_arrays
++    array = [1,2]
++    array.push(:last)
++
++    assert_equal __, array
++
++    popped_value = array.pop
++    assert_equal __, popped_value
++    assert_equal __, array
++  end
++
++  def test_shifting_arrays
++    array = [1,2]
++    array.unshift(:first)
++
++    assert_equal __, array
++
++    shifted_value = array.shift
++    assert_equal __, shifted_value
++    assert_equal __, array
++  end
++
++end
+diff --git a/learning/ruby/koans/about_asserts.rb b/learning/ruby/koans/about_asserts.rb
+new file mode 100644
+index 0000000..39643db
+--- /dev/null
++++ b/learning/ruby/koans/about_asserts.rb
+@@ -0,0 +1,40 @@
++#!/usr/bin/env ruby
++# -*- ruby -*-
++
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutAsserts < EdgeCase::Koan
++
++  # We shall contemplate truth by testing reality, via asserts.
++  def test_assert_truth
++    assert true                # This should be true
++  end
++
++  # Enlightenment may be more easily achieved with appropriate
++  # messages.
++  def test_assert_with_message
++    assert true, "This should be true -- Please fix this"
++  end
++
++  # To understand reality, we must compare our expectations against
++  # reality.
++  def test_assert_equality
++    expected_value = 2
++    actual_value = 1 + 1
++
++    assert expected_value == actual_value
++  end
++
++  # Some ways of asserting equality are better than others.
++  def test_a_better_way_of_asserting_equality
++    expected_value = 2
++    actual_value = 1 + 1
++
++    assert_equal expected_value, actual_value
++  end
++
++  # Sometimes we will ask you to fill in the values
++  def test_fill_in_values
++    assert_equal 2, 1 + 1
++  end
++end
+diff --git a/learning/ruby/koans/about_blocks.rb b/learning/ruby/koans/about_blocks.rb
+new file mode 100644
+index 0000000..0abee8f
+--- /dev/null
++++ b/learning/ruby/koans/about_blocks.rb
+@@ -0,0 +1,96 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutBlocks < EdgeCase::Koan
++  def method_with_block
++    result = yield
++    result
++  end
++
++  def test_methods_can_take_blocks
++    yielded_result = method_with_block { 1 + 2 }
++    assert_equal __, yielded_result
++  end
++
++  def test_blocks_can_be_defined_with_do_end_too
++    yielded_result = method_with_block do 1 + 2 end
++    assert_equal __, yielded_result
++  end
++
++  # ------------------------------------------------------------------
++
++  def method_with_block_arguments
++    yield("Jim")
++  end
++
++  def test_blocks_can_take_arguments
++    result = method_with_block_arguments do |argument|
++      assert_equal __, argument
++    end
++  end
++
++  # ------------------------------------------------------------------
++
++  def many_yields
++    yield(:peanut)
++    yield(:butter)
++    yield(:and)
++    yield(:jelly)
++  end
++
++  def test_methods_can_call_yield_many_times
++    result = []
++    many_yields { |item| result << item }
++    assert_equal __, result
++  end
++
++  # ------------------------------------------------------------------
++
++  def yield_tester
++    if block_given?
++      yield
++    else
++      :no_block
++    end
++  end
++
++  def test_methods_can_see_if_they_have_been_called_with_a_block
++    assert_equal __, yield_tester { :with_block }
++    assert_equal __, yield_tester
++  end
++
++  # ------------------------------------------------------------------
++
++  def test_block_can_affect_variables_in_the_code_where_they_are_created
++    value = :initial_value
++    method_with_block { value = :modified_in_a_block }
++    assert_equal __, value
++  end
++
++  def test_blocks_can_be_assigned_to_variables_and_called_explicitly
++    add_one = lambda { |n| n + 1 }
++    assert_equal __, add_one.call(10)
++
++    # Alternative calling sequence
++    assert_equal __, add_one[10]
++  end
++
++  def test_stand_alone_blocks_can_be_passed_to_methods_expecting_blocks
++    make_upper = lambda { |n| n.upcase }
++    result = method_with_block_arguments(&make_upper)
++    assert_equal __, result
++  end
++
++  # ------------------------------------------------------------------
++
++  def method_with_explicit_block(&block)
++    block.call(10)
++  end
++
++  def test_methods_can_take_an_explicit_block_argument
++    assert_equal __, method_with_explicit_block { |n| n * 2 }
++
++    add_one = lambda { |n| n + 1 }
++    assert_equal __, method_with_explicit_block(&add_one)
++  end
++
++end
+diff --git a/learning/ruby/koans/about_class_methods.rb b/learning/ruby/koans/about_class_methods.rb
+new file mode 100644
+index 0000000..ddd32bd
+--- /dev/null
++++ b/learning/ruby/koans/about_class_methods.rb
+@@ -0,0 +1,170 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutClassMethods < EdgeCase::Koan
++  class Dog
++  end
++
++  def test_objects_are_objects
++    fido = Dog.new
++    assert_equal __, fido.is_a?(Object)
++  end
++
++  def test_classes_are_classes
++    assert_equal __, Dog.is_a?(Class)
++  end
++
++  def test_classes_are_objects_too
++    assert_equal __, Dog.is_a?(Object)
++  end
++
++  def test_objects_have_methods
++    fido = Dog.new
++    assert fido.methods.size > _n_
++  end
++
++  def test_classes_have_methods
++    assert Dog.methods.size > _n_
++  end
++
++  def test_you_can_define_methods_on_individual_objects
++    fido = Dog.new
++    def fido.wag
++      :fidos_wag
++    end
++    assert_equal __, fido.wag
++  end
++
++  def test_other_objects_are_not_affected_by_these_singleton_methods
++    fido = Dog.new
++    rover = Dog.new
++    def fido.wag
++      :fidos_wag
++    end
++
++    assert_raise(___) do
++      rover.wag
++    end
++  end
++
++  # ------------------------------------------------------------------
++  
++  class Dog2
++    def wag
++      :instance_level_wag
++    end
++  end
++
++  def Dog2.wag
++    :class_level_wag
++  end
++
++  def test_since_classes_are_objects_you_can_define_singleton_methods_on_them_too
++    assert_equal __, Dog2.wag
++  end
++
++  def test_class_methods_are_independent_of_instance_methods
++    fido = Dog2.new
++    assert_equal __, fido.wag
++    assert_equal __, Dog2.wag
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog
++    attr_accessor :name
++  end
++
++  def Dog.name
++    @name
++  end
++
++  def test_classes_and_instances_do_not_share_instance_variables
++    fido = Dog.new
++    fido.name = "Fido"
++    assert_equal __, fido.name
++    assert_equal __, Dog.name
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog
++    def Dog.a_class_method
++      :dogs_class_method
++    end
++  end
++
++  def test_you_can_define_class_methods_inside_the_class
++    assert_equal __, Dog.a_class_method
++  end
++      
++
++  # ------------------------------------------------------------------
++
++  LastExpressionInClassStatement = class Dog
++                                     21
++                                   end
++  
++  def test_class_statements_return_the_value_of_their_last_expression
++    assert_equal __, LastExpressionInClassStatement
++  end
++
++  # ------------------------------------------------------------------
++
++  SelfInsideOfClassStatement = class Dog
++                                 self
++                               end
++
++  def test_self_while_inside_class_is_class_object_not_instance
++    assert_equal __, Dog == SelfInsideOfClassStatement
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog
++    def self.class_method2
++      :another_way_to_write_class_methods
++    end
++  end
++
++  def test_you_can_use_self_instead_of_an_explicit_reference_to_dog
++    assert_equal __, Dog.class_method2
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog
++    class << self
++      def another_class_method
++        :still_another_way
++      end
++    end
++  end
++
++  def test_heres_still_another_way_to_write_class_methods
++    assert_equal __, Dog.another_class_method
++  end
++
++  # THINK ABOUT IT:
++  #
++  # The two major ways to write class methods are:
++  #   class Demo
++  #     def self.method
++  #     end
++  #
++  #     class << self
++  #       def class_methods
++  #       end
++  #     end
++  #   end
++  #
++  # Which do you prefer and why?
++  # Are there times you might prefer one over the other?
++
++  # ------------------------------------------------------------------
++
++  def test_heres_an_easy_way_to_call_class_methods_from_instance_methods
++    fido = Dog.new
++    assert_equal __, fido.class.another_class_method
++  end
++
++end
+diff --git a/learning/ruby/koans/about_classes.rb b/learning/ruby/koans/about_classes.rb
+new file mode 100644
+index 0000000..2ce14cd
+--- /dev/null
++++ b/learning/ruby/koans/about_classes.rb
+@@ -0,0 +1,190 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutClasses < EdgeCase::Koan
++  class Dog
++  end
++
++  def test_instances_of_classes_can_be_created_with_new
++    fido = Dog.new
++    assert_equal Dog, fido.class
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog2
++    def set_name(a_name)
++      @name = a_name
++    end
++  end
++
++  def test_instance_variables_can_be_set_by_assigning_to_them
++    fido = Dog2.new
++    assert_equal __, fido.instance_variables
++
++    fido.set_name("Fido")
++    assert_equal __, fido.instance_variables
++  end
++
++  def test_instance_variables_cannot_be_accessed_outside_the_class
++    fido = Dog2.new
++    fido.set_name("Fido")
++
++    assert_raise(___) do
++      fido.name
++    end
++
++    assert_raise(___) do
++      eval "fido.@name"
++      # NOTE: Using eval because the above line is a syntax error.
++    end
++  end
++
++  def test_you_can_politely_ask_for_instance_variable_values
++    fido = Dog2.new
++    fido.set_name("Fido")
++
++    assert_equal __, fido.instance_variable_get("@name")
++  end
++
++  def test_you_can_rip_the_value_out_using_instance_eval
++    fido = Dog2.new
++    fido.set_name("Fido")
++
++    assert_equal __, fido.instance_eval("@name")  # string version
++    assert_equal __, fido.instance_eval { @name } # block version
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog3
++    def set_name(a_name)
++      @name = a_name
++    end
++    def name
++      @name
++    end
++  end
++
++  def test_you_can_create_accessor_methods_to_return_instance_variables
++    fido = Dog3.new
++    fido.set_name("Fido")
++
++    assert_equal __, fido.name
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog4
++    attr_reader :name
++
++    def set_name(a_name)
++      @name = a_name
++    end
++  end
++
++
++  def test_attr_reader_will_automatically_define_an_accessor
++    fido = Dog4.new
++    fido.set_name("Fido")
++
++    assert_equal __, fido.name
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog5
++    attr_accessor :name
++  end
++
++
++  def test_attr_accessor_will_automatically_define_both_read_and_write_accessors
++    fido = Dog5.new
++
++    fido.name = "Fido"
++    assert_equal __, fido.name
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog6
++    attr_reader :name
++    def initialize(initial_name)
++      @name = initial_name
++    end
++  end
++
++  def test_initialize_provides_initial_values_for_instance_variables
++    fido = Dog6.new("Fido")
++    assert_equal __, fido.name
++  end
++
++  def test_args_to_new_must_match_initialize
++    assert_raise(___) do
++      Dog6.new
++    end
++    # THINK ABOUT IT:
++    # Why is this so?
++  end
++
++  def test_different_objects_have_different_instance_variables
++    fido = Dog6.new("Fido")
++    rover = Dog6.new("Rover")
++
++    assert_equal __, rover.name != fido.name
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog7
++    attr_reader :name
++
++    def initialize(initial_name)
++      @name = initial_name
++    end
++
++    def get_self
++      self
++    end
++
++    def to_s
++      __
++    end
++
++    def inspect
++      "<Dog named '#{name}'>"
++    end
++  end
++
++  def test_inside_a_method_self_refers_to_the_containing_object
++    fido = Dog7.new("Fido")
++
++    fidos_self = fido.get_self
++    assert_equal __, fidos_self
++  end
++
++  def test_to_s_provides_a_string_version_of_the_object
++    fido = Dog7.new("Fido")
++    assert_equal __, fido.to_s
++  end
++
++  def test_to_s_is_used_in_string_interpolation
++    fido = Dog7.new("Fido")
++    assert_equal __, "My dog is #{fido}"
++  end
++
++  def test_inspect_provides_a_more_complete_string_version
++    fido = Dog7.new("Fido")
++    assert_equal __, fido.inspect
++  end
++
++  def test_all_objects_support_to_s_and_inspect
++    array = [1,2,3]
++
++    assert_equal __, array.to_s
++    assert_equal __, array.inspect
++
++    assert_equal __, "STRING".to_s
++    assert_equal __, "STRING".inspect
++  end
++
++end
+diff --git a/learning/ruby/koans/about_constants.rb b/learning/ruby/koans/about_constants.rb
+new file mode 100644
+index 0000000..41d3f01
+--- /dev/null
++++ b/learning/ruby/koans/about_constants.rb
+@@ -0,0 +1,87 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++C = "top level"
++
++class AboutConstants < EdgeCase::Koan
++
++  C = "nested"
++
++  def test_nested_constants_may_also_be_referenced_with_relative_paths
++    assert_equal __, C
++  end
++
++  def test_top_level_constants_are_referenced_by_double_colons
++    assert_equal __, ::C
++  end
++
++  def test_nested_constants_are_referenced_by_their_complete_path
++    assert_equal __, AboutConstants::C
++    assert_equal __, ::AboutConstants::C
++  end
++
++  # ------------------------------------------------------------------
++
++  class Animal
++    LEGS = 4
++    def legs_in_animal
++      LEGS
++    end
++
++    class NestedAnimal
++      def legs_in_nested_animal
++        LEGS
++      end
++    end
++  end
++
++  def test_nested_classes_inherit_constants_from_enclosing_classes
++    assert_equal __, Animal::NestedAnimal.new.legs_in_nested_animal
++  end
++
++  # ------------------------------------------------------------------
++
++  class Reptile < Animal
++    def legs_in_reptile
++      LEGS
++    end
++  end
++
++  def test_subclasses_inherit_constants_from_parent_classes
++    assert_equal __, Reptile.new.legs_in_reptile
++  end
++
++  # ------------------------------------------------------------------
++
++  class MyAnimals
++    LEGS = 2
++
++    class Bird < Animal
++      def legs_in_bird
++        LEGS
++      end
++    end
++  end
++
++  def test_who_wins_with_both_nested_and_inherited_constants
++    assert_equal __, MyAnimals::Bird.new.legs_in_bird
++  end
++
++  # QUESTION: Which has precedence: The constant in the lexical scope,
++  # or the constant from the inheritance hierarchy?
++
++  # ------------------------------------------------------------------
++
++  class MyAnimals::Oyster < Animal
++    def legs_in_oyster
++      LEGS
++    end
++  end
++
++  def test_who_wins_with_explicit_scoping_on_class_definition
++    assert_equal __, MyAnimals::Oyster.new.legs_in_oyster
++  end
++
++  # QUESTION: Now which has precedence: The constant in the lexical
++  # scope, or the constant from the inheritance hierarchy?  Why is it
++  # different than the previous answer?
++end
+diff --git a/learning/ruby/koans/about_control_statements.rb b/learning/ruby/koans/about_control_statements.rb
+new file mode 100644
+index 0000000..df503d7
+--- /dev/null
++++ b/learning/ruby/koans/about_control_statements.rb
+@@ -0,0 +1,134 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutControlStatements < EdgeCase::Koan
++
++  def test_if_then_else_statements
++    if true
++      result = :true_value
++    else
++      result = :false_value
++    end
++    assert_equal __, result
++  end
++
++  def test_if_then_statements
++    result = :default_value
++    if true
++      result = :true_value
++    end
++    assert_equal __, result
++  end
++
++  def test_if_statements_return_values
++    value = if true
++              :true_value
++            else
++              :false_value
++            end
++    assert_equal __, value
++
++    value = if false
++              :true_value
++            else
++              :false_value
++            end
++    assert_equal __, value
++
++    # NOTE: Actually, EVERY statement in Ruby will return a value, not
++    # just if statements.
++  end
++
++  def test_if_statements_with_no_else_with_false_condition_return_value
++    value = if false
++              :true_value
++            end
++    assert_equal __, value
++  end
++
++  def test_condition_operators
++    assert_equal __, (true ? :true_value : :false_value)
++    assert_equal __, (false ? :true_value : :false_value)
++  end
++
++  def test_if_statement_modifiers
++    result = :default_value
++    result = :true_value if true
++
++    assert_equal __, result
++  end
++
++  def test_unless_statement
++    result = :default_value
++    unless false    # same as saying 'if !false', which evaluates as 'if true'
++      result = :false_value
++    end
++    assert_equal __, result
++  end
++
++  def test_unless_statement_evaluate_true
++    result = :default_value
++    unless true    # same as saying 'if !true', which evaluates as 'if false'
++      result = :true_value
++    end
++    assert_equal __, result
++  end
++
++  def test_unless_statement_modifier
++    result = :default_value
++    result = :false_value unless false
++
++    assert_equal __, result
++  end
++
++  def test_while_statement
++    i = 1
++    result = 1
++    while i <= 10
++      result = result * i
++      i += 1
++    end
++    assert_equal __, result
++  end
++
++  def test_break_statement
++    i = 1
++    result = 1
++    while true
++      break unless i <= 10
++      result = result * i
++      i += 1
++    end
++    assert_equal __, result
++  end
++
++  def test_break_statement_returns_values
++    i = 1
++    result = while i <= 10
++      break i if i % 2 == 0
++      i += 1
++    end
++
++    assert_equal __, result
++  end
++
++  def test_next_statement
++    i = 0
++    result = []
++    while i < 10
++      i += 1
++      next if (i % 2) == 0
++      result << i
++    end
++    assert_equal __, result
++  end
++
++  def test_for_statement
++    array = ["fish", "and", "chips"]
++    result = []
++    for item in array
++      result << item.upcase
++    end
++    assert_equal [__, __, __], result
++  end
++
++end
+diff --git a/learning/ruby/koans/about_dice_project.rb b/learning/ruby/koans/about_dice_project.rb
+new file mode 100644
+index 0000000..ce81715
+--- /dev/null
++++ b/learning/ruby/koans/about_dice_project.rb
+@@ -0,0 +1,63 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++# Implement a DiceSet Class here:
++#
++# class DiceSet
++#   code ...
++# end
++
++class AboutDiceProject < EdgeCase::Koan
++  def test_can_create_a_dice_set
++    dice = DiceSet.new
++    assert_not_nil dice
++  end
++
++  def test_rolling_the_dice_returns_a_set_of_integers_between_1_and_6
++    dice = DiceSet.new
++
++    dice.roll(5)
++    assert dice.values.is_a?(Array), "should be an array"
++    assert_equal 5, dice.values.size
++    dice.values.each do |value|
++      assert value >= 1 && value <= 6, "value #{value} must be between 1 and 6"
++    end
++  end
++
++  def test_dice_values_do_not_change_unless_explicitly_rolled
++    dice = DiceSet.new
++    dice.roll(5)
++    first_time = dice.values
++    second_time = dice.values
++    assert_equal first_time, second_time
++  end
++
++  def test_dice_values_should_change_between_rolls
++    dice = DiceSet.new
++
++    dice.roll(5)
++    first_time = dice.values
++
++    dice.roll(5)
++    second_time = dice.values
++
++    assert_not_equal first_time, second_time,
++      "Two rolls should not be equal"
++
++    # THINK ABOUT IT:
++    #
++    # If the rolls are random, then it is possible (although not
++    # likely) that two consecutive rolls are equal.  What would be a
++    # better way to test this.
++  end
++
++  def test_you_can_roll_different_numbers_of_dice
++    dice = DiceSet.new
++
++    dice.roll(3)
++    assert_equal 3, dice.values.size
++
++    dice.roll(1)
++    assert_equal 1, dice.values.size
++  end
++
++end
+diff --git a/learning/ruby/koans/about_exceptions.rb b/learning/ruby/koans/about_exceptions.rb
+new file mode 100644
+index 0000000..d745f96
+--- /dev/null
++++ b/learning/ruby/koans/about_exceptions.rb
+@@ -0,0 +1,68 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutExceptions < EdgeCase::Koan
++
++  class MySpecialError < RuntimeError
++  end
++
++  def test_exceptions_inherit_from_Exception
++    assert_equal __, MySpecialError.ancestors[1]
++    assert_equal __, MySpecialError.ancestors[2]
++    assert_equal __, MySpecialError.ancestors[3]
++    assert_equal __, MySpecialError.ancestors[4]
++  end
++
++  def test_rescue_clause
++    result = nil
++    begin
++      fail "Oops"
++    rescue StandardError => ex
++      result = :exception_handled
++    end
++
++    assert_equal __, result
++
++    assert_equal __, ex.is_a?(StandardError), "Should be a Standard Error"
++    assert_equal __, ex.is_a?(RuntimeError),  "Should be a Runtime Error"
++
++    assert RuntimeError.ancestors.include?(StandardError),
++      "RuntimeError is a subclass of StandardError"
++
++    assert_equal __, ex.message
++  end
++
++  def test_raising_a_particular_error
++    result = nil
++    begin
++      # 'raise' and 'fail' are synonyms
++      raise MySpecialError, "My Message"
++    rescue MySpecialError => ex
++      result = :exception_handled
++    end
++
++    assert_equal __, result
++    assert_equal __, ex.message
++  end
++
++  def test_ensure_clause
++    result = nil
++    begin
++      fail "Oops"
++    rescue StandardError => ex
++      # no code here
++    ensure
++      result = :always_run
++    end
++
++    assert_equal __, result
++  end
++
++  # Sometimes, we must know about the unknown
++  def test_asserting_an_error_is_raised
++    # A do-end is a block, a topic to explore more later
++    assert_raise(___) do
++      raise MySpecialError.new("New instances can be raised directly.")
++    end
++  end
++
++end
+diff --git a/learning/ruby/koans/about_extra_credit.rb b/learning/ruby/koans/about_extra_credit.rb
+new file mode 100644
+index 0000000..5012edf
+--- /dev/null
++++ b/learning/ruby/koans/about_extra_credit.rb
+@@ -0,0 +1,8 @@
++# EXTRA CREDIT:
++#
++# Create a program that will play the Greed Game.
++# Rules for the game are in GREED_RULES.TXT.
++#
++# You already have a DiceSet class and score function you can use.
++# Write a player class and a Game class to complete the project.  This
++# is a free form assignment, so approach it however you desire.
+diff --git a/learning/ruby/koans/about_hashes.rb b/learning/ruby/koans/about_hashes.rb
+new file mode 100644
+index 0000000..2f6ba36
+--- /dev/null
++++ b/learning/ruby/koans/about_hashes.rb
+@@ -0,0 +1,116 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutHashes < EdgeCase::Koan
++  def test_creating_hashes
++    empty_hash = Hash.new
++    assert_equal __, empty_hash.class
++    assert_equal({}, empty_hash)
++    assert_equal __, empty_hash.size
++  end
++
++  def test_hash_literals
++    hash = { :one => "uno", :two => "dos" }
++    assert_equal __, hash.size
++  end
++
++  def test_accessing_hashes
++    hash = { :one => "uno", :two => "dos" }
++    assert_equal __, hash[:one]
++    assert_equal __, hash[:two]
++    assert_equal __, hash[:doesnt_exist]
++  end
++
++  def test_accessing_hashes_with_fetch
++    hash = { :one => "uno" }
++    assert_equal __, hash.fetch(:one)
++    assert_raise(___) do
++      hash.fetch(:doesnt_exist)
++    end
++
++    # THINK ABOUT IT:
++    #
++    # Why might you want to use #fetch instead of #[] when accessing hash keys?
++  end
++
++  def test_changing_hashes
++    hash = { :one => "uno", :two => "dos" }
++    hash[:one] = "eins"
++
++    expected = { :one => __, :two => "dos" }
++    assert_equal __, expected == hash
++
++    # Bonus Question: Why was "expected" broken out into a variable
++    # rather than used as a literal?
++  end
++
++  def test_hash_is_unordered
++    hash1 = { :one => "uno", :two => "dos" }
++    hash2 = { :two => "dos", :one => "uno" }
++
++    assert_equal __, hash1 == hash2
++  end
++
++  def test_hash_keys
++    hash = { :one => "uno", :two => "dos" }
++    assert_equal __, hash.keys.size
++    assert_equal __, hash.keys.include?(:one)
++    assert_equal __, hash.keys.include?(:two)
++    assert_equal __, hash.keys.class
++  end
++
++  def test_hash_values
++    hash = { :one => "uno", :two => "dos" }
++    assert_equal __, hash.values.size
++    assert_equal __, hash.values.include?("uno")
++    assert_equal __, hash.values.include?("dos")
++    assert_equal __, hash.values.class
++  end
++
++  def test_combining_hashes
++    hash = { "jim" => 53, "amy" => 20, "dan" => 23 }
++    new_hash = hash.merge({ "jim" => 54, "jenny" => 26 })
++
++    assert_equal __, hash != new_hash
++
++    expected = { "jim" => __, "amy" => 20, "dan" => 23, "jenny" => __ }
++    assert_equal __, expected == new_hash
++  end
++
++  def test_default_value
++    hash1 = Hash.new
++    hash1[:one] = 1
++
++    assert_equal __, hash1[:one]
++    assert_equal __, hash1[:two]
++
++    hash2 = Hash.new("dos")
++    hash2[:one] = 1
++
++    assert_equal __, hash2[:one]
++    assert_equal __, hash2[:two]
++  end
++
++  def test_default_value_is_the_same_object
++    hash = Hash.new([])
++
++    hash[:one] << "uno"
++    hash[:two] << "dos"
++
++    assert_equal __, hash[:one]
++    assert_equal __, hash[:two]
++    assert_equal __, hash[:three]
++
++    assert_equal __, hash[:one].object_id == hash[:two].object_id
++  end
++
++  def test_default_value_with_block
++    hash = Hash.new {|hash, key| hash[key] = [] }
++
++    hash[:one] << "uno"
++    hash[:two] << "dos"
++
++    assert_equal __, hash[:one]
++    assert_equal __, hash[:two]
++    assert_equal __, hash[:three]
++  end
++end
+diff --git a/learning/ruby/koans/about_inheritance.rb b/learning/ruby/koans/about_inheritance.rb
+new file mode 100644
+index 0000000..712daca
+--- /dev/null
++++ b/learning/ruby/koans/about_inheritance.rb
+@@ -0,0 +1,85 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutInheritance < EdgeCase::Koan
++  class Dog
++    attr_reader :name
++
++    def initialize(name)
++      @name = name
++    end
++
++    def bark
++      "WOOF"
++    end
++  end
++
++  class Chihuahua < Dog
++    def wag
++      :happy
++    end
++
++    def bark
++      "yip"
++    end
++  end
++
++  def test_subclasses_have_the_parent_as_an_ancestor
++    assert_equal __, Chihuahua.ancestors.include?(Dog)
++  end
++
++  def test_all_classes_ultimately_inherit_from_object
++    assert_equal __, Chihuahua.ancestors.include?(Object)
++  end
++
++  def test_subclasses_inherit_behavior_from_parent_class
++    chico = Chihuahua.new("Chico")
++    assert_equal __, chico.name
++  end
++
++  def test_subclasses_add_new_behavior
++    chico = Chihuahua.new("Chico")
++    assert_equal __, chico.wag
++
++    assert_raise(___) do
++      fido = Dog.new("Fido")
++      fido.wag
++    end
++  end
++
++  def test_subclasses_can_modify_existing_behavior
++    chico = Chihuahua.new("Chico")
++    assert_equal __, chico.bark
++
++    fido = Dog.new("Fido")
++    assert_equal __, fido.bark
++  end
++
++  # ------------------------------------------------------------------
++
++  class BullDog < Dog
++    def bark
++      super + ", GROWL"
++    end
++  end
++
++  def test_subclasses_can_invoke_parent_behavior_via_super
++    ralph = BullDog.new("Ralph")
++    assert_equal __, ralph.bark
++  end
++
++  # ------------------------------------------------------------------
++
++  class GreatDane < Dog
++    def growl
++      super.bark + ", GROWL"
++    end
++  end
++
++  def test_super_does_not_work_cross_method
++    george = GreatDane.new("George")
++    assert_raise(___) do
++      george.growl
++    end
++  end
++
++end
+diff --git a/learning/ruby/koans/about_iteration.rb b/learning/ruby/koans/about_iteration.rb
+new file mode 100644
+index 0000000..fb62b39
+--- /dev/null
++++ b/learning/ruby/koans/about_iteration.rb
+@@ -0,0 +1,124 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutIteration < EdgeCase::Koan
++
++  # -- An Aside ------------------------------------------------------
++  # Ruby 1.8 stores names as strings. Ruby 1.9 stores names as
++  # symbols. So we use a version dependent method "as_name" to convert
++  # to the right format in the koans.  We will use "as_name" whenever
++  # comparing to lists of methods.
++
++  in_ruby_version("1.8") do
++    def as_name(name)
++      name.to_s
++    end
++  end
++
++  in_ruby_version("1.9") do
++    def as_name(name)
++      name.to_sym
++    end
++  end
++
++  # Ok, now back to the Koans.
++  # -------------------------------------------------------------------
++
++  def test_each_is_a_method_on_arrays
++    assert_equal __, [].methods.include?(as_name(:each))
++  end
++
++  def test_iterating_with_each
++    array = [1, 2, 3]
++    sum = 0
++    array.each do |item|
++      sum += item
++    end
++    assert_equal __, sum
++  end
++
++  def test_each_can_use_curly_brace_blocks_too
++    array = [1, 2, 3]
++    sum = 0
++    array.each { |item|
++      sum += item
++    }
++    assert_equal __, sum
++  end
++
++  def test_break_works_with_each_style_iterations
++    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
++    sum = 0
++    array.each { |item|
++      break if item > 3
++      sum += item
++    }
++    assert_equal __, sum
++  end
++
++  def test_collect_transforms_elements_of_an_array
++    array = [1, 2, 3]
++    new_array = array.collect { |item| item + 10 }
++    assert_equal __, new_array
++
++    # NOTE: 'map' is another name for the 'collect' operation
++    another_array = array.map { |item| item + 10 }
++    assert_equal __, another_array
++  end
++
++  def test_select_selects_certain_items_from_an_array
++    array = [1, 2, 3, 4, 5, 6]
++
++    even_numbers = array.select { |item| (item % 2) == 0 }
++    assert_equal __, even_numbers
++
++    # NOTE: 'find_all' is another name for the 'select' operation
++    more_even_numbers = array.find_all { |item| (item % 2) == 0 }
++    assert_equal __, more_even_numbers
++  end
++
++  def test_find_locates_the_first_element_matching_a_criteria
++    array = ["Jim", "Bill", "Clarence", "Doug", "Eli"]
++
++    assert_equal __, array.find { |item| item.size > 4 }
++  end
++
++  def test_inject_will_blow_your_mind
++    result = [2, 3, 4].inject(0) { |sum, item| sum + item }
++    assert_equal __, result
++
++    result2 = [2, 3, 4].inject(1) { |sum, item| sum * item }
++    assert_equal __, result2
++
++    # Extra Credit:
++    # Describe in your own words what inject does.
++  end
++
++  def test_all_iteration_methods_work_on_any_collection_not_just_arrays
++    # Ranges act like a collection
++    result = (1..3).map { |item| item + 10 }
++    assert_equal __, result
++
++    # Files act like a collection of lines
++    File.open("example_file.txt") do |file|
++      upcase_lines = file.map { |line| line.strip.upcase }
++      assert_equal __, upcase_lines
++    end
++
++    # NOTE: You can create your own collections that work with each,
++    # map, select, etc.
++  end
++
++  # Bonus Question:  In the previous koan, we saw the construct:
++  #
++  #   File.open(filename) do |file|
++  #     # code to read 'file'
++  #   end
++  #
++  # Why did we do it that way instead of the following?
++  #
++  #   file = File.open(filename)
++  #   # code to read 'file'
++  #
++  # When you get to the "AboutSandwichCode" koan, recheck your answer.
++
++end
+diff --git a/learning/ruby/koans/about_java_interop.rb b/learning/ruby/koans/about_java_interop.rb
+new file mode 100644
+index 0000000..4d35d5d
+--- /dev/null
++++ b/learning/ruby/koans/about_java_interop.rb
+@@ -0,0 +1,137 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++include Java
++
++# Concepts
++# * Pull in a java class
++# * calling a method, Camel vs snake
++# * Resolving module/class name conflicts
++# * Showing what gets returned
++# * Ruby Strings  VS Java Strings
++# * Calling custom java class
++# * Calling Ruby from java???
++
++class AboutJavaInterop < EdgeCase::Koan
++  def test_using_a_java_library_class
++    java_array = java.util.ArrayList.new
++    assert_equal __, java_array.class
++  end
++
++  def test_java_class_can_be_referenced_using_both_ruby_and_java_like_syntax
++    assert_equal __, Java::JavaUtil::ArrayList == java.util.ArrayList
++  end
++
++  def test_include_class_includes_class_in_module_scope
++    assert_nil defined?(TreeSet)
++    include_class "java.util.TreeSet"
++    assert_equal __, defined?(TreeSet)
++  end
++
++  # THINK ABOUT IT:
++  #
++  # What if we use:
++  #
++  #   include_class "java.lang.String"
++  #
++  # What would be the value of the String constant after this
++  # include_class is run?  Would it be useful to provide a way of
++  # aliasing java classes to different names?
++
++  JString = java.lang.String
++  def test_also_java_class_can_be_given_ruby_aliases
++    java_string = JString.new("A Java String")
++    assert_equal __, java_string.class
++    assert_equal __, JString
++  end
++
++  def test_can_directly_call_java_methods_on_java_objects
++    java_string = JString.new("A Java String")
++    assert_equal __, java_string.toLowerCase
++  end
++
++  def test_jruby_provides_snake_case_versions_of_java_methods
++    java_string = JString.new("A Java String")
++    assert_equal __, java_string.to_lower_case
++  end
++
++  def test_jruby_provides_question_mark_versions_of_boolean_methods
++    java_string = JString.new("A Java String")
++    assert_equal __, java_string.endsWith("String")
++    assert_equal __, java_string.ends_with("String")
++    assert_equal __, java_string.ends_with?("String")
++  end
++
++  def test_java_string_are_not_ruby_strings
++    ruby_string = "A Java String"
++    java_string = java.lang.String.new(ruby_string)
++    assert_equal __, java_string.is_a?(java.lang.String)
++    assert_equal __, java_string.is_a?(String)
++  end
++
++  def test_java_strings_can_be_compared_to_ruby_strings_maybe
++    ruby_string = "A Java String"
++    java_string = java.lang.String.new(ruby_string)
++    assert_equal __, ruby_string == java_string
++    assert_equal __, java_string == ruby_string
++
++    # THINK ABOUT IT:
++    #
++    # Is there any possible way for this to be more wrong?
++    #
++    # SERIOUSLY, THINK ABOUT IT:
++    #
++    # Why do you suppose that Ruby and Java strings compare like that?
++    #
++    # ADVANCED THINK ABOUT IT:
++    #
++    # Is there a way to make Ruby/Java string comparisons commutative?
++    # How would you do it?
++  end
++
++  def test_however_most_methods_returning_strings_return_ruby_strings
++    java_array = java.util.ArrayList.new
++    assert_equal __, java_array.toString
++    assert_equal __, java_array.toString.is_a?(String)
++    assert_equal __, java_array.toString.is_a?(java.lang.String)
++  end
++
++  def test_some_ruby_objects_can_be_coerced_to_java
++    assert_equal __, "ruby string".to_java.class
++    assert_equal __, 1.to_java.class
++    assert_equal __, 9.32.to_java.class
++    assert_equal __, false.to_java.class
++  end
++
++  def test_some_ruby_objects_are_not_coerced_to_what_you_might_expect
++    assert_equal __, [].to_java.class == Java::JavaUtil::ArrayList
++    assert_equal __, {}.to_java.class == Java::JavaUtil::HashMap
++    assert_equal __, Object.new.to_java.class == Java::JavaLang::Object
++  end
++
++  def test_java_collections_are_enumerable
++    java_array = java.util.ArrayList.new
++    java_array << "one" << "two" << "three"
++    assert_equal __, java_array.map { |item| item.upcase }
++  end
++
++  # ------------------------------------------------------------------
++
++  # Open the Java ArrayList class and add a new method.
++  class Java::JavaUtil::ArrayList
++    def multiply_all
++      result = 1
++      each do |item|
++        result *= item
++      end
++      result
++    end
++  end
++
++  def test_java_class_are_open_from_ruby
++    java_array = java.util.ArrayList.new
++    java_array.add_all([1,2,3,4,5])
++
++    assert_equal __, java_array.multiply_all
++  end
++
++end
+diff --git a/learning/ruby/koans/about_message_passing.rb b/learning/ruby/koans/about_message_passing.rb
+new file mode 100644
+index 0000000..a978dde
+--- /dev/null
++++ b/learning/ruby/koans/about_message_passing.rb
+@@ -0,0 +1,178 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutMessagePassing < EdgeCase::Koan
++
++  class MessageCatcher
++    def caught?
++      true
++    end
++  end
++
++  def test_methods_can_be_called_directly
++    mc = MessageCatcher.new
++
++    assert mc.caught?
++  end
++
++  def test_methods_can_be_invoked_by_sending_the_message
++    mc = MessageCatcher.new
++
++    assert mc.send(:caught?)
++  end
++
++  def test_methods_can_be_invoked_more_dynamically
++    mc = MessageCatcher.new
++
++    assert mc.send("caught?")
++    assert mc.send("caught" + __ )    # What do you need to add to the first string?
++    assert mc.send("CAUGHT?".____ )      # What would you need to do to the string?
++  end
++
++  def test_send_with_underscores_will_also_send_messages
++    mc = MessageCatcher.new
++
++    assert_equal __, mc.__send__(:caught?)
++
++    # THINK ABOUT IT:
++    #
++    # Why does Ruby provide both send and __send__ ?
++  end
++
++  def test_classes_can_be_asked_if_they_know_how_to_respond
++    mc = MessageCatcher.new
++
++    assert_equal __, mc.respond_to?(:caught?)
++    assert_equal __, mc.respond_to?(:does_not_exist)
++  end
++
++  # ------------------------------------------------------------------
++
++  class MessageCatcher
++    def add_a_payload(*args)
++      args
++    end
++  end
++
++  def test_sending_a_message_with_arguments
++    mc = MessageCatcher.new
++
++    assert_equal __, mc.add_a_payload
++    assert_equal __, mc.send(:add_a_payload)
++
++    assert_equal __, mc.add_a_payload(3, 4, nil, 6)
++    assert_equal __, mc.send(:add_a_payload, 3, 4, nil, 6)
++  end
++
++  # ------------------------------------------------------------------
++
++  class TypicalObject
++  end
++
++  def test_sending_undefined_messages_to_a_typical_object_results_in_errors
++    typical = TypicalObject.new
++
++    exception = assert_raise(___) do
++      typical.foobar
++    end
++    assert_match(/foobar/, exception.message)
++  end
++
++  def test_calling_method_missing_causes_the_no_method_error
++    typical = TypicalObject.new
++
++    exception = assert_raise(___) do
++      typical.method_missing(:foobar)
++    end
++    assert_match(/foobar/, exception.message)
++
++    # THINK ABOUT IT:
++    #
++    # If the method :method_missing causes the NoMethodError, then
++    # what would happen if we redefine method_missing?
++    #
++    # NOTE:
++    #
++    # In Ruby 1.8 the method_missing method is public and can be
++    # called as shown above.  However, in Ruby 1.9 the method_missing
++    # method is private.  We explicitly made it public in the testing
++    # framework so this example works in both versions of Ruby.  Just
++    # keep in mind you can't call method_missing like that in Ruby
++    # 1.9. normally.
++    #
++    # Thanks.  We now return you to your regularly scheduled Ruby
++    # Koans.
++  end
++
++  # ------------------------------------------------------------------
++
++  class AllMessageCatcher
++    def method_missing(method_name, *args, &block)
++      "Someone called #{method_name} with <#{args.join(", ")}>"
++    end
++  end
++
++  def test_all_messages_are_caught
++    catcher = AllMessageCatcher.new
++
++    assert_equal __, catcher.foobar
++    assert_equal __, catcher.foobaz(1)
++    assert_equal __, catcher.sum(1,2,3,4,5,6)
++  end
++
++  def test_catching_messages_makes_respond_to_lie
++    catcher = AllMessageCatcher.new
++
++    assert_nothing_raised(NoMethodError) do
++      catcher.any_method
++    end
++    assert_equal __, catcher.respond_to?(:any_method)
++  end
++
++  # ------------------------------------------------------------------
++
++  class WellBehavedFooCatcher
++    def method_missing(method_name, *args, &block)
++      if method_name.to_s[0,3] == "foo"
++        "Foo to you too"
++      else
++        super(method_name, *args, &block)
++      end
++    end
++  end
++
++  def test_foo_method_are_caught
++    catcher = WellBehavedFooCatcher.new
++
++    assert_equal __, catcher.foo_bar
++    assert_equal __, catcher.foo_baz
++  end
++
++  def test_non_foo_messages_are_treated_normally
++    catcher = WellBehavedFooCatcher.new
++
++    assert_raise(___) do
++      catcher.normal_undefined_method
++    end
++  end
++
++  # ------------------------------------------------------------------
++
++  # (note: just reopening class from above)
++  class WellBehavedFooCatcher
++    def respond_to?(method_name)
++      if method_name.to_s[0,3] == "foo"
++        true
++      else
++        super(method_name)
++      end
++    end
++  end
++
++  def test_explicitly_implementing_respond_to_lets_objects_tell_the_truth
++    catcher = WellBehavedFooCatcher.new
++
++    assert_equal __, catcher.respond_to?(:foo_bar)
++    assert_equal __, catcher.respond_to?(:something_else)
++  end
++
++end
+diff --git a/learning/ruby/koans/about_methods.rb b/learning/ruby/koans/about_methods.rb
+new file mode 100644
+index 0000000..5fd7725
+--- /dev/null
++++ b/learning/ruby/koans/about_methods.rb
+@@ -0,0 +1,151 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++def my_global_method(a,b)
++  a + b
++end
++
++class AboutMethods < EdgeCase::Koan
++
++  def test_calling_global_methods
++    assert_equal __, my_global_method(2,3)
++  end
++
++  def test_calling_global_methods_without_parentheses
++    result = my_global_method 2, 3
++    assert_equal __, result
++  end
++
++  # (NOTE: We are Using eval below because the example code is
++  # considered to be syntactically invalid).
++  def test_sometimes_missing_parentheses_are_ambiguous
++    eval "assert_equal 5, my_global_method 2, 3" # ENABLE CHECK
++    #
++    # Ruby doesn't know if you mean:
++    #
++    #   assert_equal(5, my_global_method(2), 3)
++    # or
++    #   assert_equal(5, my_global_method(2, 3))
++    #
++    # Rewrite the eval string to continue.
++    #
++  end
++
++  # NOTE: wrong number of argument is not a SYNTAX error, but a
++  # runtime error.
++  def test_calling_global_methods_with_wrong_number_of_arguments
++    exception = assert_raise(___) do
++      my_global_method
++    end
++    assert_match(/__/, exception.message)
++
++    exception = assert_raise(___) do
++      my_global_method(1,2,3)
++    end
++    assert_match(/__/, exception.message)
++  end
++
++  # ------------------------------------------------------------------
++
++  def method_with_defaults(a, b=:default_value)
++    [a, b]
++  end
++
++  def test_calling_with_default_values
++    assert_equal [1, __], method_with_defaults(1)
++    assert_equal [1, __], method_with_defaults(1, 2)
++  end
++
++  # ------------------------------------------------------------------
++
++  def method_with_var_args(*args)
++    args
++  end
++
++  def test_calling_with_variable_arguments
++    assert_equal __, method_with_var_args.class
++    assert_equal __, method_with_var_args
++    assert_equal __, method_with_var_args(:one)
++    assert_equal __, method_with_var_args(:one, :two)
++  end
++
++  # ------------------------------------------------------------------
++
++  def method_with_explicit_return
++    :a_non_return_value
++    return :return_value
++    :another_non_return_value
++  end
++
++  def test_method_with_explicit_return
++    assert_equal __, method_with_explicit_return
++  end
++
++  # ------------------------------------------------------------------
++
++  def method_without_explicit_return
++    :a_non_return_value
++    :return_value
++  end
++
++  def test_method_without_explicit_return
++    assert_equal __, method_without_explicit_return
++  end
++
++  # ------------------------------------------------------------------
++
++  def my_method_in_the_same_class(a, b)
++    a * b
++  end
++
++  def test_calling_methods_in_same_class
++    assert_equal __, my_method_in_the_same_class(3,4)
++  end
++
++  def test_calling_methods_in_same_class_with_explicit_receiver
++    assert_equal __, self.my_method_in_the_same_class(3,4)
++  end
++
++  # ------------------------------------------------------------------
++
++  def my_private_method
++    "a secret"
++  end
++  private :my_private_method
++
++  def test_calling_private_methods_without_receiver
++    assert_equal __, my_private_method
++  end
++
++  def test_calling_private_methods_with_an_explicit_receiver
++    exception = assert_raise(___) do
++      self.my_private_method
++    end
++    assert_match /__/, exception.message
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog
++    def name
++      "Fido"
++    end
++
++    private
++
++    def tail
++      "tail"
++    end
++  end
++
++  def test_calling_methods_in_other_objects_require_explicit_receiver
++    rover = Dog.new
++    assert_equal __, rover.name
++  end
++
++  def test_calling_private_methods_in_other_objects
++    rover = Dog.new
++    assert_raise(___) do
++      rover.tail
++    end
++  end
++end
+diff --git a/learning/ruby/koans/about_modules.rb b/learning/ruby/koans/about_modules.rb
+new file mode 100644
+index 0000000..8b56b65
+--- /dev/null
++++ b/learning/ruby/koans/about_modules.rb
+@@ -0,0 +1,63 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutModules < EdgeCase::Koan
++  module Nameable
++    def set_name(new_name)
++      @name = new_name
++    end
++
++    def here
++      :in_module
++    end
++  end
++
++  def test_cant_instantiate_modules
++    assert_raise(___) do
++      Nameable.new
++    end
++  end
++
++  # ------------------------------------------------------------------
++
++  class Dog
++    include Nameable
++
++    attr_reader :name
++
++    def initialize
++      @name = "Fido"
++    end
++
++    def bark
++      "WOOF"
++    end
++
++    def here
++      :in_object
++    end
++  end
++
++  def test_normal_methods_are_available_in_the_object
++    fido = Dog.new
++    assert_equal __, fido.bark
++  end
++
++  def test_module_methods_are_also_available_in_the_object
++    fido = Dog.new
++    assert_nothing_raised(Exception) do
++      fido.set_name("Rover")
++    end
++  end
++
++  def test_module_methods_can_affect_instance_variables_in_the_object
++    fido = Dog.new
++    assert_equal __, fido.name
++    fido.set_name("Rover")
++    assert_equal __, fido.name
++  end
++
++  def test_classes_can_override_module_methods
++    fido = Dog.new
++    assert_equal __, fido.here
++  end
++end
+diff --git a/learning/ruby/koans/about_nil.rb b/learning/ruby/koans/about_nil.rb
+new file mode 100644
+index 0000000..1a74ed0
+--- /dev/null
++++ b/learning/ruby/koans/about_nil.rb
+@@ -0,0 +1,38 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutNil < EdgeCase::Koan
++  def test_nil_is_an_object
++    assert_equal __, nil.is_a?(Object), "Unlike NULL in other languages"
++  end
++
++  def test_you_dont_get_null_pointer_errors_when_calling_methods_on_nil
++    # What happens when you call a method that doesn't exist.  The
++    # following begin/rescue/end code block captures the exception and
++    # makes some assertions about it.
++    begin
++      nil.some_method_nil_doesnt_know_about
++    rescue Exception => ex
++      # What exception has been caught?
++      assert_equal __, ex.class
++
++      # What message was attached to the exception?
++      # (HINT: replace __ with part of the error message.)
++      assert_match(/__/, ex.message)
++    end
++  end
++
++  def test_nil_has_a_few_methods_defined_on_it
++    assert_equal __, nil.nil?
++    assert_equal __, nil.to_s
++    assert_equal __, nil.inspect
++
++    # THINK ABOUT IT:
++    #
++    # Is it better to use
++    #    obj.nil?
++    # or
++    #    obj == nil
++    # Why?
++  end
++
++end
+diff --git a/learning/ruby/koans/about_objects.rb b/learning/ruby/koans/about_objects.rb
+new file mode 100644
+index 0000000..05c44de
+--- /dev/null
++++ b/learning/ruby/koans/about_objects.rb
+@@ -0,0 +1,56 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutObjects < EdgeCase::Koan
++  def test_everything_is_an_object
++    assert_equal __, 1.is_a?(Object)
++    assert_equal __, 1.5.is_a?(Object)
++    assert_equal __, "string".is_a?(Object)
++    assert_equal __, nil.is_a?(Object)
++    assert_equal __, Object.is_a?(Object)
++  end
++
++  def test_objects_can_be_converted_to_strings
++    assert_equal __, 123.to_s
++    assert_equal __, nil.to_s
++  end
++
++  def test_objects_can_be_inspected
++    assert_equal __, 123.inspect
++    assert_equal __, nil.inspect
++  end
++
++  def test_every_object_has_an_id
++    obj = Object.new
++    assert_equal __, obj.object_id.class
++  end
++
++  def test_every_object_has_different_id
++    obj = Object.new
++    another_obj = Object.new
++    assert_equal __, obj.object_id != another_obj.object_id
++  end
++
++  def test_some_system_objects_always_have_the_same_id
++    assert_equal __, false.object_id
++    assert_equal __, true.object_id
++    assert_equal __, nil.object_id
++  end
++
++  def test_small_integers_have_fixed_ids
++    assert_equal __, 0.object_id
++    assert_equal __, 1.object_id
++    assert_equal __, 2.object_id
++    assert_equal __, 100.object_id
++
++    # THINK ABOUT IT:
++    # What pattern do the object IDs for small integers follow?
++  end
++
++  def test_clone_creates_a_different_object
++    obj = Object.new
++    copy = obj.clone
++
++    assert_equal __, obj           != copy
++    assert_equal __, obj.object_id != copy.object_id
++  end
++end
+diff --git a/learning/ruby/koans/about_open_classes.rb b/learning/ruby/koans/about_open_classes.rb
+new file mode 100644
+index 0000000..afef1f9
+--- /dev/null
++++ b/learning/ruby/koans/about_open_classes.rb
+@@ -0,0 +1,45 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutOpenClasses < EdgeCase::Koan
++  class Dog
++    def bark
++      "WOOF"
++    end
++  end
++
++  def test_as_defined_dogs_do_bark
++    fido = Dog.new
++    assert_equal __, fido.bark
++  end
++
++  # ------------------------------------------------------------------
++
++  # Open the existing Dog class and add a new method.
++  class Dog
++    def wag
++      "HAPPY"
++    end
++  end
++
++  def test_after_reopening_dogs_can_both_wag_and_bark
++    fido = Dog.new
++    assert_equal __, fido.wag
++    assert_equal __, fido.bark
++  end
++
++  # -----------------------------------------warning: LF will be replaced by CRLF in learning/java/datastructures.mm.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/GREED_RULES.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/README.rdoc.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/Rakefile.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_array_assignment.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_arrays.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_asserts.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_blocks.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_class_methods.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_classes.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_constants.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_control_statements.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_dice_project.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_exceptions.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_extra_credit.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_hashes.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_inheritance.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_iteration.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_java_interop.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_message_passing.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_methods.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_modules.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_nil.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_objects.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_open_classes.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_proxy_object_project.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_regular_expressions.rb.
+The file will have its original line endings in your w-------------------------
++
++  class ::Integer
++    def even?
++      (self % 2) == 0
++    end
++  end
++
++  def test_even_existing_built_in_classes_can_be_reopened
++    assert_equal __, 1.even?
++    assert_equal __, 2.even?
++  end
++
++  # NOTE: To understand why we need the :: before Integer, you need to
++  # become enlightened about scope.  
++end
+diff --git a/learning/ruby/koans/about_proxy_object_project.rb b/learning/ruby/koans/about_proxy_object_project.rb
+new file mode 100644
+index 0000000..064eb68
+--- /dev/null
++++ b/learning/ruby/koans/about_proxy_object_project.rb
+@@ -0,0 +1,156 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++# Project: Create a Proxy Class
++#
++# In this assignment, create a proxy class (one is started for you
++# below).  You should be able to initialize the proxy object with any
++# object.  Any messages sent to the proxy object should be forwarded
++# to the target object.  As each message is sent, the proxy should
++# record the name of the method sent.
++#
++# The proxy class is started for you.  You will need to add a method
++# missing handler and any other supporting methods.  The specification
++# of the Proxy class is given in the AboutProxyObjectProject koan.
++
++class Proxy
++  def initialize(target_object)
++    @object = target_object
++    # ADD MORE CODE HERE
++  end
++
++  # WRITE CODE HERE
++end
++
++# The proxy object should pass the following Koan:
++#
++class AboutProxyObjectProject < EdgeCase::Koan
++  def test_proxy_method_returns_wrapped_object
++    # NOTE: The Television class is defined below
++    tv = Proxy.new(Television.new)
++
++    # HINT: Proxy class is defined above, may need tweaking...
++
++    assert tv.instance_of?(Proxy)
++  end
++
++  def test_tv_methods_still_perform_their_function
++    tv = Proxy.new(Television.new)
++
++    tv.channel = 10
++    tv.power
++
++    assert_equal 10, tv.channel
++    assert tv.on?
++  end
++
++  def test_proxy_records_messages_sent_to_tv
++    tv = Proxy.new(Television.new)
++
++    tv.power
++    tv.channel = 10
++
++    assert_equal [:power, :channel=], tv.messages
++  end
++
++  def test_proxy_handles_invalid_messages
++    tv = Proxy.new(Television.new)
++
++    assert_raise(NoMethodError) do
++      tv.no_such_method
++    end
++  end
++
++  def test_proxy_reports_methods_have_been_called
++    tv = Proxy.new(Television.new)
++
++    tv.power
++    tv.power
++
++    assert tv.called?(:power)
++    assert ! tv.called?(:channel)
++  end
++
++  def test_proxy_counts_method_calls
++    tv = Proxy.new(Television.new)
++
++    tv.power
++    tv.channel = 48
++    tv.power
++
++    assert_equal 2, tv.number_of_times_called(:power)
++    assert_equal 1, tv.number_of_times_called(:channel=)
++    assert_equal 0, tv.number_of_times_called(:on?)
++  end
++
++  def test_proxy_can_record_more_than_just_tv_objects
++    proxy = Proxy.new("Code Mash 2009")
++
++    proxy.upcase!
++    result = proxy.split
++
++    assert_equal ["CODE", "MASH", "2009"], result
++    assert_equal [:upcase!, :split], proxy.messages
++  end
++end
++
++
++# ====================================================================
++# The following code is to support the testing of the Proxy class.  No
++# changes should be necessary to anything below this comment.
++
++# Example class using in the proxy testing above.
++class Television
++  attr_accessor :channel
++
++  def power
++    if @power == :on
++      @power = :off
++    else
++      @power = :on
++    end
++  end
++
++  def on?
++    @power == :on
++  end
++end
++
++# Tests for the Television class.  All of theses tests should pass.
++class TelevisionTest < EdgeCase::Koan
++  def test_it_turns_on
++    tv = Television.new
++
++    tv.power
++    assert tv.on?
++  end
++
++  def test_it_also_turns_off
++    tv = Television.new
++
++    tv.power
++    tv.power
++
++    assert ! tv.on?
++  end
++
++  def test_edge_case_on_off
++    tv = Television.new
++
++    tv.power
++    tv.power
++    tv.power
++
++    assert tv.on?
++
++    tv.power
++
++    assert ! tv.on?
++  end
++
++  def test_can_set_the_channel
++    tv = Television.new
++
++    tv.channel = 11
++    assert_equal 11, tv.channel
++  end
++end
+diff --git a/learning/ruby/koans/about_regular_expressions.rb b/learning/ruby/koans/about_regular_expressions.rb
+new file mode 100644
+index 0000000..790bea3
+--- /dev/null
++++ b/learning/ruby/koans/about_regular_expressions.rb
+@@ -0,0 +1,161 @@
++# -*- coding: utf-8 -*-
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutRegularExpressions < EdgeCase::Koan
++  def test_a_pattern_is_a_regular_expression
++    assert_equal __, /pattern/.class
++  end
++
++  def test_a_regexp_can_search_a_string_for_matching_content
++    assert_equal __, "some matching content"[/match/]
++  end
++
++  def test_a_failed_match_returns_nil
++    assert_equal __, "some matching content"[/missing/]
++  end
++
++  # ------------------------------------------------------------------
++
++  def test_question_mark_means_optional
++    assert_equal __, "abbcccddddeeeee"[/ab?/]
++    assert_equal __, "abbcccddddeeeee"[/az?/]
++  end
++
++  def test_plus_means_one_or_more
++    assert_equal __, "abbcccddddeeeee"[/bc+/]
++  end
++
++  def test_asterisk_means_zero_or_more
++    assert_equal __, "abbcccddddeeeee"[/ab*/]
++    assert_equal __, "abbcccddddeeeee"[/az*/]
++    assert_equal __, "abbcccddddeeeee"[/z*/]
++
++    # THINK ABOUT IT:
++    #
++    # When would * fail to match?
++  end
++
++  # THINK ABOUT IT:
++  #
++  # We say that the repetition operators above are "greedy."
++  #
++  # Why?
++
++  # ------------------------------------------------------------------
++
++  def test_the_left_most_match_wins
++    assert_equal __, "abbccc az"[/az*/]
++  end
++
++  # ------------------------------------------------------------------
++
++  def test_character_classes_give_options_for_a_character
++    animals = ["cat", "bat", "rat", "zat"]
++    assert_equal __, animals.select { |a| a[/[cbr]at/] }
++  end
++
++  def test_slash_d_is_a_shortcut_for_a_digit_character_class
++    assert_equal __, "the number is 42"[/[0123456789]+/]
++    assert_equal __, "the number is 42"[/\d+/]
++  end
++
++  def test_character_classes_can_include_ranges
++    assert_equal __, "the number is 42"[/[0-9]+/]
++  end
++
++  def test_slash_s_is_a_shortcut_for_a_whitespace_character_class
++    assert_equal __, "space: \t\n"[/\s+/]
++  end
++
++  def test_slash_w_is_a_shortcut_for_a_word_character_class
++    # NOTE:  This is more like how a programmer might define a word.
++    assert_equal __, "variable_1 = 42"[/[a-zA-Z0-9_]+/]
++    assert_equal __, "variable_1 = 42"[/\w+/]
++  end
++
++  def test_period_is_a_shortcut_for_any_non_newline_character
++    assert_equal __, "abc\n123"[/a.+/]
++  end
++
++  def test_a_character_class_can_be_negated
++    assert_equal __, "the number is 42"[/[^0-9]+/]
++  end
++
++  def test_shortcut_character_classes_are_negated_with_capitals
++    assert_equal __, "the number is 42"[/\D+/]
++    assert_equal __, "space: \t\n"[/\S+/]
++    # ... a programmer would most likely do
++    assert_equal __, "variable_1 = 42"[/[^a-zA-Z0-9_]+/]
++    assert_equal __, "variable_1 = 42"[/\W+/]
++  end
++
++  # ------------------------------------------------------------------
++
++  def test_slash_a_anchors_to_the_start_of_the_string
++    assert_equal __, "start end"[/\Astart/]
++    assert_equal __, "start end"[/\Aend/]
++  end
++
++  def test_slash_z_anchors_to_the_end_of_the_string
++    assert_equal __, "start end"[/end\z/]
++    assert_equal __, "start end"[/start\z/]
++  end
++
++  def test_caret_anchors_to_the_start_of_lines
++    assert_equal __, "num 42\n2 lines"[/^\d+/]
++  end
++
++  def test_dollar_sign_anchors_to_the_end_of_lines
++    assert_equal __, "2 lines\nnum 42"[/\d+$/]
++  end
++
++  def test_slash_b_anchors_to_a_word_boundary
++    assert_equal __, "bovine vines"[/\bvine./]
++  end
++
++  # ------------------------------------------------------------------
++
++  def test_parentheses_group_contents
++    assert_equal __, "ahahaha"[/(ha)+/]
++  end
++
++  # ------------------------------------------------------------------
++
++  def test_parentheses_also_capture_matched_content_by_number
++    assert_equal __, "Gray, James"[/(\w+), (\w+)/, 1]
++    assert_equal __, "Gray, James"[/(\w+), (\w+)/, 2]
++  end
++
++  def test_variables_can_also_be_used_to_access_captures
++    assert_equal __, "Name:  Gray, James"[/(\w+), (\w+)/]
++    assert_equal __, $1
++    assert_equal __, $2
++  end
++
++  # ------------------------------------------------------------------
++
++  def test_a_vertical_pipe_means_or
++    grays = /(James|Dana|Summer) Gray/
++    assert_equal __, "James Gray"[grays]
++    assert_equal __, "Summer Gray"[grays, 1]
++    assert_equal __, "Jim Gray"[grays, 1]
++  end
++
++  # THINK ABOUT IT:
++  #
++  # Explain the difference between a character class ([...]) and alternation (|).
++
++  # ------------------------------------------------------------------
++
++  def test_scan_is_like_find_all
++    assert_equal __, "one two-three".scan(/\w+/)
++  end
++
++  def test_sub_is_like_find_and_replace
++    assert_equal __, "one two-three".sub(/(t\w*)/) { $1[0, 1] }
++  end
++
++  def test_gsub_is_like_find_and_replace_all
++    assert_equal __, "one two-three".gsub(/(t\w*)/) { $1[0, 1] }
++  end
++end
+diff --git a/learning/ruby/koans/about_sandwich_code.rb b/learning/ruby/koans/about_sandwich_code.rb
+new file mode 100644
+index 0000000..30583fc
+--- /dev/null
++++ b/learning/ruby/koans/about_sandwich_code.rb
+@@ -0,0 +1,106 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutSandwichCode < EdgeCase::Koan
++
++  def count_lines(file_name)
++    file = open(file_name)
++    count = 0
++    while line = file.gets
++      count += 1
++    end
++    count
++  ensure
++    file.close if file
++  end
++
++  def test_counting_lines
++    assert_equal __, count_lines("example_file.txt")
++  end
++
++  # ------------------------------------------------------------------
++
++  def find_line(file_name)
++    file = open(file_name)
++    while line = file.gets
++      return line if line.match(/e/)
++    end
++  ensure
++    file.close if file
++  end
++
++  def test_finding_lines
++    assert_equal __, find_line("example_file.txt")
++  end
++
++  # ------------------------------------------------------------------
++  # THINK ABOUT IT:
++  #
++  # The count_lines and find_line are similar, and yet different.
++  # They both follow the pattern of "sandwich code".
++  #
++  # Sandwich code is code that comes in three parts: (1) the top slice
++  # of bread, (2) the meat, and (3) the bottom slice of bread.  The
++  # bread part of the sandwich almost always goes together, but
++  # the meat part changes all the time.
++  #
++  # Because the changing part of the sandwich code is in the middle,
++  # abstracting the top and bottom bread slices to a library can be
++  # difficult in many languages.
++  #
++  # (Aside for C++ programmers: The idiom of capturing allocated
++  # pointers in a smart pointer constructor is an attempt to deal with
++  # the problem of sandwich code for resource allocation.)
++  #
++  # Consider the following code:
++  #
++
++  def file_sandwich(file_name)
++    file = open(file_name)
++    yield(file)
++  ensure
++    file.close if file
++  end
++
++  # Now we write:
++
++  def count_lines2(file_name)
++    file_sandwich(file_name) do |file|
++      count = 0
++      while line = file.gets
++        count += 1
++      end
++      count
++    end
++  end
++
++  def test_counting_lines2
++    assert_equal __, count_lines2("example_file.txt")
++  end
++
++  # ------------------------------------------------------------------
++
++  def find_line2(file_name)
++    # Rewrite find_line using the file_sandwich library function.
++  end
++
++  def test_finding_lines2
++    assert_equal __, find_line2("example_file.txt")
++  end
++
++  # ------------------------------------------------------------------
++
++  def count_lines3(file_name)
++    open(file_name) do |file|
++      count = 0
++      while line = file.gets
++        count += 1
++      end
++      count
++    end
++  end
++
++  def test_open_handles_the_file_sandwich_when_given_a_block
++    assert_equal __, count_lines3("example_file.txt")
++  end
++
++end
+diff --git a/learning/ruby/koans/about_scope.rb b/learning/ruby/koans/about_scope.rb
+new file mode 100644
+index 0000000..d07d2af
+--- /dev/null
++++ b/learning/ruby/koans/about_scope.rb
+@@ -0,0 +1,79 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutScope < EdgeCase::Koan
++  module Jims
++    class Dog
++      def identify
++        :jims_dog
++      end
++    end
++  end
++
++  module Joes
++    class Dog
++      def identify
++        :joes_dog
++      end
++    end
++  end
++
++  def test_dog_is_not_available_in_the_current_scope
++    assert_raise(___) do
++      fido = Dog.new
++    end
++  end
++
++  def test_you_can_reference_nested_classes_using_the_scope_operator
++    fido = Jims::Dog.new
++    rover = Joes::Dog.new
++    assert_equal __, fido.identify
++    assert_equal __, rover.identify
++
++    assert_equal __, fido.class != rover.class
++    assert_equal __, Jims::Dog != Joes::Dog
++  end
++
++  # ------------------------------------------------------------------
++
++  class String
++  end
++
++  def test_bare_bones_class_names_assume_the_current_scope
++    assert_equal __, AboutScope::String == String
++  end
++
++  def test_nested_string_is_not_the_same_as_the_system_string
++    assert_equal __, String == "HI".class
++  end
++
++  def test_use_the_prefix_scope_operator_to_force_the_global_scope
++    assert_equal __, ::String == "HI".class
++  end
++
++  # ------------------------------------------------------------------
++
++  PI = 3.1416
++
++  def test_constants_are_defined_with_an_initial_uppercase_letter
++    assert_equal __, PI
++  end
++
++  # ------------------------------------------------------------------
++
++  MyString = ::String
++
++  def test_class_names_are_just_constants
++    assert_equal __, MyString == ::String
++    assert_equal __, MyString == "HI".class
++  end
++
++  def test_constants_can_be_looked_up_explicitly
++    assert_equal __, PI == AboutScope.const_get("PI")
++    assert_equal __, MyString == AboutScope.const_get("MyString")
++  end
++
++  def test_you_can_get_a_list_of_constants_for_any_class_or_module
++    assert_equal __, Jims.constants
++    assert Object.constants.size > _n_
++  end
++end
+diff --git a/learning/ruby/koans/about_scoring_project.rb b/learning/ruby/koans/about_scoring_project.rb
+new file mode 100644
+index 0000000..bc61785
+--- /dev/null
++++ b/learning/ruby/koans/about_scoring_project.rb
+@@ -0,0 +1,74 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++# Greed is a dice game where you roll up to five dice to accumulate
++# points.  The following "score" function will be used to calculate the
++# score of a single roll of the dice.
++#
++# A greed roll is scored as follows:
++#
++# * A set of three ones is 1000 points
++#
++# * A set of three numbers (other than ones) is worth 100 times the
++#   number. (e.g. three fives is 500 points).
++#
++# * A one (that is not part of a set of three) is worth 100 points.
++#
++# * A five (that is not part of a set of three) is worth 50 points.
++#
++# * Everything else is worth 0 points.
++#
++#
++# Examples:
++#
++# score([1,1,1,5,1]) => 1150 points
++# score([2,3,4,6,2]) => 0 points
++# score([3,4,5,3,3]) => 350 points
++# score([1,5,1,2,4]) => 250 points
++#
++# More scoring examples are given in the tests below:
++#
++# Your goal is to write the score method.
++
++def score(dice)
++  # You need to write this method
++end
++
++class AboutScoringProject < EdgeCase::Koan
++  def test_score_of_an_empty_list_is_zero
++    assert_equal 0, score([])
++  end
++
++  def test_score_of_a_single_roll_of_5_is_50
++    assert_equal 50, score([5])
++  end
++
++  def test_score_of_a_single_roll_of_1_is_100
++    assert_equal 100, score([1])
++  end
++
++  def test_score_of_multiple_1s_and_5s_is_the_sum_of_individual_scores
++    assert_equal 300, score([1,5,5,1])
++  end
++
++  def test_score_of_single_2s_3s_4s_and_6s_are_zero
++    assert_equal 0, score([2,3,4,6])
++  end
++
++  def test_score_of_a_triple_1_is_1000
++    assert_equal 1000, score([1,1,1])
++  end
++
++  def test_score_of_other_triples_is_100x
++    assert_equal 200, score([2,2,2])
++    assert_equal 300, score([3,3,3])
++    assert_equal 400, score([4,4,4])
++    assert_equal 500, score([5,5,5])
++    assert_equal 600, score([6,6,6])
++  end
++
++  def test_score_of_mixed_is_sum
++    assert_equal 250, score([2,5,2,2,3])
++    assert_equal 550, score([5,5,5,5])
++  end
++
++end
+diff --git a/learning/ruby/koans/about_strings.rb b/learning/ruby/koans/about_strings.rb
+new file mode 100644
+index 0000000..34d4a50
+--- /dev/null
++++ b/learning/ruby/koans/about_strings.rb
+@@ -0,0 +1,195 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutStrings < EdgeCase::Koan
++  def test_double_quoted_strings_are_strings
++    string = "Hello, World"
++    assert_equal __, string.is_a?(String)
++  end
++
++  def test_single_quoted_strings_are_also_strings
++    string = 'Goodbye, World'
++    assert_equal __, string.is_a?(String)
++  end
++
++  def test_use_single_quotes_to_create_string_with_double_quotes
++    string = 'He said, "Go Away."'
++    assert_equal __, string
++  end
++
++  def test_use_double_quotes_to_create_strings_with_single_quotes
++    string = "Don't"
++    assert_equal __, string
++  end
++
++  def test_use_backslash_for_those_hard_cases
++    a = "He said, \"Don't\""
++    b = 'He said, "Don\'t"'
++    assert_equal __, a == b
++  end
++
++  def test_use_flexible_quoting_to_handle_really_hard_cases
++    a = %(flexible quotes can handle both ' and " characters)
++    b = %!flexible quotes can handle both ' and " characters!
++    c = %{flexible quotes can handle both ' and " characters}
++    assert_equal __, a == b
++    assert_equal __, a == c
++  end
++
++  def test_flexible_quotes_can_handle_multiple_lines
++    long_string = %{
++It was the best of times,
++It was the worst of times.
++}
++    assert_equal __, long_string.length
++    assert_equal __, long_string.lines.count
++  end
++
++  def test_here_documents_can_also_handle_multiple_lines
++    long_string = <<EOS
++It was the best of times,
++It was the worst of times.
++EOS
++    assert_equal __, long_string.length
++    assert_equal __, long_string.lines.count
++  end
++
++  def test_plus_will_concatenate_two_strings
++    string = "Hello, " + "World"
++    assert_equal __, string
++  end
++
++  def test_plus_concatenation_will_leave_the_original_strings_unmodified
++    hi = "Hello, "
++    there = "World"
++    string = hi + there
++    assert_equal __, hi
++    assert_equal __, there
++  end
++
++  def test_plus_equals_will_concatenate_to_the_end_of_a_string
++    hi = "Hello, "
++    there = "World"
++    hi += there
++    assert_equal __, hi
++  end
++
++  def test_plus_equals_also_will_leave_the_original_string_unmodified
++    original_string = "Hello, "
++    hi = original_string
++    there = "World"
++    hi += there
++    assert_equal __, original_string
++  end
++
++  def test_the_shovel_operator_will_also_append_content_to_a_string
++    hi = "Hello, "
++    there = "World"
++    hi << there
++    assert_equal __, hi
++    assert_equal __, there
++  end
++
++  def test_the_shovel_operator_modifies_the_original_string
++    original_string = "Hello, "
++    hi = original_string
++    there = "World"
++    hi << there
++    assert_equal __, original_string
++
++    # THINK ABOUT IT:
++    #
++    # Ruby programmers tend to favor the shovel operator (<<) over the
++    # plus equals operator (+=) when building up strings.  Why?
++  end
++
++  def test_double_quoted_string_interpret_escape_characters
++    string = "\n"
++    assert_equal __, string.size
++  end
++
++  def test_single_quoted_string_do_not_interpret_escape_characters
++    string = '\n'
++    assert_equal __, string.size
++  end
++
++  def test_single_quotes_sometimes_interpret_escape_characters
++    string = '\\\''
++    assert_equal __, string.size
++    assert_equal __, string
++  end
++
++  def test_double_quoted_strings_interpolate_variables
++    value = 123
++    string = "The value is #{value}"
++    assert_equal __, string
++  end
++
++  def test_single_quoted_strings_do_not_interpolate
++    value = 123
++    string = 'The value is #{value}'
++    assert_equal __, string
++  end
++
++  def test_any_ruby_expression_may_be_interpolated
++    string = "The square root of 5 is #{Math.sqrt(5)}"
++    assert_equal __, string
++  end
++
++  def test_you_can_get_a_substring_from_a_string
++    string = "Bacon, lettuce and tomato"
++    assert_equal __, string[7,3]
++    assert_equal __, string[7..9]
++  end
++
++  def test_you_can_get_a_single_character_from_a_string
++    string = "Bacon, lettuce and tomato"
++    assert_equal __, string[1]
++
++    # Surprised?
++  end
++
++  in_ruby_version("1.8") do
++    def test_in_ruby_1_8_single_characters_are_represented_by_integers
++      assert_equal __, ?a
++      assert_equal __, ?a == 97
++
++      assert_equal __, ?b == (?a + 1)
++    end
++  end
++
++  in_ruby_version("1.9") do
++    def test_in_ruby_1_9_single_characters_are_represented_by_strings
++      assert_equal __, ?a
++      assert_equal __, ?a == 97
++    end
++  end
++
++  def test_strings_can_be_split
++    string = "Sausage Egg Cheese"
++    words = string.split
++    assert_equal [__, __, __], words
++  end
++
++  def test_strings_can_be_split_with_different_patterns
++    string = "the:rain:in:spain"
++    words = string.split(/:/)
++    assert_equal [__, __, __, __], words
++
++    # NOTE: Patterns are formed from Regular Expressions.  Ruby has a
++    # very powerful Regular Expression library.  We will become
++    # enlightened about them soon.
++  end
++
++  def test_strings_can_be_joined
++    words = ["Now", "is", "the", "time"]
++    assert_equal __, words.join(" ")
++  end
++
++  def test_strings_are_unique_objects
++    a = "a string"
++    b = "a string"
++
++    assert_equal __, a           == b
++    assert_equal __, a.object_id == b.object_id
++  end
++end
+diff --git a/learning/ruby/koans/about_symbols.rb b/learning/ruby/koans/about_symbols.rb
+new file mode 100644
+index 0000000..a88d6fe
+--- /dev/null
++++ b/learning/ruby/koans/about_symbols.rb
+@@ -0,0 +1,100 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutSymbols < EdgeCase::Koan
++  def test_symbols_are_symbols
++    symbol = :ruby
++    assert_equal __, symbol.is_a?(Symbol)
++  end
++
++  def test_symbols_can_be_compared
++    symbol1 = :a_symbol
++    symbol2 = :a_symbol
++    symbol3 = :something_else
++
++    assert_equal __, symbol1 == symbol2
++    assert_equal __, symbol1 == symbol3
++  end
++
++  def test_identical_symbols_are_a_single_internal_object
++    symbol1 = :a_symbol
++    symbol2 = :a_symbol
++
++    assert_equal __, symbol1           == symbol2
++    assert_equal __, symbol1.object_id == symbol2.object_id
++  end
++
++  def test_method_names_become_symbols
++    symbols_as_strings = Symbol.all_symbols.map { |x| x.to_s }
++    assert_equal __, symbols_as_strings.include?("test_method_names_become_symbols")
++  end
++
++  # THINK ABOUT IT:
++  #
++  # Why do we convert the list of symbols to strings and then compare
++  # against the string value rather than against symbols?
++
++  in_ruby_version("mri") do
++    RubyConstant = "What is the sound of one hand clapping?"
++    def test_constants_become_symbols
++      all_symbols = Symbol.all_symbols
++
++      assert_equal __, all_symbols.include?(__)
++    end
++  end
++
++  def test_symbols_can_be_made_from_strings
++    string = "catsAndDogs"
++    assert_equal __, string.to_sym
++  end
++
++  def test_symbols_with_spaces_can_be_built
++    symbol = :"cats and dogs"
++
++    assert_equal symbol, __.to_sym
++  end
++
++  def test_symbols_with_interpolation_can_be_built
++    value = "and"
++    symbol = :"cats #{value} dogs"
++
++    assert_equal symbol, __.to_sym
++  end
++
++  def test_to_s_is_called_on_interpolated_symbols
++    symbol = :cats
++    string = "It is raining #{symbol} and dogs."
++
++    assert_equal __, string
++  end
++
++  def test_symbols_are_not_strings
++    symbol = :ruby
++    assert_equal __, symbol.is_a?(String)
++    assert_equal __, symbol.eql?("ruby")
++  end
++
++  def test_symbols_do_not_have_string_methods
++    symbol = :not_a_string
++    assert_equal __, symbol.respond_to?(:each_char)
++    assert_equal __, symbol.respond_to?(:reverse)
++  end
++
++  # It's important to realize that symbols are not "immutable
++  # strings", though they are immutable. None of the
++  # interesting string operations are available on symbols.
++
++  def test_symbols_cannot_be_concatenated
++    # Exceptions will be pondered further down the path
++    assert_raise(___) do
++      :cats + :dogs
++    end
++  end
++
++  def test_symbols_can_be_dynamically_created
++    assert_equal __, ("cats" + "dogs").to_sym
++  end
++
++  # THINK ABOUT IT:
++  #
++  # Why is it not a good idea to dynamically create a lot of symbols?
++end
+diff --git a/learning/ruby/koans/about_to_str.rb b/learning/ruby/koans/about_to_str.rb
+new file mode 100644
+index 0000000..964850d
+--- /dev/null
++++ b/learning/ruby/koans/about_to_str.rb
+@@ -0,0 +1,54 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutToStr < EdgeCase::Koan
++
++  class CanNotBeTreatedAsString
++    def to_s
++      "non-string-like"
++    end
++  end
++
++  def test_to_s_returns_a_string_representation
++    not_like_a_string = CanNotBeTreatedAsString.new
++    assert_equal __, not_like_a_string.to_s
++  end
++
++  def test_normally_objects_cannot_be_used_where_strings_are_expected
++    assert_raise(___) do
++      File.exist?(CanNotBeTreatedAsString.new)
++    end
++  end
++
++  # ------------------------------------------------------------------
++
++  class CanBeTreatedAsString
++    def to_s
++      "string-like"
++    end
++
++    def to_str
++      to_s
++    end
++  end
++
++  def test_to_str_also_returns_a_string_representation
++    like_a_string = CanBeTreatedAsString.new
++    assert_equal __, like_a_string.to_str
++  end
++
++  def test_to_str_allows_objects_to_be_treated_as_strings
++    assert_equal __, File.exist?(CanBeTreatedAsString.new)
++  end
++
++  # ------------------------------------------------------------------
++
++  def acts_like_a_string?(string)
++    string = string.to_str if string.respond_to?(:to_str)
++    string.is_a?(String)
++  end
++
++  def test_user_defined_code_can_check_for_to_str
++    assert_equal __, acts_like_a_string?(CanNotBeTreatedAsString.new)
++    assert_equal __,  acts_like_a_string?(CanBeTreatedAsString.new)
++  end
++end
+diff --git a/learning/ruby/koans/about_triangle_project.rb b/learning/ruby/koans/about_triangle_project.rb
+new file mode 100644
+index 0000000..da23bbd
+--- /dev/null
++++ b/learning/ruby/koans/about_triangle_project.rb
+@@ -0,0 +1,25 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++# You need to write the triangle method in the file 'triangle.rb'
++require 'triangle.rb'
++
++class AboutTriangleProject < EdgeCase::Koan
++  def test_equilateral_triangles_have_equal_sides
++    assert_equal :equilateral, triangle(2, 2, 2)
++    assert_equal :equilateral, triangle(10, 10, 10)
++  end
++
++  def test_isosceles_triangles_have_exactly_two_sides_equal
++    assert_equal :isosceles, triangle(3, 4, 4)
++    assert_equal :isosceles, triangle(4, 3, 4)
++    assert_equal :isosceles, triangle(4, 4, 3)
++    assert_equal :isosceles, triangle(10, 10, 2)
++  end
++
++  def test_scalene_triangles_have_no_equal_sides
++    assert_equal :scalene, triangle(3, 4, 5)
++    assert_equal :scalene, triangle(10, 11, 12)
++    assert_equal :scalene, triangle(5, 4, 2)
++  end
++end
++
+diff --git a/learning/ruby/koans/about_triangle_project_2.rb b/learning/ruby/koans/about_triangle_project_2.rb
+new file mode 100644
+index 0000000..0a57e25
+--- /dev/null
++++ b/learning/ruby/koans/about_triangle_project_2.rb
+@@ -0,0 +1,17 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++# You need to write the triangle method in the file 'triangle.rb'
++require 'triangle.rb'
++
++class AboutTriangleProject2 < EdgeCase::Koan
++  # The first assignment did not talk about how to handle errors.
++  # Let's handle that part now.
++  def test_illegal_triangles_throw_exceptions
++    assert_raise(TriangleError) do triangle(0, 0, 0) end
++    assert_raise(TriangleError) do triangle(3, 4, -5) end
++    assert_raise(TriangleError) do triangle(1, 1, 3) end
++    assert_raise(TriangleError) do triangle(2, 4, 2) end
++    # HINT: for tips, see http://stackoverflow.com/questions/3834203/ruby-koan-151-raising-exceptions
++ end
++end
++
+diff --git a/learning/ruby/koans/about_true_and_false.rb b/learning/ruby/koans/about_true_and_false.rb
+new file mode 100644
+index 0000000..1138fb9
+--- /dev/null
++++ b/learning/ruby/koans/about_true_and_false.rb
+@@ -0,0 +1,33 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
++
++class AboutTrueAndFalse < EdgeCase::Koan
++  def truth_value(condition)
++    if condition
++      :true_stuff
++    else
++      :false_stuff
++    end
++  end
++
++  def test_true_is_treated_as_true
++    assert_equal __, truth_value(true)
++  end
++
++  def test_false_is_treated_as_false
++    assert_equal __, truth_value(false)
++  end
++
++  def test_nil_is_treated_as_false_too
++    assert_equal __, truth_value(nil)
++  end
++
++  def test_everything_else_is_treated_as_true
++    assert_equal __, truth_value(1)
++    assert_equal __, truth_value(0)
++    assert_equal __, truth_value([])
++    assert_equal __, truth_value({})
++    assert_equal __, truth_value("Strings")
++    assert_equal __, truth_value("")
++  end
++
++end
+diff --git a/learning/ruby/koans/array_test.rb b/learning/ruby/koans/array_test.rb
+new file mode 100644
+index 0000000..83ec07b
+--- /dev/null
++++ b/learning/ruby/koans/array_test.rb
+@@ -0,0 +1,47 @@
++require 'test_helper'
++
++class ArrayTest < EdgeCase::TestCase
++
++  def test_basic_arrays
++    food = [:peanut, :button, :and, :jelly]
++    assert_equal __, food[0]
++    assert_equal __, food.size
++  end
++
++  def test_array_access
++    food = [:peanut, :button, :and, :jelly]
++    assert_equal __, food.first
++    assert_equal __, food.last
++    assert_equal __, food[0]
++    assert_equal __, food[2]
++    assert_equal __, food[(food.size() - 1)]
++  end
++
++  def test_arrays_with_other_objects
++    food = [:peanut, :button, :and, :jelly, 1, nil]
++    assert_equal __, food.size
++    assert_equal __, food.last
++    assert_equal __, food[5]
++  end
++
++  def test_adding_to_an_array_with_shovel_shovel
++    food = [:peanut, :button, :and, :jelly]
++    food << 'sandwich'
++    assert_equal __, food.size
++    assert_equal __, food.first
++  end
++
++  def test_adding_to_an_array_with_push
++    food = [:peanut, :button, :and, :jelly]
++    food.push('sandwich')
++    assert_equal __, food.last
++  end
++
++  def test_adding_to_an_array_with_unshift
++    food = [:peanut, :button, :and, :jelly]
++    food.unshift('a')
++    assert_equal __, food.first
++  end
++
++end
++
+diff --git a/learning/ruby/koans/autotest/discover.rb b/learning/ruby/koans/autotest/discover.rb
+new file mode 100644
+index 0000000..31a7804
+--- /dev/null
++++ b/learning/ruby/koans/autotest/discover.rb
+@@ -0,0 +1,3 @@
++Autotest.add_discovery do
++  "rubykoan" if File.exist? 'path_to_enlightenment.rb'
++end
+diff --git a/learning/ruby/koans/autotest/rubykoan.rb b/learning/ruby/koans/autotest/rubykoan.rb
+new file mode 100644
+index 0000000..d43dc91
+--- /dev/null
++++ b/learning/ruby/koans/autotest/rubykoan.rb
+@@ -0,0 +1,24 @@
++require 'autotest'
++
++class Autotest::Rubykoan < Autotest
++  def initialize
++    super
++    @exceptions = /\.txt|Rakefile|\.rdoc/
++
++    self.order = :alpha
++    self.add_mapping(/^about_.*rb$/) do |filename, _|
++      filename
++    end 
++
++  end
++
++  def make_test_cmd files_to_test
++    "#{ruby}  'path_to_enlightenment.rb'"
++  end 
++
++  # quiet test/unit chatter
++  def handle_results(results)
++  end
++
++end
++
+diff --git a/learning/ruby/koans/code_mash.rb b/learning/ruby/koans/code_mash.rb
+new file mode 100644
+index 0000000..8fbf617
+--- /dev/null
++++ b/learning/ruby/koans/code_mash.rb
+@@ -0,0 +1 @@
++require File.expand_path(File.dirname(__FILE__) + '/edgecase')
+diff --git a/learning/ruby/koans/edgecase.rb b/learning/ruby/koans/edgecase.rb
+new file mode 100644
+index 0000000..40c9607
+--- /dev/null
++++ b/learning/ruby/koans/edgecase.rb
+@@ -0,0 +1,492 @@
++#!/usr/bin/env ruby
++# -*- ruby -*-
++
++require 'test/unit/assertions'
++begin
++  require 'win32console'
++rescue LoadError
++end
++
++# --------------------------------------------------------------------
++# Support code for the Ruby Koans.
++# --------------------------------------------------------------------
++
++class FillMeInError < StandardError
++end
++
++def ruby_version?(version)
++  RUBY_VERSION =~ /^#{version}/ ||
++    (version == 'jruby' && defined?(JRUBY_VERSION)) ||
++    (version == 'mri' && ! defined?(JRUBY_VERSION))
++end
++
++def in_ruby_version(*versions)
++  yield if versions.any? { |v| ruby_version?(v) }
++end
++
++in_ruby_version("1.8") do
++  class KeyError < StandardError
++  end
++end
++
++# Standard, generic replacement value.
++# If value19 is given, it is used in place of value for Ruby 1.9.
++def __(value="FILL ME IN", value19=:mu)
++  if RUBY_VERSION < "1.9"
++    value
++  else
++    (value19 == :mu) ? value : value19
++  end
++end
++
++# Numeric replacement value.
++def _n_(value=999999, value19=:mu)
++  if RUBY_VERSION < "1.9"
++    value
++  else
++    (value19 == :mu) ? value : value19
++  end
++end
++
++# Error object replacement value.
++def ___(value=FillMeInError, value19=:mu)
++  if RUBY_VERSION < "1.9"
++    value
++  else
++    (value19 == :mu) ? value : value19
++  end
++end
++
++# Method name replacement.
++class Object
++  def ____(method=nil)
++    if method
++      self.send(method)
++    end
++  end
++
++  in_ruby_version("1.9") do
++    public :method_missing
++  end
++end
++
++class String
++  def side_padding(width)
++    extra = width - self.size
++    if width < 0
++      self
++    else
++      left_padding = extra / 2
++      right_padding = (extra+1)/2
++      (" " * left_padding) + self + (" " *right_padding)
++    end
++  end
++end
++
++module EdgeCase
++  class << self
++    def simple_output
++      ENV['SIMPLE_KOAN_OUTPUT'] == 'true'
++    end
++  end
++
++  module Color
++    #shamelessly stolen (and modified) from redgreen
++    COLORS = {
++      :clear   => 0,  :black   => 30, :red   => 31,
++      :green   => 32, :yellow  => 33, :blue  => 34,
++      :magenta => 35, :cyan    => 36,
++    }
++
++    module_function
++
++    COLORS.each do |color, value|
++      module_eval "def #{color}(string); colorize(string, #{value}); end"
++      module_function color
++    end
++
++    def colorize(string, color_value)
++      if use_colors?
++        color(color_value) + string + color(COLORS[:clear])
++      else
++        string
++      end
++    end
++
++    def color(color_value)
++      "\e[#{color_value}m"
++    end
++
++    def use_colors?
++      return false if ENV['NO_COLOR']
++      if ENV['ANSI_COLOR'].nil?
++        if using_windows?
++          using_win32console
++        else
++          return true
++        end
++      else
++        ENV['ANSI_COLOR'] =~ /^(t|y)/i
++      end
++    end
++
++    def using_windows?
++      File::ALT_SEPARATOR
++    end
++
++    def using_win32console
++      defined? Win32::Console
++    end
++  end
++
++  class Sensei
++    attr_reader :failure, :failed_test, :pass_count
++
++    in_ruby_version("1.8") do
++      AssertionError = Test::Unit::AssertionFailedError
++    end
++
++    in_ruby_version("1.9") do
++      if defined?(MiniTest)
++        AssertionError = MiniTest::Assertion
++      else
++        AssertionError = Test::Unit::AssertionFailedError
++      end
++    end
++
++    def initialize
++      @pass_count = 0
++      @failure = nil
++      @failed_test = nil
++      @observations = []
++    end
++
++    PROGRESS_FILE_NAME = '.path_progress'
++
++    def add_progress(prog)
++      @_contents = nil
++      exists = File.exists?(PROGRESS_FILE_NAME)
++      File.open(PROGRESS_FILE_NAME,'a+') do |f|
++        f.print "#{',' if exists}#{prog}"
++      end
++    end
++
++    def progress
++      if @_contents.nil?
++        if File.exists?(PROGRESS_FILE_NAME)
++          File.open(PROGRESS_FILE_NAME,'r') do |f|
++            @_contents = f.read.to_s.gsub(/\s/,'').split(',')
++          end
++        else
++          @_contents = []
++        end
++      end
++      @_contents
++    end
++
++    def observe(step)
++      if step.passed?
++        @pass_count += 1
++        if @pass_count > progress.last.to_i
++          @observations << Color.green("#{step.koan_file}##{step.name} has expanded your awareness.")
++        end
++      else
++        @failed_test = step
++        @failure = step.failure
++        add_progress(@pass_count)
++        @observations << Color.red("#{step.koan_file}##{step.name} has damaged your karma.")
++        throw :edgecase_exit
++      end
++    end
++
++    def failed?
++      ! @failure.nil?
++    end
++
++    def assert_failed?
++      failure.is_a?(AssertionError)
++    end
++
++    def instruct
++      if failed?
++        @observations.each{|c| puts c }
++        encourage
++        guide_through_error
++        a_zenlike_statement
++        show_progress
++      else
++        end_screen
++      end
++    end
++
++    def show_progress
++      bar_width = 50
++      total_tests = EdgeCase::Koan.total_tests
++      scale = bar_width.to_f/total_tests
++      print Color.green("your path thus far [")
++      happy_steps = (pass_count*scale).to_i
++      happy_steps = 1 if happy_steps == 0 && pass_count > 0
++      print Color.green('.'*happy_steps)
++      if failed?
++        print Color.red('X')
++        print Color.cyan('_'*(bar_width-1-happy_steps))
++      end
++      print Color.green(']')
++      print " #{pass_count}/#{total_tests}"
++      puts
++    end
++
++    def end_screen
++      if EdgeCase.simple_output
++        boring_end_screen
++      else
++        artistic_end_screen
++      end
++    end
++
++    def boring_end_screen
++      puts "Mountains are again merely mountains"
++    end
++
++    def artistic_end_screen
++      "JRuby 1.9.x Koans"
++      ruby_version = "(in #{'J' if defined?(JRUBY_VERSION)}Ruby #{defined?(JRUBY_VERSION) ? JRUBY_VERSION : RUBY_VERSION})"
++      ruby_version = ruby_version.side_padding(54)
++        completed = <<-ENDTEXT
++                                  ,,   ,  ,,
++                                :      ::::,    :::,
++                   ,        ,,: :::::::::::::,,  ::::   :  ,
++                 ,       ,,,   ,:::::::::::::::::::,  ,:  ,: ,,
++            :,        ::,  , , :, ,::::::::::::::::::, :::  ,::::
++           :   :    ::,                          ,:::::::: ::, ,::::
++          ,     ,:::::                                  :,:::::::,::::,
++      ,:     , ,:,,:                                       :::::::::::::
++     ::,:   ,,:::,                                           ,::::::::::::,
++    ,:::, :,,:::                                               ::::::::::::,
++   ,::: :::::::,       Mountains are again merely mountains     ,::::::::::::
++   :::,,,::::::                                                   ::::::::::::
++ ,:::::::::::,                                                    ::::::::::::,
++ :::::::::::,                                                     ,::::::::::::
++:::::::::::::                                                     ,::::::::::::
++::::::::::::                      Ruby Koans                       ::::::::::::,
++::::::::::::#{                  ruby_version                     },::::::::::::,
++:::::::::::,                                                      , ::::::::::::
++,:::::::::::::,                brought to you by                 ,,::::::::::::,
++::::::::::::::                                                    ,::::::::::::
++ ::::::::::::::,                                                 ,:::::::::::::
++ ::::::::::::,             EdgeCase Software Artisans           , ::::::::::::
++  :,::::::::: ::::                                               :::::::::::::
++   ,:::::::::::  ,:                                          ,,:::::::::::::,
++     ::::::::::::                                           ,::::::::::::::,
++      :::::::::::::::::,                                  ::::::::::::::::
++       :::::::::::::::::::,                             ::::::::::::::::
++        ::::::::::::::::::::::,                     ,::::,:, , ::::,:::
++          :::::::::::::::::::::::,               ::,: ::,::, ,,: ::::
++              ,::::::::::::::::::::              ::,,  , ,,  ,::::
++                 ,::::::::::::::::              ::,, ,   ,:::,
++                      ,::::                         , ,,
++                                                  ,,,
++ENDTEXT
++        puts completed
++    end
++
++    def encourage
++      puts
++      puts "The Master says:"
++      puts Color.cyan("  You have not yet reached enlightenment.")
++      if ((recents = progress.last(5)) && recents.size == 5 && recents.uniq.size == 1)
++        puts Color.cyan("  I sense frustration. Do not be afraid to ask for help.")
++      elsif progress.last(2).size == 2 && progress.last(2).uniq.size == 1
++        puts Color.cyan("  Do not lose hope.")
++      elsif progress.last.to_i > 0
++        puts Color.cyan("  You are progressing. Excellent. #{progress.last} completed.")
++      end
++    end
++
++    def guide_through_error
++      puts
++      puts "The answers you seek..."
++      puts Color.red(indent(failure.message).join)
++      puts
++      puts "Please meditate on the following code:"
++      if assert_failed?
++        puts embolden_first_line_only(indent(find_interesting_lines(failure.backtrace)))
++      else
++        puts embolden_first_line_only(indent(failure.backtrace))
++      end
++      puts
++    end
++
++    def embolden_first_line_only(text)
++      first_line = true
++      text.collect { |t|
++        if first_line
++          first_line = false
++          Color.red(t)
++        else
++          Color.cyan(t)
++        end
++      }
++    end
++
++    def indent(text)
++      text = text.split(/\n/) if text.is_a?(String)
++      text.collect{|t| "  #{t}"}
++    end
++
++    def find_interesting_lines(backtrace)
++      backtrace.reject { |line|
++        line =~ /test\/unit\/|edgecase\.rb|minitest/
++      }
++    end
++
++    # Hat's tip to Ara T. Howard for the zen statements from his
++    # metakoans Ruby Quiz (http://rubyquiz.com/quiz67.html)
++    def a_zenlike_statement
++      if !failed?
++        zen_statement =  "Mountains are again merely mountains"
++      else
++        zen_statement = case (@pass_count % 10)
++        when 0
++          "mountains are merely mountains"
++        when 1, 2
++          "learn the rules so you know how to break them properly"
++        when 3, 4
++          "remember that silence is sometimes the best answer"
++        when 5, 6
++          "sleep is the best meditation"
++        when 7, 8
++          "when you lose, don't lose the lesson"
++        else
++          "things are not what they appear to be: nor are they otherwise"
++        end
++      end
++      puts Color.green(zen_statement)
++    end
++  end
++
++  class Koan
++    include Test::Unit::Assertions
++
++    attr_reader :name, :failure, :koan_count, :step_count, :koan_file
++
++    def initialize(name, koan_file=nil, koan_count=0, step_count=0)
++      @name = name
++      @failure = nil
++      @koan_count = koan_count
++      @step_count = step_count
++      @koan_file = koan_file
++    end
++
++    def passed?
++      @failure.nil?
++    end
++
++    def failed(failure)
++      @failure = failure
++    end
++
++    def setup
++    end
++
++    def teardown
++    end
++
++    def meditate
++      setup
++      begin
++        send(name)
++      rescue StandardError, EdgeCase::Sensei::AssertionError => ex
++        failed(ex)
++      ensure
++        begin
++          teardown
++        rescue StandardError, EdgeCase::Sensei::AssertionError => ex
++          failed(ex) if passed?
++        end
++      end
++      self
++    end
++
++    # Class methods for the EdgeCase test suite.
++    class << self
++      def inherited(subclass)
++        subclasses << subclass
++      end
++
++      def method_added(name)
++        testmethods << name if !tests_disabled? && Koan.test_pattern =~ name.to_s
++      end
++
++      def end_of_enlightenment
++        @tests_disabled = true
++      end
++
++      def command_line(args)
++        args.each do |arg|
++          case arg
++          when /^-n\/(.*)\/$/
++            @test_pattern = Regexp.new($1)
++          when /^-n(.*)$/
++            @test_pattern = Regexp.new(Regexp.quote($1))
++          else
++            if File.exist?(arg)
++              load(arg)
++            else
++              fail "Unknown command line argument '#{arg}'"
++            end
++          end
++        end
++      end
++
++      # Lazy initialize list of subclasses
++      def subclasses
++        @subclasses ||= []
++      end
++
++       # Lazy initialize list of test methods.
++      def testmethods
++        @test_methods ||= []
++      end
++
++      def tests_disabled?
++        @tests_disabled ||= false
++      end
++
++      def test_pattern
++        @test_pattern ||= /^test_/
++      end
++
++      def total_tests
++        self.subclasses.inject(0){|total, k| total + k.testmethods.size }
++      end
++    end
++  end
++
++  class ThePath
++    def walk
++      sensei = EdgeCase::Sensei.new
++      each_step do |step|
++        sensei.observe(step.meditate)
++      end
++      sensei.instruct
++    end
++
++    def each_step
++      catch(:edgecase_exit) {
++        step_count = 0
++        EdgeCase::Koan.subclasses.each_with_index do |koan,koan_index|
++          koan.testmethods.each do |method_name|
++            step = koan.new(method_name, koan.to_s, koan_index+1, step_count+=1)
++            yield step
++          end
++        end
++      }
++    end
++  end
++end
++
++END {
++  EdgeCase::Koan.command_line(ARGV)
++  EdgeCase::ThePath.new.walk
++}
+diff --git a/learning/ruby/koans/example_file.txt b/learning/ruby/koans/example_file.txt
+new file mode 100644
+index 0000000..ffe7cbd
+--- /dev/null
++++ b/learning/ruby/koans/example_file.txt
+@@ -0,0 +1,4 @@
++this
++is
++a
++test
+diff --git a/learning/ruby/koans/first_test.rb b/learning/ruby/koans/first_test.rb
+new file mode 100644
+index 0000000..708baf1
+--- /dev/null
++++ b/learning/ruby/koans/first_test.rb
+@@ -0,0 +1,11 @@
++require 'test/unit'
++
++class TestSomething < Test::Unit::TestCase
++  def test_assert
++    assert true
++    assert_equal 1, 1
++    assert_equal 1, 1.0
++  end
++end
++
++
+diff --git a/learning/ruby/koans/path_to_enlightenment.rb b/learning/ruby/koans/path_to_enlightenment.rb
+new file mode 100644
+index 0000000..64621bf
+--- /dev/null
++++ b/learning/ruby/koans/path_to_enlightenment.rb
+@@ -0,0 +1,38 @@
++# The path to Ruby Enlightenment starts with the following:
++
++$LOAD_PATH << File.dirname(__FILE__)
++
++require 'about_asserts'
++require 'about_nil'
++require 'about_objects'
++require 'about_arrays'
++require 'about_array_assignment'
++require 'about_hashes'
++require 'about_strings'
++require 'about_symbols'
++require 'about_regular_expressions'
++require 'about_methods'
++require 'about_constants'
++require 'about_control_statements'
++require 'about_true_and_false'
++require 'about_triangle_project'
++require 'about_exceptions'
++require 'about_triangle_project_2'
++require 'about_iteration'
++require 'about_blocks'
++require 'about_sandwich_code'
++require 'about_scoring_project'
++require 'about_classes'
++require 'about_open_classes'
++require 'about_dice_project'
++require 'about_inheritance'
++require 'about_modules'
++require 'about_scope'
++require 'about_class_methods'
++require 'about_message_passing'
++require 'about_proxy_object_project'
++require 'about_to_str'
++in_ruby_version("jruby") do
++  require 'about_java_interop'
++end
++require 'about_extra_credit'
+diff --git a/learning/ruby/koans/test_helper.rb b/learning/ruby/koans/test_helper.rb
+new file mode 100644
+index 0000000..9accf96
+--- /dev/null
++++ b/learning/ruby/koans/test_helper.rb
+@@ -0,0 +1,7 @@
++require 'test/unit'
++
++def __
++  "FILL ME IN"
++end
++
++EdgeCase = Test::Unit
+diff --git a/learning/ruby/koans/triangle.rb b/learning/ruby/koans/triangle.rb
+new file mode 100644
+index 0000000..8df052a
+--- /dev/null
++++ b/learning/ruby/koans/triangle.rb
+@@ -0,0 +1,22 @@
++# Triangle Project Code.
++
++# Triangle analyzes the lengths of the sides of a triangle
++# (represented by a, b and c) and returns the type of triangle.
++#
++# It returns:
++#   :equilateral  if all sides are equal
++#   :isosceles    if exactly 2 sides are equal
++#   :scalene      if no sides are equal
++#
++# The tests for this method can be found in
++#   about_triangle_project.rb
++# and
++#   about_triangle_project_2.rb
++#
++def triangle(a, b, c)
++  # WRITE THIS CODE
++end
++
++# Error class used in part 2.  No need to change this code.
++class TriangleError < StandardError
++end
+diff --git a/learning/sicp/lesson1.org b/learning/sicp/lesson1.org
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/problems/projectEuler/python/p10.py b/problems/projectEuler/python/p10.py
+new file mode 100644
+index 0000000..3de8d90
+--- /dev/null
++++ b/problems/projectEuler/python/p10.py
+@@ -0,0 +1,17 @@
++#!/usr/bin/env python
++from itertools import takewhile
++def eratosthenes():
++    '''Yields the sequence of prime numbers via the Sieve of Eratosthenes.'''
++    D = {}  # map composite integers to primes witnessing their compositeness
++    q = 2   # first integer to test for primality
++    while 1:
++        if q not in D:
++            yield q        # not marked composite, must be prime
++            D[q*q] = [q]   # first multiple of q not already marked
++        else:
++            for p in D[q]: # move each witness to its next multiple
++                D.setdefault(p+q,[]).append(p)
++            del D[q]       # no longer need D[q], free memory
++        q += 1
++
++print sum(takewhile(lambda x: x < 2000000, eratosthenes()))
+diff --git a/problems/projectEuler/scala/p10.scala b/problems/projectEuler/scala/p10.scala
+new file mode 100644
+index 0000000..159e945
+--- /dev/null
++++ b/problems/projectEuler/scala/p10.scala
+@@ -0,0 +1,44 @@
++import java.util.LinkedHashMap
++import scala.collection.JavaConversions._
++
++object FindPrime {
++
++  var items   = new LinkedHashMap[Int, Boolean]()
++
++  def main(args: Array[String]) {
++    findAllPrime( 2000000)
++  }
++
++  def findAllPrime(size: Int): Unit = {
++    // Prepare
++    for (i <- 2 until size + 1)
++      items.put(i, true)
++
++    // Mark prime
++    for (item <- items if items.get(item) == true) markPrime(item)
++    
++    // Calculate sum
++    var sum = 0
++    var count = 0
++    for (item <- items if markers(item - 2) == false)  {
++      sum = sum + item
++      count = count + 1
++      println("item: " + item)
++    }
++    println("Count: " + count)
++    println("Grand total: " + sum)
++  }
++
++  def markPrime(in: Int) {
++   var count = 2
++   var item = in * count
++
++   var max = items.get(item)
++
++   while (item <= max) {
++     markers(item - 2) = true
++     count = count + 1
++     item = in * count
++   }
++  }
++}
+diff --git a/problems/projectEuler/scala/p7.scala b/problems/projectEuler/scala/p7.scala
+new file mode 100644
+index 0000000..9b1aca5
+--- /dev/null
++++ b/problems/projectEuler/scala/p7.scala
+@@ -0,0 +1,13 @@
++object FindPrime {
++
++  def main(args: Array[String]): Unit = {
++    isPrime(22)
++  }
++
++  def isPrime(x: Int): Boolean = {
++    var status = false
++    for (i:int ;)
++    status
++
++  }
++}
+\ No newline at end of file
+orking directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_sandwich_code.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_scope.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_scoring_project.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_strings.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_symbols.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_to_str.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_triangle_project.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_triangle_project_2.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/about_true_and_false.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/array_test.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/autotest/discover.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/autotest/rubykoan.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/code_mash.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/edgecase.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/example_file.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/first_test.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/path_to_enlightenment.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/test_helper.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in learning/ruby/koans/triangle.rb.
+The file will have its original line endings in your working directory.
