@@ -1,0 +1,6 @@
+# Comment.
+
+def test()
+	
+end
+

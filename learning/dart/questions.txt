@@ -1,0 +1,3 @@
+Does DART introduce any new language features?  DART looks like what Scala tries to do in JVM. 
+
+Does DART support backbone.js like MVC libraries to structure javascript programs?
