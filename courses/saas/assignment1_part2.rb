@@ -4,11 +4,13 @@ class NoSuchStrategyError < StandardError ; end
 Strategies = ["R", "P", "S"]
 
 def rps_game_winner(game)
-	# Initialize
+	
+  raise WrongNumberOfPlayersError unless game.length == 2
+
+  # Initialize
 	first, second = game[0][1], game[1][1]
   
   # Precondition check
-  raise WrongNumberOfPlayersError unless game.length == 2
   raise NoSuchStrategyError unless Strategies.include?(first) and Strategies.include?(second)
 
   
@@ -25,12 +27,12 @@ def rps_game_winner(game)
   elsif first == "P" and second == "R"
   	return game[0]
   elsif first == "R" and second == "P"
-  	return game[0]
+  	return game[1]
   end
   	
 end
 
-puts rps_game_winner([["Armando","P"], ["Dave","S"]]).inspect
+# puts rps_game_winner([["Armando","P"], ["Dave","S"]]).inspect
 
 =begin 
 (b) A rock, paper, scissors tournament is encoded as a bracketed array of games - that is, each
@@ -63,9 +65,18 @@ def rps_tournament_winner(tournaments)
  # If its a game then use rps_game_winner method to find winner
     # Game will have only 2 elements, and both will be string
  # If its a tournament then use rps_tournament_winner method to find the winner
- tournaments.each { |e| }
+ if tournaments.length != 2 then return end
+ 
+ if tournaments[0][0].instance_of?(Array)
+   first  = rps_tournament_winner(tournaments[0])
+   second = rps_tournament_winner(tournaments[1])
+   return rps_game_winner([first, second])
+ elsif tournaments[0][0].instance_of?(String)
+   return rps_game_winner(tournaments)
+ end
 end
 
+=begin 
 puts rps_tournament_winner([
 [
 [ ["Armando", "P"], ["Dave", "S"] ],
@@ -75,4 +86,6 @@ puts rps_tournament_winner([
 [ ["Allen", "S"], ["Omer", "P"] ],
 [ ["David E.", "R"], ["Richard X.", "P"] ]
 ]
-])
+]).inspect
+
+=end
