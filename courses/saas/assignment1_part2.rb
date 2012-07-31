@@ -59,7 +59,11 @@ a single winner. You can assume that the initial array is well formed (that is, 
 =end
 
 def rps_tournament_winner(tournaments)
-
+ # For each element in array, is another array then 
+ # If its a game then use rps_game_winner method to find winner
+    # Game will have only 2 elements, and both will be string
+ # If its a tournament then use rps_tournament_winner method to find the winner
+ tournaments.each { |e| }
 end
 
 puts rps_tournament_winner([
