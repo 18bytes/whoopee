@@ -8,10 +8,19 @@
 =end
 
 def combine_anagrams(words)
-  prepared = {}
-  words.each { |w| prepared[w] = w.downcase.chars.sort.join }
-  prepared.each_pair {}  
-  puts prepared
-end
+  initial    = {}
+  prepared   = {}
+  result = []
+  # Prepare the hash with sorted characters as value
+  words.each { |w| initial[w] = w.downcase.chars.sort.join } 
+  # Group the values in previous step into arrays with unique keys
+  initial.each_pair { |k, v| (prepared[v] == nil) ? prepared[v] = [k] : prepared[v] << k }   
+  # Extract the group of arrays and add it to result
+  prepared.each_value { |v| result << v}
 
-combine_anagrams ['cars', 'for', 'potatoes', 'racs', 'four','scar', 'creams', 'scream']
+  return result
+end
+# FIXME What do you do for duplicate values? :P
+puts (combine_anagrams ['cars', 'for', 'potatoes', 'cars', 'racs', 'four','scar', 'creams', 'scream']).inspect
+
+
