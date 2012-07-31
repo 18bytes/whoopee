@@ -8,8 +8,9 @@
 =end
 
 def combine_anagrams(words)
-  prepared = []
-  words.each { |w| prepared << w.downcase.chars.sort.join }
+  prepared = {}
+  words.each { |w| prepared[w] = w.downcase.chars.sort.join }
+  prepared.each_pair {}  
   puts prepared
 end
 
