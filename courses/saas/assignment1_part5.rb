@@ -34,7 +34,7 @@ puts f.x_history.inspect
 
 
 class Numeric
-  @@currencies = {'yen' => 0.013, 'euro' => 1.292, 'rupee' => 0.019}
+  @@currencies = {'dollar' => 1, 'yen' => 0.013, 'euro' => 1.292, 'rupee' => 0.019}
   def method_missing(method_id)
     singular_currency = method_id.to_s.gsub( /s$/, '')
     if @@currencies.has_key?(singular_currency)
@@ -43,6 +43,33 @@ class Numeric
      super 
     end
   end
+
+  def in(currency)
+    singular_currency = currency.to_s.gsub(/s$/, '')
+    self / @@currencies[singular_currency]
+  end
 end
 
-puts 10.rupee
+# ===================================
+
+class String
+  def method_missing(method_id, *input)
+    if method_id == :palindrome?
+      self.downcase!
+      self.gsub!(/[^\w]/, "")
+      self == self.reverse
+    end
+  end
+end
+# puts "aa".palindrome?
+
+
+# ===================================
+
+module Enumerable
+  def palindrome?
+    self == self.reverse
+  end
+end
+
+# puts [2, 4, 2].palindrome?
