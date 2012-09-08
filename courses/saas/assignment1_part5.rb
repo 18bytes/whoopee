@@ -50,26 +50,27 @@ class Numeric
   end
 end
 
+puts 2.rupee.in(:dollar)
+
 # ===================================
 
+
 class String
-  def method_missing(method_id, *input)
-    if method_id == :palindrome?
-      self.downcase!
-      self.gsub!(/[^\w]/, "")
-      self == self.reverse
-    end
+  def palindrome?
+    self.downcase!
+    self.gsub!(/[^\w]/, "")
+    self == self.reverse
   end
 end
-# puts "aa".palindrome?
+# puts "aas".palindrome?
 
 
 # ===================================
 
 module Enumerable
   def palindrome?
-    self == self.reverse
+    self == self.reverse unless self.class == Hash
   end
 end
 
-# puts [2, 4, 2].palindrome?
+ a = {"hello"=> "world"}.palindrome?
